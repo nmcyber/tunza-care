@@ -1,0 +1,27 @@
+/* src/layouts/RootLayout.css */
+
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li a {
+    transition: color 0.2s ease-in-out;
+  }
+  
+  nav li a:hover {
+    color: #4c1d95; /* Darker indigo */
+  }
+  
+  /* Footer Styles */
+  footer {
+    font-size: 0.875rem;
+  }
