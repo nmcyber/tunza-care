@@ -1,11 +1,20 @@
-import React from 'react';
-import RootLayout from './layouts/RootLayout';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = ({ children }) => {
   return (
-    <RootLayout>
-      {children}
-    </RootLayout>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route/>
+      </Routes>
+    </Router>
   );
 };
 
