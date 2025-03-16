@@ -1,0 +1,82 @@
+import { Card, CardContent } from "@/components/ui/card"
+import { Check } from "lucide-react"
+
+export default function NDIS({ title, highlightedTitle, services, image, badgeImage, className }) {
+
+
+  return (
+    <section className=" relative z-10 flex flex-col w-full py-12 bg-background overflow-hiddenn after:bg-[url(/left_.svg)] after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 ">
+
+        {/* Main Content Card */}
+        <div className=" flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none ">
+        {/* Controls where the overflow is at for the inverted border radius */}
+        <Card className="rounded-lg bg-none overflow-hiddenn border-0 border-lime-500 outline-none shadow-none">
+          <CardContent className="p-0 bg-none ">
+          {/* defines the white background color that will appear in the gap between the two seperate columns */}
+            <div id="house-info" className=" relative bbbbg-background flex flex-col space-y-10 md:flex-row md:gap-8 ">
+                          {/* Right Side - Content */}
+                          <div className="w-full md:w-1/2 p-6 bg-background md:p-10 relative rounded-lg border-0 border-lime-500">
+              <div className="space-y-6">
+          <h2 className="text-3xl font-bold">
+            {title} {highlightedTitle && <span className="text-primary">{highlightedTitle}</span>}
+          </h2>
+
+          <ul className="space-y-2">
+            {services.map((service, index) => (
+              <li key={index} className="flex items-start gap-2">
+                <span className="flex-shrink-0 mt-1 text-green-500">
+                  <Check className="h-4 w-4" />
+                </span>
+                <span>{service.text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+              </div>
+              {/* ============================================= */}
+              {/* Right Side - Image with Play Button and inverted border radius */}
+              <div id="house-image" className="relative z-0 w-full md:w-1/2 outline-none border-0 border-fuchsia-500">
+
+                <img
+                  src="/about-tunza-care.webp"
+                  alt="Caregiver and client smiling together"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+
+                
+
+                  {/* INVERTED BORDER COMPONENT - TOP RIGHT */}
+                <div id="play" className="absolute z-20 p-0 bg-white top-0 right-0 border-0 border-lime-500 ">
+                <div className=" bg-[hsl(199,36%,91%)] rounded-full p-3 ">
+                <div className=" flex items-center justify-center ">
+                  <button className=" flex mx-auto aspect-square rounded-full p-3 text-white hover:bg-blue-600 transition-colors">
+                    {/* <Play className="h-6 w-6" /> */}
+                    <img src="/play.svg" alt="Play Button" className="object-cover h-4 w-4" />
+                  </button>
+                </div>
+                </div>
+                  </div>
+
+                  {/* INVERTED BORDER COMPONENT */}
+                <div id="house-price" className=" absolute z-20 p-4 -bottom-6 -left-7 outline-0 outline-red-400 ">
+                <div className="grid grid-cols-1 text-white gap-0 space-y-0 items-center border-0 border-lime-400">
+                  <span className="text-xl font-bold ">150+</span>
+                  <span className="text-xs ">Lorem ipsum dum</span>
+                </div>
+                </div>
+                {/* <Badge id="badge" className="absolute bottom-4 left-4 bg-orange-500 text-white before:content-[''] before:absolute before:w-4 before:h-4 before:bg-white before:top-full before:left-0 before:rounded-tl-full"
+                >
+                  66
+                </Badge> */}
+
+              </div>
+
+            </div>
+          </CardContent>
+        </Card>
+        </div>
+      {/* <div className=" absolute w-full h-full border-2 border-red-500 top-0 right-0 bg-[url(/left_.svg)] bg-no-repeat object-contain z-20 " /> */}
+    </section>
+  )
+}
+
