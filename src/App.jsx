@@ -1,4 +1,3 @@
-
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,13 +5,16 @@ import {
   Navigate,
 } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import TrustedPartnership from "./components/TrustedPartnerships";
+import Home from "./pages/Home";
 
 const App = ({ children }) => {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route/>
+        <Route path="" element={<Home />} />
+        <Route path="/About" element={<TrustedPartnership />} />
       </Routes>
     </Router>
   );
