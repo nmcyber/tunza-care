@@ -26,7 +26,7 @@ const Navbar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <section className=" w-full py-2 fixed top-0 left-0 z-50">
+    <section className=" w-full py-2 fixed top-0 left-0 z-50 bg-white">
       <div className=" px-4 sm:px-8 lg:px-16 xl:px-24 ">
         <nav className="hidden justify-between lg:flex">
           <div className="flex flex-grow justify-between items-center gap-6 outline-0 outline-red-400">
@@ -43,7 +43,7 @@ const Navbar = () => {
                 <a
                   key={item.id}
                   href={item.url}
-                  className={`block relative font-sans text-[17px]  hover:text-gray-400  transition-colors duration-300 outline-0 outline-lime-600 mt-6  px-4 py-8 lg:-mr-0.25  font-semibold  lg:leading-5 lg:hover:text-n-1 xl:px-12 `}
+                  className={`block relative font-sans text-[17px] rounded-sm  hover:text-gray-400 hover:shadow-md hover:bg-slate-100 transition-colors duration-300 outline-0 outline-lime-600 mt-6 py-2 lg:-mr-0.25  font-semibold  lg:leading-5 lg:hover:text-n-1 xl:px-12 `}
                 >
                   {item.title}
                 </a>
@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="">
             <GradientButton
               children={"08 9387 6326"}
-              className="relative font-semibold mt-12 px-6 py-2 rounded-2xl overflow-hidden group"
+              className="relative font-semibold mt-8 px-6 py-2 rounded-2xl overflow-hidden group"
             />
           </div>
         </nav>
