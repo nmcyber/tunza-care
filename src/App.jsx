@@ -7,6 +7,7 @@ import {
 import Navbar from "./components/Navbar/Navbar";
 import TrustedPartnership from "./components/TrustedPartnerships";
 import Home from "./pages/Home";
+import Footer from "./components/Footer/footer";
 
 const App = ({ children }) => {
   return (
@@ -16,6 +17,7 @@ const App = ({ children }) => {
         <Route path="" element={<Home />} />
         <Route path="/About" element={<TrustedPartnership />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 };
