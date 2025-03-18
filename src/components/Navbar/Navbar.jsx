@@ -26,7 +26,7 @@ const Navbar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <section className=" w-full py-2 fixed top-0 left-0 z-50 bg-white">
+    <section className=" w-full py-2 fixed top-0 left-0 z-50 bg-white ">
       <div className=" px-4 sm:px-8 lg:px-16 xl:px-24 ">
         <nav className="hidden justify-between lg:flex">
           <div className="flex flex-grow justify-between items-center gap-6 outline-0 outline-red-400">

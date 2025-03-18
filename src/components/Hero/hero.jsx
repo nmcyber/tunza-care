@@ -4,7 +4,7 @@ import { banner, playIcon, reviews, stars } from "@/assets";
 
 const Hero = () => {
   return (
-    <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between bg-white py-16">
+    <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between bg-white py-16 ">
       {/* Left Section */}
       <div className="md:w-1/2 space-y-2">
         <motion.h1

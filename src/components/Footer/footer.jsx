@@ -7,7 +7,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="bg-white rounded-t-sm">
+    <footer className="bg-white rounded-t-sm ">
       <div className="container flex justify-between flex-wrap mx-auto px-12 md:px-16  gap-6 pb-4">
         <div className="space-y-4">
           <img src={logo} alt="Tunza Care Services Logo" className="w-40 mx-8 " />
@@ -30,7 +30,7 @@ const Footer = () => {
         {/* Quick Links Sections */}
 
         <div>
-          <h4 className="font-semibold text-2xl text-[#64cdf6]/60 mb-4">
+          <h4 className="font-semibold text-xl text-[#64cdf6]/60 mb-4">
             Quick Links
           </h4>
           <div>
@@ -39,7 +39,7 @@ const Footer = () => {
                 <a
                   key={item.id}
                   href={item.url}
-                  className="text-gray-600  text-lg hover:text-gray-800 cursor-pointer"
+                  className="text-gray-600  text-md hover:text-gray-800 cursor-pointer"
                 >
                   {item.title}
                 </a>
@@ -50,7 +50,7 @@ const Footer = () => {
 
         {/* Contact Section */}
         <div>
-          <h4 className="font-semibold text-2xl  text-[#64cdf6]/60 mb-4">
+          <h4 className="font-semibold text-xl  text-[#64cdf6]/60 text-center mb-4">
             Contact
           </h4>
           <ul className="space-y-4 text-center ">
@@ -59,20 +59,20 @@ const Footer = () => {
                 <MdOutlineCall size={'22'}/>
               </span>
               <a href="">
-                <span className="text-lg">08 9387 6326</span>
+                <span className="text-md">08 9387 6326</span>
               </a>
             </li>
             <li className="flex items-center space-x-3 text-gray-600">
               <span className=" bg-[#64cdf6]/60 text-white p-2 rounded-full">
                 <MdMailOutline size={'22'}/>
               </span>
-              <span className="text-lg">loremipsum@email.com</span>
+              <span className="text-md">loremipsum@email.com</span>
             </li>
             <li className="flex items-center text-start space-x-3 text-gray-600">
               <span className=" bg-[#64cdf6]/60 text-white p-2 rounded-full">
                 <MdOutlineLocationOn size={'22'}/>
               </span>
-              <span className="text-lg">
+              <span className="text-md">
                 6/15 Pattie St
                 <br />
                 Cannington WA 6107
