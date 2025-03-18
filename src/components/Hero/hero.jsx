@@ -27,7 +27,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Book Appointment
+            Book Appointment →
           </motion.button>
           <div className="flex -space-x-8">
             <motion.img
