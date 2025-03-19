@@ -20,4 +20,4 @@ export { default as image5 } from "./images/image5.png";
 
 
 // Icons
-export { default as playIcon} from "./icons/playicon.png"
+export { default as playIcon} from "./icons/playIcon.png"

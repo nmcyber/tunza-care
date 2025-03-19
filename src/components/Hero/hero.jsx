@@ -4,7 +4,8 @@ import { banner, playIcon, reviews, stars } from "@/assets";
 
 const Hero = () => {
   return (
-    <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between bg-white py-20 ">
+    <section className=" px-4 flex flex-col  bg-white py-20 ">
+    <div className=" flex max-w-6xl mx-auto md:flex-row items-center justify-between p-0">
       {/* Left Section */}
       <div className="md:w-1/2 space-y-2">
         <motion.h1
@@ -66,7 +67,7 @@ const Hero = () => {
         <motion.img
           src={banner}
           alt="Healthcare"
-          className="rounded-lg shadow-lg"
+          className="rounded-lg"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -112,7 +113,8 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+      </div>
+    </section>
   );
 };
 

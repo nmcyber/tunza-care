@@ -2,8 +2,6 @@ import { image5, image1, image2, image3, image4 } from "@/assets";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter, FaYoutube } from "react-icons/fa6";
 
-
-
 export const navigation = [
     {
       id: "0",
