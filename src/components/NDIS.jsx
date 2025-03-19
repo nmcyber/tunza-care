@@ -20,7 +20,7 @@ const InvertedBorder = ({ top,
   imgSrc,
   imgSize = '48px',
   imgAlt,
-  spanBgColor = '#146690',
+  spanBgColor,
   children,}) => {
   let mainDivPositionClasses = 'absolute';
 
@@ -104,8 +104,8 @@ const InvertedBorder = ({ top,
         </span>
       </div>
     </div>
-    <div className={`${beforePositionClasses} w-9 h-9 bg-radial-[at_0%_0%] outline outline-lime-500 from-white to-white aspect-square bg-blue ${beforeRotation} z-20 shadow-[-0.5rem_0_0_white] bg-[radial-gradient(circle_at_100%_100%,transparent_1.4rem,white,white_calc(1.4rem_+_1px))]`} />
-    <div className={`${afterPositionClasses} w-8 h-8 bg-radial-[at_100%_100%] from-white to-white aspect-square bg-white-500 ${afterRotation} outline outline-lime-500 bg-[radial-gradient(circle_at_100%_100%,transparent_1.4rem,white,white_calc(1.4rem_+_2px))] shadow-[-0.5rem_0_0_white] z-20`} />
+    <div className={`${beforePositionClasses} w-9 h-9 bg-radial-[at_0%_0%] outline-0 outline-lime-500 from-white to-white aspect-square bg-blue ${beforeRotation} z-20 shadow-[-0.5rem_0_0_white] bg-[radial-gradient(circle_at_100%_100%,transparent_1.4rem,white,white_calc(1.4rem_+_1px))]`} />
+    <div className={`${afterPositionClasses} w-8 h-8 bg-radial-[at_100%_100%] from-white to-white aspect-square bg-white-500 ${afterRotation} outline-0 outline-lime-500 bg-[radial-gradient(circle_at_100%_100%,transparent_1.4rem,white,white_calc(1.4rem_+_2px))] shadow-[-0.5rem_0_0_white] z-20`} />
     {children}
   </div>
   );
@@ -115,7 +115,7 @@ export default function NDIS({ title, highlightedTitle, services, image, badgeIm
 
 
   return (
-    <section className=" relative z-10 flex flex-col w-[90svw] max-w-[90svw] mx-auto py-12 bg-background overflow-hiddenn bbg-[url(/left_.svg)] bg-no-repeat after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 ">
+    <section className=" relative z-10 flex flex-col outline-0 outline-pink-700 w-[90svw] max-w-[90svw] mx-auto py-12 bg-background overflow-hiddenn bbg-[url(/left_.svg)] bg-no-repeat after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 ">
 
         {/* Main Content Card */}
         <div className=" flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none ">
@@ -171,34 +171,33 @@ export default function NDIS({ title, highlightedTitle, services, image, badgeIm
                 {/* Example 1: Top-right position with custom image and background */}
                 <InvertedBorder
                     right="0"
-                    bottom="0"
+                    top="0"
                     imgSrc="/logos/verified.svg"
                     imgAlt="Star Icon"
                     imgSize="48px"
                     innerBorderRadius='rounded-lg'
-                    beforeRotation="rotate-[180deg]"
+                    beforeRotation="-rotate-[2deg]"
                     afterRotation="rotate-[180deg]"
                     beforeBottom="-bottom-3"
-                    beforeLeft="-left-6"
-                    afterTop='-top-6'
-                    afterRight='-right-2'
+                    beforeRight="right-4"
+                    afterTop='-top-0'
+                    afterLeft='-left-0'
                     spanBgColor="#146690"
                   >
                   </InvertedBorder>
-
+{/* 
                   <div id="play" className="absolute z-20 p-0 bg-white top-0 right-2 border-0 rotate border-lime-500 ">
                 <div className=" bg-[hsl(199,36%,91%)] rounded-full p-3 ">
                 <div className=" flex items-center justify-center ">
                 <button className=" flex mx-auto aspect-square rounded-full p-3 text-white hover:bg-blue-600 transition-colors">
-                    {/* <Play className="h-6 w-6" /> */}
                     <img src="/play.svg" alt="Play Button" className="object-cover h-4 w-4" />
                 </button>
                 </div>
                 </div>
-                </div>
+                </div> */}
 
                   {/* INVERTED BORDER COMPONENT */}
-                <div id="house-price" className=" absolute z-20 p-3 -bottom-6 -left-[30%] bg-white rounded-xl outline-0 outline-red-400 ">
+                <div id="house-pricee" className=" absolute z-20 p-4 -bottom-6 -left-[32%] bg-white rounded-xl outline-0 outline-red-400 ">
                 <div className="grid grid-cols-1 text-white gap-0   space-y-0 items-center border-0 border-lime-400">
                   {/* <span className="text-xl font-bold ">150+</span>
                   <span className="text-xs ">Lorem ipsum dum</span> */}
