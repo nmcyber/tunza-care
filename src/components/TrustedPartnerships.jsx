@@ -40,7 +40,7 @@ export default function TrustedPartnership() {
         <Card className="rounded-lg bg-none overflow-hiddenn border-0 border-lime-500 outline-none shadow-none">
           <CardContent className="p-0 bg-none ">
           {/* defines the white background color that will appear in the gap between the two seperate columns */}
-            <div id="house-info" className=" relative bbbbg-background flex flex-col space-y-10 md:flex-row md:gap-8 ">
+            <div id="house-info" className=" relative bbbbg-background flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 ">
               {/* Left Side - Image with Play Button and inverted border radius */}
               <div id="house-image" className="relative z-0 w-full md:w-5/12 outline-none border-0 border-fuchsia-500">
 

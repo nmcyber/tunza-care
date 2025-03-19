@@ -4,6 +4,8 @@ import logos from '../data/logos';
 import TrustedPartnership from '@/components/TrustedPartnerships';
 import NDIS from '@/components/NDIS';
 import { ServicesSection } from '@/components/ServicesSection';
+import { WelcomeSection } from '@/components/WelcomeSection';
+import { TestimonialsSection } from '@/components/Testimonials';
 
 const healthcareServices = {
   title: "Tunza Care",
@@ -31,8 +33,10 @@ const Home = () => {
       </section> */}
       <TrustedPartnership />
       <NDIS {...healthcareServices} />
-      <ServicesSection {...healthcareServices} />
-      <TrustedPartnership />
+      {/* <ServicesSection {...healthcareServices} /> */}
+      <WelcomeSection />
+      <TestimonialsSection />
+      {/* <TrustedPartnership /> */}
     </>
   );
 };
