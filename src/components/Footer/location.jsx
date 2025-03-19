@@ -61,7 +61,7 @@ const Location = () => {
               </div>
             </li>
           </ul>
-          <button className="mt-6 px-6 py-3 w-48  bg-[#64cdf6]/60 text-white rounded-lg shadow-md hover:bg-blue-300">
+          <button className="mt-6 px-6 py-3 w-48  bg-[#64cdf6]/60 text-white rounded-lg shadow-lg hover:bg-blue-300">
             Contact Form
           </button>
         </div>

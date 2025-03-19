@@ -6,6 +6,7 @@ import TrustedPartnership from '@/components/TrustedPartnerships';
 import Hero from '@/components/Hero/hero';
 import Location from '@/components/Footer/location';
 import HealthcareBanner from '@/components/shared/HealthcareBanner';
+import Gallery from '@/components/shared/Gallery';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       </section> */}
       <Hero/>
       <TrustedPartnership />
+      <Gallery />
       {/* <HealthcareBanner /> */}
       <Location />
      

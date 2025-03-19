@@ -7,7 +7,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="bg-white rounded-t-sm ">
+    <footer className="bg-white rounded-t-3xl pt-10 ">
       <div className="container flex justify-between flex-wrap mx-auto px-12 md:px-16  gap-6 pb-4">
         <div className="space-y-4">
           <img src={logo} alt="Tunza Care Services Logo" className="w-40 mx-8 " />
@@ -39,7 +39,7 @@ const Footer = () => {
                 <a
                   key={item.id}
                   href={item.url}
-                  className="text-gray-600  text-md hover:text-gray-800 cursor-pointer"
+                  className="font-semibold text-gray-600  text-md hover:text-gray-800 cursor-pointer"
                 >
                   {item.title}
                 </a>
@@ -53,7 +53,7 @@ const Footer = () => {
           <h4 className="font-semibold text-xl  text-[#64cdf6]/60 text-center mb-4">
             Contact
           </h4>
-          <ul className="space-y-4 text-center ">
+          <ul className="space-y-4 text-center font-semibold ">
             <li className="flex items-center space-x-3 text-gray-600">
               <span className=" bg-[#64cdf6]/60 text-white p-2 rounded-full">
                 <MdOutlineCall size={'22'}/>
