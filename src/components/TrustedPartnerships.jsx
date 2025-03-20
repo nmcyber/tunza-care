@@ -1,6 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Play } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import Typography from "./Typography"
 
 const partners = [
   { id: 1, name: "Partner 1", logo: "/logos/logo_1.svg" },
@@ -12,7 +15,7 @@ const partners = [
 
 export default function TrustedPartnership() {
   return (
-    <section className=" flex flex-col w-full py-12 bg-background overflow-hidden">
+    <section className=" relative z-10 flex flex-col w-full py-12 bg-background overflow-hiddenn after:bg-[url(/left_.svg)] after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 ">
       <div className="container mx-auto px-4">
         <h2 className="text-center text-xl font-medium text-gray-700 mb-8">
           Our Trusted Partnership
@@ -36,29 +39,42 @@ export default function TrustedPartnership() {
         </div>
 
         {/* Main Content Card */}
-        <div className=" flex rounded-lg p-8 bg-white border-none outline-none ">
-          <Card className="rounded-lg overflow-hidden border-none outline-none shadow-none">
-            <CardContent className="p-0">
-              <div className="flex flex-col md:flex-row md:gap-8">
-                {/* Left Side - Image with Play Button and inverted border radius */}
-                <div
-                  id="image"
-                  className="relative w-full md:w-5/12 bg-gray-100 overflow-hidden before:content-[''] before:absolute before:w-6 before:h-6 before:bg-white before:bottom-0 before:left-0 before:rounded-br-full after:content-[''] after:absolute after:w-6 after:h-6 after:bg-white after:top-0 after:right-0 after:rounded-tl-full"
-                >
-                  <img
-                    src="/about-tunza-care.webp"
-                    alt="Caregiver and client smiling together"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button className="rounded-full bg-blue-500 p-3 text-white hover:bg-blue-600 transition-colors">
-                      <Play className="h-6 w-6" />
-                    </button>
+        <div className=" flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none ">
+        {/* Controls where the overflow is at for the inverted border radius */}
+        <Card className="rounded-lg bg-none overflow-hiddenn border-0 border-lime-500 outline-none shadow-none">
+          <CardContent className="p-0 bg-none ">
+          {/* defines the white background color that will appear in the gap between the two seperate columns */}
+            <div id="house-info" className=" relative bbbbg-background flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 ">
+              {/* Left Side - Image with Play Button and inverted border radius */}
+              <div id="house-image" className="relative z-0 w-full md:w-5/12 outline-none border-0 border-fuchsia-500">
+
+                <img
+                  src="/about-tunza-care.webp"
+                  alt="Caregiver and client smiling together"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+
+                
+
+                  {/* INVERTED BORDER COMPONENT - TOP RIGHT */}
+                <div id="play" className="absolute z-20 p-0 bg-white top-0 right-0 border-0 border-lime-500 ">
+                <div className=" bg-[hsl(199,36%,91%)] rounded-full p-3 ">
+                <div className=" flex items-center justify-center ">
+                  <button className=" flex mx-auto aspect-square rounded-full p-3 text-white hover:bg-blue-600 transition-colors">
+                    {/* <Play className="h-6 w-6" /> */}
+                    <img src="/play.svg" alt="Play Button" className="object-cover h-4 w-4" />
+                  </button>
+                </div>
+                </div>
                   </div>
-                  {/* <Badge id="badge" className="absolute bottom-4 left-4 bg-orange-500 text-white before:content-[''] before:absolute before:w-4 before:h-4 before:bg-white before:top-full before:left-0 before:rounded-tl-full"
-                >
-                  66
-                </Badge> */}
+
+                  {/* INVERTED BORDER COMPONENT */}
+                <div id="house-price" className=" absolute z-20 p-4 -bottom-6 -left-7 outline-0 outline-red-400 ">
+                <div className="grid grid-cols-1 text-white gap-0 space-y-0 items-center border-0 border-lime-400">
+                  <span className="text-xl font-bold ">150+</span>
+                  <span className="text-xs ">Lorem ipsum dum</span>
+                </div>
+                </div>
                 </div>
 
                 {/* Right Side - Content */}
@@ -70,13 +86,16 @@ export default function TrustedPartnership() {
                     Welcome <span className="text-blue-600">Communities</span>
                   </h2>
 
-                  <div className="space-y-4 text-gray-600 text-sm md:text-base">
-                    <p>
-                      Tunza Care Services is a WA NDIS provider, offering a
-                      range of in-home care, community participation, supported
-                      independent living, clinical care and allied health
-                      services across Western Australia.
-                    </p>
+              {/* Right Side - Content */}
+              <div className="w-full md:w-7/12 p-6 bg-background md:p-10 relative rounded-lg border-0 border-lime-500">
+                <>
+                  <Typography variant={"subtitle"}>About us</Typography>
+                  <Typography variant="h1" className={"pt-4 pb-6"}
+                  h1Parts={[
+                    { text: 'Welcome', color: 'color1' },
+                    { text: 'Communities', color: 'color2' },
+                  ]}/>
+                </>
 
                     <p>
                       Our team have years of experience in disability care,
@@ -97,23 +116,22 @@ export default function TrustedPartnership() {
                     </p>
                   </div>
 
-                  <div className="absolute bottom-4 right-4 flex items-center">
-                    <span className="text-3xl font-bold text-blue-600">
-                      150+
-                    </span>
-                    <span className="text-xs text-gray-500 ml-1">
-                      Lorem ipsum dum
-                    </span>
-                  </div>
 
-                  {/* <Badge id="house-price" className="absolute top-4 right-4 bg-red-500 text-white">65</Badge> */}
-                  <div id="house-price"> 150+ </div>
+                  <p>
+                    Tunza Care Services is culturally inclusive, that allows people to make choices and have full
+                    control of their way of living, feeling accepted and belonging to the team and the community. Tunza
+                    Care will work together with you, to personalise your needs according to your choices, ability, and
+                    your unique experience. Tunza Care Services is a Western Australian family owned company that will
+                    work and deliver services across WA.
+                  </p>
+
                 </div>
               </div>
             </CardContent>
           </Card>
         </div>
       </div>
+      {/* <div className=" absolute w-full h-full border-2 border-red-500 top-0 right-0 bg-[url(/left_.svg)] bg-no-repeat object-contain z-20 " /> */}
     </section>
   );
 }

@@ -16,6 +16,9 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // shadow: {
+        //   xl: '0 35px 60px -15px rgba(255, 255, 255, 1)',
+        // },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -52,10 +55,13 @@ module.exports = {
         },
       },
       borderRadius: {
-        xl: "calc(var(--radius) * 3.75)", // 0.5rem * 3.75 = 30px
-        lg: "calc(var(--radius) * 2.25)", // 0.5rem * 2.25 = 18px
-        md: "calc(var(--radius) * 1.75)", // 0.5rem * 1.75 = 14px
         sm: "calc(var(--radius) * 2.25)", // 0.5rem * 2.25 = 18px
+        md: "calc(var(--radius) * 1.75)", // 0.5rem * 1.75 = 14px
+        lg: "calc(var(--radius) * 2.25)", // 0.5rem * 2.25 = 18px
+        xl: "calc(var(--radius) * 3.75)", // 0.5rem * 3.75 = 30px
+        "2xl": "calc(var(--radius) * 5.25)", // 0.5rem * 5.25 = 42px
+        "3xl": "calc(var(--radius) * 7.25)", // 0.5rem * 7.25 = 58px
+        "4xl": "calc(var(--radius) * 10.25)", // 0.5rem * 10.25 = 82px
       },
     },
   },
