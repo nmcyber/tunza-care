@@ -38,19 +38,17 @@ const Home = () => {
       </section> */}
       <Hero/>
       <TrustedPartnership />
+      <NDIS {...healthcareServices} />
+      <WelcomeSection />
       <Gallery />
       {/* <HealthcareBanner /> */}
+      <TestimonialsSection />
       <Location />
         
-      <NDIS {...healthcareServices} />
       {/* <ServicesSection {...healthcareServices} /> */}
-      <WelcomeSection />
-      <TestimonialsSection />
       {/* <TrustedPartnership /> */}
      
     </section>
-
-    </>
 
   );
 };

@@ -1,8 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Play } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import Typography from "./Typography"
 
 const partners = [
@@ -15,7 +13,7 @@ const partners = [
 
 export default function TrustedPartnership() {
   return (
-    <section className=" relative z-10 flex flex-col w-full py-12 bg-background overflow-hiddenn after:bg-[url(/left_.svg)] after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 ">
+    <section className=" relative z-10 flex flex-col w-full py-12 bg-background overflow-hidden after:bg-[url(/left_.svg)] after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 ">
       <div className="container mx-auto px-4">
         <h2 className="text-center text-xl font-medium text-gray-700 mb-8">
           Our Trusted Partnership
@@ -40,83 +38,68 @@ export default function TrustedPartnership() {
 
         {/* Main Content Card */}
         <div className=" flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none ">
-        {/* Controls where the overflow is at for the inverted border radius */}
-        <Card className="rounded-lg bg-none overflow-hiddenn border-0 border-lime-500 outline-none shadow-none">
-          <CardContent className="p-0 bg-none ">
-          {/* defines the white background color that will appear in the gap between the two seperate columns */}
-            <div id="house-info" className=" relative bbbbg-background flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 ">
-              {/* Left Side - Image with Play Button and inverted border radius */}
-              <div id="house-image" className="relative z-0 w-full md:w-5/12 outline-none border-0 border-fuchsia-500">
-
-                <img
-                  src="/about-tunza-care.webp"
-                  alt="Caregiver and client smiling together"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-
-                
-
+          {/* Controls where the overflow is at for the inverted border radius */}
+          <Card className="rounded-lg bg-none overflow-hiddenn border-0 border-lime-500 outline-none shadow-none">
+            <CardContent className="p-0 bg-none ">
+              {/* defines the white background color that will appear in the gap between the two seperate columns */}
+              <div id="house-info" className=" relative bbbbg-background flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 ">
+                {/* Left Side - Image with Play Button and inverted border radius */}
+                <div id="house-image" className="relative z-0 w-full md:w-5/12 outline-none border-0 border-fuchsia-500">
+                  <img
+                    src="/about-tunza-care.webp"
+                    alt="Caregiver and client smiling together"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                  
                   {/* INVERTED BORDER COMPONENT - TOP RIGHT */}
-                <div id="play" className="absolute z-20 p-0 bg-white top-0 right-0 border-0 border-lime-500 ">
-                <div className=" bg-[hsl(199,36%,91%)] rounded-full p-3 ">
-                <div className=" flex items-center justify-center ">
-                  <button className=" flex mx-auto aspect-square rounded-full p-3 text-white hover:bg-blue-600 transition-colors">
-                    {/* <Play className="h-6 w-6" /> */}
-                    <img src="/play.svg" alt="Play Button" className="object-cover h-4 w-4" />
-                  </button>
-                </div>
-                </div>
+                  <div id="play" className="absolute z-20 p-0 bg-white top-0 right-0 border-0 border-lime-500 ">
+                    <div className=" bg-[hsl(199,36%,91%)] rounded-full p-3 ">
+                      <div className=" flex items-center justify-center ">
+                        <button className=" flex mx-auto aspect-square rounded-full p-3 text-white hover:bg-blue-600 transition-colors">
+                          {/* <Play className="h-6 w-6" /> */}
+                          <img src="/play.svg" alt="Play Button" className="object-cover h-4 w-4" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
 
                   {/* INVERTED BORDER COMPONENT */}
-                <div id="house-price" className=" absolute z-20 p-4 -bottom-6 -left-7 outline-0 outline-red-400 ">
-                <div className="grid grid-cols-1 text-white gap-0 space-y-0 items-center border-0 border-lime-400">
-                  <span className="text-xl font-bold ">150+</span>
-                  <span className="text-xs ">Lorem ipsum dum</span>
-                </div>
-                </div>
+                  <div id="house-price" className=" absolute z-20 p-4 -bottom-6 -left-7 outline-0 outline-red-400 ">
+                    <div className="grid grid-cols-1 text-white gap-0 space-y-0 items-center border-0 border-lime-400">
+                      <span className="text-xl font-bold ">150+</span>
+                      <span className="text-xs ">Lorem ipsum dum</span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Right Side - Content */}
-                <div className="w-full md:w-7/12 p-6 bg-background md:p-10 relative">
-                  <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100 font-normal">
-                    About Us
-                  </Badge>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                    Welcome <span className="text-blue-600">Communities</span>
-                  </h2>
+                <div className="w-full md:w-7/12 p-6 bg-background md:p-10 relative rounded-lg border-0 border-lime-500">
+                  <>
+                    <Typography variant={"subtitle"}>About us</Typography>
+                    <Typography variant="h1" className={"pt-4 pb-6"}
+                    h1Parts={[
+                      { text: 'Welcome', color: 'color1' },
+                      { text: 'Communities', color: 'color2' },
+                    ]}/>
+                  </>
 
-              {/* Right Side - Content */}
-              <div className="w-full md:w-7/12 p-6 bg-background md:p-10 relative rounded-lg border-0 border-lime-500">
-                <>
-                  <Typography variant={"subtitle"}>About us</Typography>
-                  <Typography variant="h1" className={"pt-4 pb-6"}
-                  h1Parts={[
-                    { text: 'Welcome', color: 'color1' },
-                    { text: 'Communities', color: 'color2' },
-                  ]}/>
-                </>
+                  <p>
+                    Our team have years of experience in disability care,
+                    recognizing multicultural aspects of Western Australia,
+                    respect and compassion for our clients, staff and the
+                    community.
+                  </p>
 
-                    <p>
-                      Our team have years of experience in disability care,
-                      recognizing multicultural aspects of Western Australia,
-                      respect and compassion for our clients, staff and the
-                      community.
-                    </p>
-
-                    <p>
-                      Tunza Care Services is culturally inclusive, that allows
-                      people to make choices and have full control of their way
-                      of living, feeling accepted and belonging to the team and
-                      the community. Tunza Care will work together with you, to
-                      personalise your needs according to your choices, ability,
-                      and your unique experience. Tunza Care Services is a
-                      Western Australian family owned company that will work and
-                      deliver services across WA.
-                    </p>
-                  </div>
-
-
+                  <p>
+                    Tunza Care Services is culturally inclusive, that allows
+                    people to make choices and have full control of their way
+                    of living, feeling accepted and belonging to the team and
+                    the community. Tunza Care will work together with you, to
+                    personalise your needs according to your choices, ability,
+                    and your unique experience. Tunza Care Services is a
+                    Western Australian family owned company that will work and
+                    deliver services across WA.
+                  </p>
                   <p>
                     Tunza Care Services is culturally inclusive, that allows people to make choices and have full
                     control of their way of living, feeling accepted and belonging to the team and the community. Tunza
@@ -124,9 +107,9 @@ export default function TrustedPartnership() {
                     your unique experience. Tunza Care Services is a Western Australian family owned company that will
                     work and deliver services across WA.
                   </p>
-
                 </div>
               </div>
+
             </CardContent>
           </Card>
         </div>
