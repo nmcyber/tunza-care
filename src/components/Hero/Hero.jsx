@@ -1,0 +1,180 @@
+"use client"
+
+import { useEffect, useRef } from "react"
+import { motion, useAnimation, useInView } from "framer-motion"
+import { MapPin, Play } from "lucide-react"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
+import { AvatarGroup } from "@/components/ui/avatar-group"
+import { banner } from "@/assets"
+import Typography from "../shared/Typography"
+
+const Hero = () => {
+  const progressRef = useRef(null)
+  const isInView = useInView(progressRef, { once: true })
+  const progressControls = useAnimation()
+
+  useEffect(() => {
+    if (isInView) {
+      progressControls.start({
+        width: "78%",
+        transition: { duration: 1.5, ease: "easeOut" },
+      })
+    }
+  }, [isInView, progressControls])
+
+  return (
+    <section className="  border border-fuchsia-800 px-4 sm:px-6 lg:px-8 py-8 md:py-12  bg-white">
+      <div className=" md:max-w-[90svw] mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-12 outline outline-lime-500">
+        {/* Left Section */}
+        <div className="w-full md:w-1/2 space-y-6">
+          <motion.div
+            className="space-y-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Typography variant="heading" h1Parts={[ { text: 'Quality', color: 'color1' }, { text: 'Home Healthcare', color: 'color2' }, { text: 'You Can Trust.', color: 'color1' }, ]} />
+
+            <Typography variant="p" className="mt-4 text-lg max-w-xl">
+              Tunza Care Services is a WA NDIS provider, offering a range of in-home care, community participation,
+              supported independent living, clinical care and allied health services across Western Australia.
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Button
+              size="lg"
+              className="bg-[#1a6b9f] hover:bg-[#155a87] text-white rounded-full px-8 py-6 text-lg font-medium"
+            >
+              Book Appointment →
+            </Button>
+
+            <div className="flex items-center gap-2">
+              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e6f2f5]">
+                <Play className="h-5 w-5 text-[#1a6b9f] ml-0.5" />
+              </div>
+              <span className="text-[#1a6b9f] font-medium">Learn More</span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center gap-6 mt-8"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <AvatarGroup>
+              <Avatar>
+                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User 1" />
+                <AvatarFallback>U1</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User 2" />
+                <AvatarFallback>U2</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User 3" />
+                <AvatarFallback>U3</AvatarFallback>
+              </Avatar>
+              <Avatar>
+                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User 4" />
+                <AvatarFallback>+</AvatarFallback>
+              </Avatar>
+            </AvatarGroup>
+
+            <div>
+              <p className="text-lg font-semibold text-gray-800">3.2K</p>
+              <p className="text-sm text-gray-500">People with us</p>
+            </div>
+
+            <div className="flex">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <svg
+                  key={star}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5 text-yellow-400"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              ))}
+              <span className="ml-1 text-sm font-medium">5.0</span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Right Section - Image with Overlays */}
+        <div className=" flex w-full md:w-1/2 relative">
+          <motion.div
+            className="rounded-2xl overflow-hidden shadow-lg aspect-w-16 aspect-h-9" // Example: 16:9 aspect ratio
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          >
+            <img
+              src={banner}
+              style={{ objectFit: "fill", objectPosition: "center" }}
+              alt="Healthcare professional with patient"
+              className="w-full"
+            />
+          </motion.div>
+
+          {/* 150+ Card */}
+          <motion.div
+            className="absolute top-6 right-6 bg-white p-4 rounded-lg shadow-md"
+            initial={{ opacity: 0, scale: 0.8, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <p className="text-2xl font-bold text-[#1a6b9f]">150+</p>
+            <div className="w-full h-px bg-gray-200 my-2"></div>
+            <p className="text-sm text-gray-500">Qualified Staff</p>
+          </motion.div>
+
+          {/* Health Control Card */}
+          <motion.div
+            className="absolute bottom-6 left-6 bg-white p-4 rounded-lg shadow-md max-w-[280px]"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            ref={progressRef}
+          >
+            <div className="flex items-start gap-3">
+              <div className="mt-1">
+                <MapPin className="h-5 w-5 text-[#1a6b9f]" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-semibold text-gray-800">Health Control</p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Personalized care plans tailored to your specific health needs
+                </p>
+                <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
+                  <motion.div
+                    className="bg-[#1a6b9f] h-2 rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={progressControls}
+                  ></motion.div>
+                </div>
+                <p className="text-xs text-right mt-1 text-gray-500">78%</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Hero
+
