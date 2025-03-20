@@ -2,7 +2,11 @@
 // logos
 export { default as logo } from "./svg/TUNZA-CARE-Logo.svg";
 
-
+// Icons
+export { default as verified } from "./svg/verified.svg";
+export { default as wheelchair } from "./svg/wheelchair.svg";
+export { default as handshake } from "./svg/handshake.svg";
+export { default as target } from "./svg/targeting.svg";
 
 // Images
 export { default as reviews } from "./images/reviews.png";

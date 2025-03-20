@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 import Typography from "./Typography"
+import { handshake, target, wheelchair } from "@/assets"
 
 // Icons
 const SunIcon = () => (
@@ -78,7 +79,7 @@ export const WelcomeSection = ({ className }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Vision Card */}
           <Card className="p-6 flex flex-col items-start">
-            <SunIcon />
+            <img src={target} alt="Target icon" className="w-12 h-12 bg-primary rounded-md p-3" />
             <h3 className="text-xl font-bold text-primary-foreground mt-4 mb-2">Our Vision</h3>
             <p className="text-muted-foreground">
               To provide quality care & services to empower people with disabilities to live a good life.
@@ -87,7 +88,7 @@ export const WelcomeSection = ({ className }) => {
 
           {/* Core Values Card */}
           <Card className="p-6 flex flex-col items-start bg-primary text-primary-foreground shadow-lg relative">
-            <HandshakeHeartIcon />
+            <img src={handshake} alt="Handshake icon" className="w-12 h-12 bg-white rounded-md p-3" />
             <h3 className="text-xl font-bold mt-4 mb-2">Our Core Values</h3>
             <ul className="space-y-1">
               <li>Respect</li>
@@ -101,7 +102,7 @@ export const WelcomeSection = ({ className }) => {
 
           {/* Mission Card */}
           <Card className="p-6 flex flex-col items-start">
-            <WheelchairIcon />
+          <img src={wheelchair} alt="Wheelchair icon" className="w-12 h-12 bg-white rounded-md p-3" />
             <h3 className="text-xl font-bold text-primary-foreground mt-4 mb-2">Our Mission</h3>
             <p className="text-muted-foreground">
               To welcome communities that value respect & empower people with disabilities.
