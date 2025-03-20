@@ -66,18 +66,19 @@ export default function NDIS({ title, highlightedTitle, services, image, badgeIm
                 <InvertedBorder
                     right="0"
                     top="0"
-                    padding="5"
+                    padding="4"
+                    rotation="-rotate-0"
                     imgSrc="/logos/verified.svg"
                     imgAlt="Star Icon"
                     imgSize="36px"
                     innerBorderRadius='rounded-lg'
-                    beforeRotation="rotate-[90deg]"
-                    afterRotation="rotate-[90deg]"
+                    beforeRotation="rotate-[0deg]"
+                    afterRotation="rotate-[0deg]"
                     beforeBottom="-bottom-6"
                     beforeRight="-right-3"
                     afterTop='-top-2'
                     afterLeft='-left-6'
-                    spanBgColor="#146690"
+                    spanBgColor="146690"
                   />
 
                   <InvertedBorder
@@ -88,15 +89,24 @@ export default function NDIS({ title, highlightedTitle, services, image, badgeIm
                     smoothness='2'
                     imgSrc="/logos/verified.svg"
                     imgAlt="Star Icon"
-                    imgSize="72px"
-                    innerBorderRadius='rounded-xl'
-                    beforeRotation="rotate-[90deg]"
-                    afterRotation="rotate-[90deg]"
-                    beforeBottom="-bottom-6"
-                    beforeRight="-right-3"
-                    afterTop='-top-2'
-                    afterLeft='-left-6'
-                    spanBgColor="#146690"
+                    imgSize="64px"
+                    innerBorderRadius='rounded-bl-2xl'
+                    beforeRotation="rotate-[0deg]"
+                    afterRotation="rotate-[0deg]"
+                    spanBgColor="6C2A77"
+                    />
+
+                  <InvertedBorder     
+                    right="0"
+                    bottom="0"
+                    rotation="rotate-90"
+                    imageRotation="-rotate-90"
+                    smoothness='2'
+                    imgSrc="/logos/verified.svg"
+                    imgAlt="Star Icon"
+                    imgSize="24px"
+                    innerBorderRadius='rounded-bl-2xl'
+                    spanBgColor="146690"
                     />
 
                 {/* 

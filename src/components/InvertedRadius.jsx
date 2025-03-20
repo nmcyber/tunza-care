@@ -12,18 +12,18 @@ export const InvertedBorder = ({ top,
     imageRotation,
     smoothness = '2',
     beforeTop,
-    beforeRight,
-    beforeBottom,
+    beforeBottom="-bottom-6",
+    beforeRight="-right-3",
     beforeLeft,
-    beforeRotation,
-    afterTop,
+    beforeRotation = 'rotate-0',
+    afterRotation = 'rotate-0',
+    afterTop='-top-2',
+    afterLeft='-left-6',
     afterRight,
     afterBottom,
-    afterLeft,
-    afterRotation,
     innerBorderRadius,
     imgSrc,
-    imgSize = '48px',
+    imgSize = '24px',
     imgAlt,
     spanBgColor,
     children }) => {
@@ -49,7 +49,7 @@ export const InvertedBorder = ({ top,
       mainDivPositionClasses += ' top-0 left-0'; // Default position
     }
   
-    const mainDivClasses = `${mainDivPositionClasses} outline outline-lime-500 z-20 p-${padding} ${innerBorderRadius} ${rotation} bg-white after:w-8 after:h-8 after:bg-radial-[at_100%_100%] after:from-white after:to-white after:aspect-square after:bg-white-500  after:absolute after:top-0 aafter:rotate-6 after:shadow-[-0.5rem_0_0_white] after:z-20 before:absolute before:bottom-0 before:-right-8 before:w-9 before:h-9 before:bg-radial-[at_100%_100%] before:from-white before:to-white before:aspect-square before:bg-blue before:z-20 before:shadow-[-0.5rem_0_0_white]`;
+    const mainDivClasses = `${mainDivPositionClasses} outline-0 outline-lime-500 z-20 p-${padding} ${innerBorderRadius} ${rotation} bg-white after:w-8 after:h-8 after:bg-radial-[at_100%_100%] after:from-white after:to-white after:aspect-square after:bg-white-500 after:absolute after:top-0 aafter:rotate-6 after:shadow-[-0.5rem_0_0_white] after:z-20 before:absolute before:bottom-0 before:-right-8 before:w-9 before:h-9 before:bg-radial-[at_100%_100%] before:from-white before:to-white before:aspect-square before:bg-blue before:z-20 before:shadow-[-0.5rem_0_0_white]`;
   
     let beforePositionClasses = 'absolute';
     if (beforeTop !== undefined && beforeLeft !== undefined) {
@@ -95,9 +95,9 @@ export const InvertedBorder = ({ top,
   
     return (
       <div id="iB" className={mainDivClasses}>
-      <div className="bg-[hsl(199,36%,91%)] rounded-full p-3">
-        <div className="flex items-center justify-center">
-          <span className={`flex mx-auto aspect-square rounded-full p-3 text-white bg-[${spanBgColor}] ${imageRotation} transition-colors`}>
+      <div className="bg-[hsl(199,36%,91%)] relative z-0 rounded-full overflow-hidden p-3">
+        <div className=" relative z-0 flex items-center justify-center">
+          <span className={`flex mx-auto aspect-square rounded-full p-3 text-white bg-[#${spanBgColor}] ${imageRotation} transition-colors`}>
             {imgSrc && (
               <img
                 src={imgSrc}
@@ -109,9 +109,14 @@ export const InvertedBorder = ({ top,
           </span>
         </div>
       </div>
-      <div className={`${beforePositionClasses} w-9 h-9 bg-radial-[at_0%_0%] outline-0 outline-lime-500 from-white to-white aspect-square bg-blue ${beforeRotation} z-20 shadow-[-0.5rem_0_0_white] bg-[radial-gradient(circle_at_100%_100%,transparent_1.4rem,white,white_calc(1.4rem_+_${smoothness}px))]`} />
-      <div className={`${afterPositionClasses} w-8 h-8 bg-radial-[at_100%_100%] from-white to-white aspect-square bg-white-500 ${afterRotation} outline-0 outline-lime-500 bg-[radial-gradient(circle_at_100%_100%,transparent_1.4rem,white,white_calc(1.4rem_+_${smoothness}px))] shadow-[-0.5rem_0_0_white] z-20`} />
+      <div className={`${beforePositionClasses} w-9 h-9 bg-radial-[at_100%_100%] border-0 border-fuchsia-500 from-white to-white aspect-square bg-transparent ${beforeRotation} z-20 shadow-[-0.5rem_0_0_1]`} style={{
+    backgroundImage: `radial-gradient(circle at 0% 100%, transparent 1.4rem, white, white calc(1.4rem + ${smoothness}px))`,
+  }} />
+  <div className={`${afterPositionClasses} w-8 h-8 bg-radial-[at_100%_100%] from-white to-white aspect-square bg-white-500 ${afterRotation} border-0 border-lime-500 shadow-[-0.5rem_0_0_1] z-20`} style={{
+    backgroundImage: `radial-gradient(circle at 0% 100%, transparent 1.4rem, white, white calc(1.4rem + ${smoothness}px))`,
+  }} />
       {children}
     </div>
     );
   };
+  
