@@ -9,13 +9,17 @@ const Typography = ({ variant, children, className, h1Parts }) => {
     h4: "font-bold text-[20px] leading-[30px] md:text-[24px] md:leading-[34px] ",
     span: "font-normal text-[18px] leading-[26px] md:text-[22px] md:leading-[32px] ",
     p: "font-normal text-[16px] leading-[24px] md:text-[18px] md:leading-[28px] ",
+    heading: "text-black font-almarai text-[85px] font-normal leading-[85px] tracking-[-0.85px] capitalize",
   };
 
-  if (variant === "h1" && Array.isArray(h1Parts)) {
-    const h1BaseStyles =
-      "font-normal md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-6xl leading-[60px] tracking-[-0.6px] capitalize";
+  if ((variant === "h1" || variant === "heading") && Array.isArray(h1Parts)) {
+    const baseStyles =
+      variant === "h1"
+        ? "font-normal md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-6xl leading-[60px] tracking-[-0.6px] capitalize"
+        : variantClasses.heading;
+
     return (
-      <h1 className={cn(h1BaseStyles, className)}>
+      <h1 className={cn(baseStyles, className)}>
         {h1Parts.map((part, index) => (
           <React.Fragment key={index}>
             <span
@@ -43,9 +47,11 @@ const Typography = ({ variant, children, className, h1Parts }) => {
     );
   }
 
-  const Tag = variant;
+  const Tag = variant === "heading" ? "h1" : variant;
   const tagClassName =
-    variant === "h1" ? className : cn(variantClasses[variant], className);
+    variant === "h1" || variant === "heading"
+      ? className
+      : cn(variantClasses[variant], className);
 
   return <Tag className={tagClassName}>{children}</Tag>;
 };

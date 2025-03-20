@@ -1,6 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Play } from "lucide-react";
 import Typography from "../shared/Typography";
 import { about_tunza_care, nurse_patient_care, tunza_play_icon, verified } from "@/assets";
 import { InvertedBorder } from "../shared/InvertedRadius";
@@ -16,13 +14,13 @@ const partners = [
 export default function TrustedPartnership() {
   return (
     <section className=' relative z-10 flex flex-col w-full py-12 bg-background overflow-hidden after:bg-[url(/left_.svg)] after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 '>
-      <div className='container mx-auto px-4'>
-        <h2 className='text-center text-xl font-medium text-gray-700 mb-8'>
+      <div className='container grid mx-auto px-4'>
+        <Typography variant='span' className='text-center text-[#939393]'>
           Our Trusted Partnership
-        </h2>
+        </Typography>
 
         {/* Partner Logos */}
-        <div className='flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-10'>
+        <div className='flex flex-wrap py-8 justify-center items-center gap-8 md:gap-12 mb-10'>
           {partners.map((partner) => (
             <div key={partner.id} className='flex items-center'>
               <img
@@ -39,7 +37,7 @@ export default function TrustedPartnership() {
         </div>
 
         {/* Main Content Card */}
-        <div className=' flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none '>
+        <section className=' flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none '>
           {/* Controls where the overflow is at for the inverted border radius */}
           <Card className='rounded-lg bg-none overflow-hiddenn border-0 border-lime-500 outline-none shadow-none'>
             <CardContent className='p-0 bg-none '>
@@ -94,7 +92,7 @@ export default function TrustedPartnership() {
                 </div>
 
                 {/* Right Side - Content */}
-                <div className='w-full md:w-7/12 p-6 bg-background space-y-4 md:p-10 relative rounded-lg border-0 border-lime-500'>
+                <article className='w-full md:w-7/12 p-6 bg-background space-y-4 md:p-10 relative rounded-lg border-0 border-lime-500'>
                   <div className=' flex flex-col items-start '>
                     <Typography variant={"subtitle"}>About us</Typography>
                     <Typography
@@ -134,11 +132,11 @@ export default function TrustedPartnership() {
                     Australian family owned company that will work and deliver
                     services across WA.
                   </Typography>
-                </div>
+                </article>
               </div>
             </CardContent>
           </Card>
-        </div>
+        </section>
       </div>
     </section>
   );

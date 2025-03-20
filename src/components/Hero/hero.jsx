@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { banner, playIcon, reviews, stars } from "@/assets";
+import Typography from "../shared/Typography";
 
 const Hero = () => {
   return (
-    <section className=' px-4 flex flex-col  bg-white py-20 '>
+    <section className=' px-4 flex flex-col bg-white py-20 '>
       <div className=' flex max-w-6xl mx-auto md:flex-row items-center justify-between p-0'>
         {/* Left Section */}
         <div className='md:w-1/2 space-y-2'>
@@ -14,8 +15,15 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Quality <span className=' text-sky-700'>Home Healthcare</span> You
-            Can Trust.
+            {/* Quality <span className=' text-sky-700'>Home Healthcare</span> You
+            Can Trust. */}
+            <Typography variant="heading"
+            h1Parts={[
+              { text: 'Quality', color: 'color1' },
+              { text: 'Home Healthcare', color: 'color2' },
+              { text: 'You Can Trust.', color: 'color1' },
+            ]}
+            />
           </motion.h1>
           <p className='text-gray-600'>
             Tunza Care Services is a WA NDIS provider, offering a range of
@@ -24,7 +32,7 @@ const Hero = () => {
           </p>
           <div className='flex m-2 '>
             <motion.button
-              className=' w-60 p-1  bg-[#64cdf6]/60 text-lg text-white mx-4 my-12 rounded-lg shadow-xl hover:bg-blue-700'
+              className=' w-60 p-1  bg-primary text-lg text-white mx-4 my-12 rounded-lg shadow-xl hover:bg-blue-700'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
