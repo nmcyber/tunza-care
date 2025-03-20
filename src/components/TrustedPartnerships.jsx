@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Typography from "./Typography"
 
 const partners = [
   { id: 1, name: "Partner 1", logo: "/logos/logo_1.svg" },
@@ -80,10 +81,14 @@ export default function TrustedPartnership() {
 
               {/* Right Side - Content */}
               <div className="w-full md:w-7/12 p-6 bg-background md:p-10 relative rounded-lg border-0 border-lime-500">
-                <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100 font-normal">About Us</Badge>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Welcome <span className="text-blue-600">Communities</span>
-                </h2>
+                <>
+                  <Typography variant={"subtitle"}>About us</Typography>
+                  <Typography variant="h1" className={"pt-4 pb-6"}
+                  h1Parts={[
+                    { text: 'Welcome', color: 'color1' },
+                    { text: 'Communities', color: 'color2' },
+                  ]}/>
+                </>
 
                 <div className="space-y-4 text-gray-600 text-sm md:text-base">
                   <p>
@@ -105,9 +110,6 @@ export default function TrustedPartnership() {
                     work and deliver services across WA.
                   </p>
                 </div>
-
-                {/* <Badge id="house-price" className="absolute top-4 right-4 bg-red-500 text-white">65</Badge> */}
-                {/* <div id="house-price"> 150+ </div> */}
               </div>
             </div>
           </CardContent>

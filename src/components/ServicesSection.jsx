@@ -1,13 +1,26 @@
 import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Card } from "@/components/ui/card"
+import Typography from "./Typography"
 
 export const ServicesSection = ({ title, highlightedTitle, services, image, badgeImage, className }) => {
   return (
     <Card className={cn("bg-white p-6 shadow-sm rounded-xl", className)}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold">
+          <>
+                {/* <Typography variant="subtitle">
+                  Testimonials
+                </Typography>
+                <Typography
+                  variant="h1"
+                  h1Parts={[
+                    { text: {title}, color: 'color1' },
+                    { text: {highlightedTitle}, color: 'color2' },
+                  ]}
+                /> */}
+              </>
+         <h2 className="text-3xl font-bold">
             {title} {highlightedTitle && <span className="text-primary">{highlightedTitle}</span>}
           </h2>
 
