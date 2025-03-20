@@ -6,7 +6,7 @@ import { MapPin, Play } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { AvatarGroup } from "@/components/ui/avatar-group"
-import { banner } from "@/assets"
+import { avatar_1, avatar_2, avatar_3, banner, heart_icon } from "@/assets"
 import Typography from "../shared/Typography"
 
 const Hero = () => {
@@ -24,8 +24,8 @@ const Hero = () => {
   }, [isInView, progressControls])
 
   return (
-    <section className="  border border-fuchsia-800 px-4 sm:px-6 lg:px-8 py-8 md:py-12  bg-white">
-      <div className=" md:max-w-[90svw] mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-12 outline outline-lime-500">
+    <section className=" px-4 sm:px-6 lg:px-8 py-8 md:py-12  bg-white">
+      <div className=" md:max-w-[90svw] mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-12 outline-0 outline-lime-500">
         {/* Left Section */}
         <div className="w-full md:w-1/2 space-y-6">
           <motion.div
@@ -71,19 +71,19 @@ const Hero = () => {
           >
             <AvatarGroup>
               <Avatar>
-                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User 1" />
+                <AvatarImage src={avatar_1} alt="User 1" />
                 <AvatarFallback>U1</AvatarFallback>
               </Avatar>
               <Avatar>
-                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User 2" />
+                <AvatarImage src={avatar_2} alt="User 2" />
                 <AvatarFallback>U2</AvatarFallback>
               </Avatar>
               <Avatar>
-                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User 3" />
+                <AvatarImage src={avatar_3} alt="User 3" />
                 <AvatarFallback>U3</AvatarFallback>
               </Avatar>
               <Avatar>
-                <AvatarImage src="/placeholder.svg?height=40&width=40" alt="User 4" />
+                <AvatarImage src={avatar_1} alt="User 4" />
                 <AvatarFallback>+</AvatarFallback>
               </Avatar>
             </AvatarGroup>
@@ -104,7 +104,7 @@ const Hero = () => {
                 >
                   <path
                     fillRule="evenodd"
-                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    d="M6.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
                     clipRule="evenodd"
                   />
                 </svg>
@@ -115,18 +115,18 @@ const Hero = () => {
         </div>
 
         {/* Right Section - Image with Overlays */}
-        <div className=" flex w-full md:w-1/2 relative">
+        <div className=" flex w-full px-8 md:px-2 h-full md:w-1/2 relative  ">
           <motion.div
-            className="rounded-2xl overflow-hidden shadow-lg aspect-w-16 aspect-h-9" // Example: 16:9 aspect ratio
+            className=" h-full rounded-lg overflow-hidden shadow-lg aspect-w-16 aspect-h-9" // Example: 16:9 aspect ratio
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
           >
             <img
               src={banner}
-              style={{ objectFit: "fill", objectPosition: "center" }}
+              style={{ objectFit: "cover", objectPosition: "center", height: "100%" }}
               alt="Healthcare professional with patient"
-              className="w-full"
+              className="w-full h-full"
             />
           </motion.div>
 
@@ -137,38 +137,41 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <p className="text-2xl font-bold text-[#1a6b9f]">150+</p>
+            <p className="text-2xl font-bold text-[#1a6b9f]">100+</p>
             <div className="w-full h-px bg-gray-200 my-2"></div>
             <p className="text-sm text-gray-500">Qualified Staff</p>
           </motion.div>
 
           {/* Health Control Card */}
           <motion.div
-            className="absolute bottom-6 left-6 bg-white p-4 rounded-lg shadow-md max-w-[280px]"
+            className="absolute bottom-6 -left-4 md:-left-12 bg-white p-4 rounded-lg shadow-md max-w-[280px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
+            transition={{ delay: 1.5, duration: 2.5 }}
             ref={progressRef}
           >
-            <div className="flex items-start gap-3">
-              <div className="mt-1">
-                <MapPin className="h-5 w-5 text-[#1a6b9f]" />
-              </div>
-              <div className="flex-1">
-                <p className="text-sm font-semibold text-gray-800">Health Control</p>
-                <p className="text-xs text-gray-500 mt-1">
-                  Personalized care plans tailored to your specific health needs
-                </p>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
-                  <motion.div
-                    className="bg-[#1a6b9f] h-2 rounded-full"
-                    initial={{ width: "0%" }}
-                    animate={progressControls}
-                  ></motion.div>
-                </div>
-                <p className="text-xs text-right mt-1 text-gray-500">78%</p>
-              </div>
+            <div className="grid grid-cols-[auto_1fr] items-start gap-3">
+            <div className="mt-1 bg-primary p-2  rounded-full">
+              <img src={heart_icon} className={`object-contain h-5 w-5`} style={{ objectFit: 'contain' }} />
             </div>
+            <div>
+              <p className="text-sm font-semibold text-gray-800">Health Control</p>
+              <p className="text-xs text-gray-500 mt-1">
+                Personalized care plans tailored to your specific health needs
+              </p>
+            </div>
+            <div className=" relative col-span-2"> {/* Span across both columns */}
+              {/* Progressbar */}
+              <div className="w-full flex items-center px-2 bg-gray-200 rounded-full h-5 mt-1">
+                <motion.div
+                  className="bg-[#1a6b9f] h-2 rounded-full"
+                  initial={{ width: "0%" }}
+                  animate={progressControls}
+                ></motion.div>
+              </div>
+              <p className=" absolute -inset-y-3 inset-x-6 text-xs text-right mt-0 text-gray-500">78%</p>
+            </div>
+          </div>
           </motion.div>
         </div>
       </div>

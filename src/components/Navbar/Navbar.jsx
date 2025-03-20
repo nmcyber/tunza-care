@@ -42,13 +42,14 @@ const Navbar = () => {
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <div className="px-4 sm:px-8 md:px-16 xl:px-24">
+      <div className="px-4 sm:px-8 md:px-16 xl:px-20">
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-between">
-          <div className="flex items-center gap-16">
+        <nav className="hidden lg:flex items-center justify-between outline-0 outline-lime-800">
+          {/* <div className="flex items-center gap-16 ">
+          </div> */}
             <Logo />
 
-            <div className="flex items-center">
+            <div className="flex items-center outline-0 outline-fuchsia-800">
               {navigation.map((item, index) => (
                 <a
                   key={item.id}
@@ -64,14 +65,13 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-          </div>
 
-          <div>
-            <Button className="rounded-full bg-[#e6f2f5] text-[#0469842] hover:bg-[#d6eaef] px-6" variant="ghost">
+          <>
+            <Button className="rounded-full bg-[#e6f2f5] text-[#0469842] hover:bg-[#d6eaef] px-6 outline-0 outline-blue-800 " variant="ghost">
               <Phone className="mr-2 h-4 w-4 text-teal-600" />
               <span className="text-teal-600 font-medium">0469 842 289</span>
             </Button>
-          </div>
+          </>
         </nav>
 
         {/* Mobile Navigation */}

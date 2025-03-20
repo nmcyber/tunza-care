@@ -6,9 +6,9 @@ const AvatarGroup = React.forwardRef(({ className, children, ...props }, ref) =>
   const avatarArray = React.Children.toArray(children).slice(0, 4)
 
   return (
-    <div ref={ref} className={cn("flex -space-x-4", className)} {...props}>
+    <span ref={ref} className={cn("flex -space-x-5", className)} {...props}>
       {avatarArray}
-    </div>
+    </span>
   )
 })
 

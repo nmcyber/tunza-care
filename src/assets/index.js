@@ -4,6 +4,7 @@ export { default as logo } from "./svg/TUNZA-CARE-Logo.svg";
 
 // Icons
 export { default as verified } from "./svg/verified.svg";
+export { default as heart_icon } from "./svg/heart_icon.svg";
 export { default as wheelchair } from "./svg/wheelchair.svg";
 export { default as handshake } from "./svg/handshake.svg";
 export { default as target } from "./svg/targeting.svg";
@@ -25,6 +26,10 @@ export { default as image5 } from "./images/image5.png";
 export { default as young_doctor } from "./images/young_doctor.webp";
 export { default as about_tunza_care } from "./images/about-tunza-care.webp";
 export { default as nurse_patient_care } from "./images/nurse_patient_care.webp";
+
+export {default as avatar_1 } from "./images/avatar_1.png";
+export {default as avatar_2 } from "./images/avatar_2.png";
+export {default as avatar_3 } from "./images/avatar_3.png";
 
 // Icons
 export { default as playIcon} from "./icons/playIcon.png"
