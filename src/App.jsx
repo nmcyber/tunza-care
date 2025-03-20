@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import TrustedPartnership from "./components/TrustedPartnerships";
+import TrustedPartnership from "./components/Landing/TrustedPartnerships";
 import Home from "./pages/Home";
 import Footer from "./components/Footer/footer";
 
@@ -14,10 +14,10 @@ const App = ({ children }) => {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="/About" element={<TrustedPartnership />} />
+        <Route path='' element={<Home />} />
+        <Route path='/About' element={<TrustedPartnership />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 };

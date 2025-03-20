@@ -1,16 +1,14 @@
-
 // src/pages/Home.jsx
-import React from 'react';
-import logos from '../data/logos';
-import TrustedPartnership from '@/components/TrustedPartnerships';
-import Hero from '@/components/Hero/hero';
-import Location from '@/components/Footer/location';
-import HealthcareBanner from '@/components/shared/HealthcareBanner';
-import Gallery from '@/components/shared/Gallery';
-import NDIS from '@/components/NDIS';
-import { ServicesSection } from '@/components/ServicesSection';
-import { WelcomeSection } from '@/components/WelcomeSection';
-import { TestimonialsSection } from '@/components/Testimonials';
+import React from "react";
+import logos from "../data/logos";
+import NDIS from "@/components/Landing/NDIS";
+import Hero from "@/components/Hero/hero";
+import Location from "@/components/Footer/location";
+import Gallery from "@/components/shared/Gallery";
+import HealthcareBanner from "@/components/shared/HealthcareBanner";
+import TrustedPartnership from "@/components/Landing/TrustedPartnerships";
+import { OurPrinciplesSection } from "@/components/Landing/CoreMissionVision/OurPrinciplesSection";
+import { TestimonialsSection } from "@/components/Landing/Testimonials";
 
 const healthcareServices = {
   title: "Tunza Care",
@@ -27,31 +25,29 @@ const healthcareServices = {
     { text: "Respite" },
     { text: "Staffing agent" },
   ],
-  image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lchOxPNqQMlJVc3UogI5X5os8Iw2jQ.png",
+  image:
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lchOxPNqQMlJVc3UogI5X5os8Iw2jQ.png",
   badgeImage: "/ndis-badge.png",
-}
+};
 
 const Home = () => {
   return (
     <section className='py-20  m-auto bg-gray-100 '>
       {/* <section className=" min-h-full bg-gray-100 text-gray-800 flex flex-col items-center justify-center py-16">
       </section> */}
-      <Hero/>
+      <Hero />
       <TrustedPartnership />
       <NDIS {...healthcareServices} />
-      <WelcomeSection />
+      <OurPrinciplesSection />
       <Gallery />
       {/* <HealthcareBanner /> */}
       <TestimonialsSection />
       <Location />
-        
+
       {/* <ServicesSection {...healthcareServices} /> */}
       {/* <TrustedPartnership /> */}
-     
     </section>
-
   );
 };
 
 export default Home;
-
