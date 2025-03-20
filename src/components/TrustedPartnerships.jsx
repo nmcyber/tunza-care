@@ -1,3 +1,6 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Play } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Typography from "./Typography"
@@ -8,15 +11,15 @@ const partners = [
   { id: 3, name: "Partner 3", logo: "/logos/logo_3.svg" },
   { id: 4, name: "Partner 4", logo: "/logos/logo_4.svg" },
   { id: 5, name: "Partner 5", logo: "/logos/logo_5.svg" },
-]
+];
 
 export default function TrustedPartnership() {
-
-
   return (
     <section className=" relative z-10 flex flex-col w-full py-12 bg-background overflow-hiddenn after:bg-[url(/left_.svg)] after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 ">
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-xl font-medium text-gray-700 mb-8">Our Trusted Partnership</h2>
+        <h2 className="text-center text-xl font-medium text-gray-700 mb-8">
+          Our Trusted Partnership
+        </h2>
 
         {/* Partner Logos */}
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-10">
@@ -28,7 +31,7 @@ export default function TrustedPartnership() {
                 className="h-8 md:h-10 opacity-70"
                 onError={(e) => {
                   // e.target.src = `/placeholder.svg?height=40&width=120`
-                  e.target.alt = "Logo placeholder"
+                  e.target.alt = "Logo placeholder";
                 }}
               />
             </div>
@@ -72,12 +75,16 @@ export default function TrustedPartnership() {
                   <span className="text-xs ">Lorem ipsum dum</span>
                 </div>
                 </div>
-                {/* <Badge id="badge" className="absolute bottom-4 left-4 bg-orange-500 text-white before:content-[''] before:absolute before:w-4 before:h-4 before:bg-white before:top-full before:left-0 before:rounded-tl-full"
-                >
-                  66
-                </Badge> */}
+                </div>
 
-              </div>
+                {/* Right Side - Content */}
+                <div className="w-full md:w-7/12 p-6 bg-background md:p-10 relative">
+                  <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100 font-normal">
+                    About Us
+                  </Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Welcome <span className="text-blue-600">Communities</span>
+                  </h2>
 
               {/* Right Side - Content */}
               <div className="w-full md:w-7/12 p-6 bg-background md:p-10 relative rounded-lg border-0 border-lime-500">
@@ -90,17 +97,25 @@ export default function TrustedPartnership() {
                   ]}/>
                 </>
 
-                <div className="space-y-4 text-gray-600 text-sm md:text-base">
-                  <p>
-                    Tunza Care Services is a WA NDIS provider, offering a range of in-home care, community
-                    participation, supported independent living, clinical care and allied health services across Western
-                    Australia.
-                  </p>
+                    <p>
+                      Our team have years of experience in disability care,
+                      recognizing multicultural aspects of Western Australia,
+                      respect and compassion for our clients, staff and the
+                      community.
+                    </p>
 
-                  <p>
-                    Our team have years of experience in disability care, recognizing multicultural aspects of Western
-                    Australia, respect and compassion for our clients, staff and the community.
-                  </p>
+                    <p>
+                      Tunza Care Services is culturally inclusive, that allows
+                      people to make choices and have full control of their way
+                      of living, feeling accepted and belonging to the team and
+                      the community. Tunza Care will work together with you, to
+                      personalise your needs according to your choices, ability,
+                      and your unique experience. Tunza Care Services is a
+                      Western Australian family owned company that will work and
+                      deliver services across WA.
+                    </p>
+                  </div>
+
 
                   <p>
                     Tunza Care Services is culturally inclusive, that allows people to make choices and have full
@@ -109,15 +124,14 @@ export default function TrustedPartnership() {
                     your unique experience. Tunza Care Services is a Western Australian family owned company that will
                     work and deliver services across WA.
                   </p>
+
                 </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
         </div>
       </div>
       {/* <div className=" absolute w-full h-full border-2 border-red-500 top-0 right-0 bg-[url(/left_.svg)] bg-no-repeat object-contain z-20 " /> */}
     </section>
-  )
+  );
 }
-

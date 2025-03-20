@@ -1,11 +1,24 @@
-import React from 'react';
-import RootLayout from './layouts/RootLayout';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import TrustedPartnership from "./components/TrustedPartnerships";
+import Home from "./pages/Home";
+import Footer from "./components/Footer/footer";
 
 const App = ({ children }) => {
   return (
-    <RootLayout>
-      {children}
-    </RootLayout>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="" element={<Home />} />
+        <Route path="/About" element={<TrustedPartnership />} />
+      </Routes>
+      <Footer/>
+    </Router>
   );
 };
 
