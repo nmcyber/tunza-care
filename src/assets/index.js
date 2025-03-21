@@ -26,6 +26,7 @@ export { default as image5 } from "./images/image5.png";
 export { default as young_doctor } from "./images/young_doctor.webp";
 export { default as about_tunza_care } from "./images/about-tunza-care.webp";
 export { default as nurse_patient_care } from "./images/nurse_patient_care.webp";
+export { default as holding_hands_banner } from "./images/holding_hands_services_page_banner.webp";
 
 export {default as avatar_1 } from "./images/avatar_1.png";
 export {default as avatar_2 } from "./images/avatar_2.png";

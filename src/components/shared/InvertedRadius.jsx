@@ -11,6 +11,9 @@ export const InvertedBorder = ({
   padding = '3',
   rotation,
   innerColor,
+  imgHeight = 'h-3',
+  imgWidth = 'w-3',
+  objectFit = 'contain',
   imageRotation,
   smoothness = '2',
   beforeTop,
@@ -123,8 +126,8 @@ export const InvertedBorder = ({
                                   <img
                                       src={imgSrc}
                                       alt={imgAlt}
-                                      className={`object-contain h-3 w-3`}
-                                      style={{ objectFit: 'contain', width: imgSize }}
+                                      className={`object-contain ${imgHeight} ${imgWidth}`}
+                                      style={{ objectFit: objectFit, width: imgSize }}
                                   />
                               )}
                           </span>
