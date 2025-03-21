@@ -22,7 +22,7 @@ const RootLayout = ({ children }) => {
           </ul>
         </nav>
       </header>
-      <main className=" h-full flex-grow p-6">{children}</main>
+      <main className=" h-full flex-grow overflow-hidden p-6">{children}</main>
       <footer className="bg-gray-200 py-4 text-center text-gray-600">
       <p>&copy; {new Date().getFullYear()} NMCYBER Templates. All rights reserved.</p>
       </footer>
