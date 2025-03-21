@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { images1, images2 } from "@/constants";
+import Typography from "./Typography";
 
 
 const Gallery = () => {
@@ -18,49 +19,55 @@ const Gallery = () => {
 
   return (
     <section className=" bg-gray-100 rounded-xl shadow-none">
-      {/* Header */}
-      <div className=" max-w-7xl mx-auto p-4">
-        {/* <p className="text-sm text-indigo-600 font-semibold">Our Gallery</p> */}
-        <h1 className=" text-center text-3xl font-bold text-gray-800 mb-6">Our Gallery</h1>
-      
-
+      <div className=" max-w-7xl mx-auto p-4">      
       {/* Scrollable Grid */}
       <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 rounded-xl bg-white">
         <div className="grid grid-rows-2 gap-y-8 w-[1200px] p-10">
           {/* First Row */}
           <div className="flex justify-between ">
-            {images1.map((image) => (
-              <motion.div
-                key={image.id}
-                className={`${image.id%2 == 1 ?"w-[395px]" :"w-[290px]"} h-[200px] rounded-xl overflow-hidden shadow-md flex-shrink-0 mx-6`}
-                whileHover={{ scale: 1.05 }}
-                onClick={() => openPreview(image.src.image1)}
-              >
-                <img
-                  src={image.src.image1}
-                  alt={`Gallery ${image.id}`}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            ))}
-          </div>
+              {images1.map((item) => (
+                <motion.div
+                  key={item.id}
+                  className={`${
+                    item.id % 2 == 1 ? "w-[395px]" : "w-[290px]"
+                  } h-[200px] rounded-xl overflow-hidden shadow-md flex-shrink-0 mx-6 flex items-center justify-center`}
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => item.type !== "text" && openPreview(item.src)}
+                >
+                  {item.type === "text" ? (
+                    <div className=" grid text-center gap-4 justify-center">
+                      <Typography variant="subtitle" className="text-sm">{item.subtitle}</Typography> 
+                      <Typography variant="h1" h1Parts={item.titleParts} />
+                    </div>
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt={`Gallery ${item.id}`}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </motion.div>
+              ))}
+            </div>
 
           {/* Second Row */}
           <div className="flex justify-between mx-16 ">
-            {images2.map((image) => (
-              <motion.div
-                key={image.id}
-                className={`${image.id%2 == 1 ?"w-[400px]" :"w-[300px]"} h-[200px] rounded-xl overflow-hidden shadow-md flex-shrink-0 mx-10 `}
-                whileHover={{ scale: 1.05 }}
-                onClick={() => openPreview(image.src)}
+          {images2.map((image) => (
+            <motion.div
+              key={image.id}
+              className={`${
+                image.id % 2 == 1 ? "w-[400px]" : "w-[300px]"
+              } h-[200px] rounded-xl overflow-hidden shadow-md flex-shrink-0 mx-10 `}
+              whileHover={{ scale: 1.05 }}
+              onClick={() => openPreview(image.src)}
               >
-                <img
-                  src={image.src}
-                  alt={`Gallery ${image.id}`}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            ))}
+              <img
+                src={image.src}
+                alt={`Gallery ${image.id}`}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          ))}
           </div>
         </div>
       </div>

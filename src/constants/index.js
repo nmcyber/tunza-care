@@ -54,14 +54,22 @@ export const socials = [
 ];
 
 export const images1 = [
-  { id: 1, src: { image1 } },
-  { id: 2, src: { image2 } },
-  { id: 3, src: { image3 } },
-  // { id: 4, src: {image3 }},
-  // { id: 5, src: {image4} },
+  {
+    id: 1,
+    type: "text", 
+    titleParts: [ 
+      { text: "Moments of ", color: "color1" },
+      { text: "Connection", color: "#13668E" },
+    ],
+    subtitle: "Quality Care",
+  },
+  { id: 2, src: image1 },
+  { id: 3, src: image2 },
+  // { id: 4, src: image3 },
+  // { id: 5, src: image4 },
 ];
 export const images2 = [
-  { id: 1, src: { image4 } },
-  { id: 2, src: { image5 } },
-  // { id: 3, src: {image3} },
+  { id: 1, src: image4 },
+  { id: 2, src: image3 },
+  // { id: 3, src: image3 },
 ];

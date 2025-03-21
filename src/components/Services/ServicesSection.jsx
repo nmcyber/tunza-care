@@ -49,10 +49,10 @@ const ServicesSection = () => {
                 <div className="w-full lg:w-1/2 bg-white">
                   <Typography variant="span">Our Approach</Typography>
                   <Typography variant="h1" className={"py-4"}
-              h1Parts={[
-                { text: "welcome", color: "color1" },
-                { text: "communities", color: "color2" },
-              ]} />
+                    h1Parts={[
+                      { text: "welcome", color: "color1" },
+                      { text: "communities", color: "color2" },
+                    ]} />
 
                   <div className="space-y-4 text-gray-600">
                     <p>
