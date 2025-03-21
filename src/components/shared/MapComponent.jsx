@@ -4,14 +4,16 @@ import { useEffect } from "react";
 
 const MapComponent = () => {
   useEffect(() => {
-    new maplibregl.Map({
+    const map = new maplibregl.Map({
       container: "map",
-      style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-      center: [0, 0],
-    //   center: [-32.01577, 115.9363],
-      zoom: 2,
+      style: "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
+      center: [115.9358737, -32.0160237],
+      zoom: 16,
     });
-  }, []);
+    new maplibregl.Marker()
+      .setLngLat([115.9358737, -32.0160237])
+      .addTo(map);
+  },);
 
   return <div id="map" style={{ height: "400px", width: "100%" }}></div>;
 };

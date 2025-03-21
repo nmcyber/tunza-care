@@ -68,7 +68,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Right Side - Services List */}
-                <div className="w-full lg:w-1/2 bg-[#f8f9fa] md:px-8 md:py-4 relative outline outline-lime-400">
+                <div className="w-full lg:w-1/2 bg-[#f8f9fa] md:px-8 md:py-4 relative rounded-lg outline-0 outline-lime-400">
                 <InvertedBorder
                   right='0'
                   top='0'
@@ -78,6 +78,10 @@ const ServicesSection = () => {
                   imgSrc={logo}
                   imgAlt='Star Icon'
                   imgSize='64px'
+                  objectFit="cover"
+                  imgHeight="h-16"
+                  imgWidth="w-24"
+                  imgHolderRounded="rounded-none"
                   hideSpanBg={true}
                   innerBorderRadius='rounded-bl-xl'
                   beforeRotation='rotate-[0deg]'

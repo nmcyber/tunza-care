@@ -14,6 +14,7 @@ export const InvertedBorder = ({
   imgHeight = 'h-3',
   imgWidth = 'w-3',
   objectFit = 'contain',
+  imgHolderRounded = 'rounded-full',
   imageRotation,
   smoothness = '2',
   beforeTop,
@@ -120,7 +121,7 @@ export const InvertedBorder = ({
                   <div className=" relative z-0 flex items-center justify-center">
                       {showSpan && (
                           <span
-                              className={`flex mx-auto aspect-square rounded-full p-3 text-white ${!hideSpanBg ? `${spanBgColor}` : ''} ${imageRotation} transition-colors`}
+                              className={`flex mx-auto aspect-square ${imgHolderRounded} p-3 text-white ${!hideSpanBg ? `${spanBgColor}` : ''} ${imageRotation} transition-colors`}
                           >
                               {imgSrc && (
                                   <img
