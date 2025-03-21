@@ -1,23 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Navbar from "./components/Navbar/Navbar"
-import TrustedPartnership from "./components/Landing/TrustedPartnerships"
-import Home from "./pages/Home"
-import Services from "./pages/Services" // Import the new Services page
-import Footer from "./components/Footer/footer"
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/footer';
 
-const App = ({ children }) => {
+function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="" element={<Home />} />
-        <Route path="/About" element={<TrustedPartnership />} />
-        <Route path="/Services" element={<Services />} /> {/* Add the Services route */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
-      <Footer />
-    </Router>
-  )
+        <Footer />
+    </BrowserRouter>
+  );
 }
 
-export default App
-
+export default App;

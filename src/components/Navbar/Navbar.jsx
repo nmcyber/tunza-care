@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger
 import { navigation, socials } from "@/constants"
 import Logo from "@/components/shared/Logo"
 import { useMediaQuery } from "@/hooks/use-mobile"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)")
@@ -51,9 +52,9 @@ const Navbar = () => {
 
             <div className="flex items-center outline-0 outline-fuchsia-800">
               {navigation.map((item, index) => (
-                <a
+                <Link
                   key={item.id}
-                  href={item.url}
+                  to={item.url}
                   className={cn(
                     "relative font-sans text-[16px] font-medium px-6 py-2 rounded-md transition-colors duration-300",
                     item.title === "Home"
@@ -62,7 +63,7 @@ const Navbar = () => {
                   )}
                 >
                   {item.title}
-                </a>
+                </Link>
               ))}
             </div>
 
