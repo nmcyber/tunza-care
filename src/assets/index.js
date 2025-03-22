@@ -23,7 +23,10 @@ export { default as image1 } from "./images/image1.png";
 export { default as image2 } from "./images/image2.png";
 export { default as image3 } from "./images/image3.png";
 export { default as image4 } from "./images/image4.png";
-export { default as image5 } from "./images/image5.png";
+// export { default as image5 } from "./images/image5.png";
+export { default as image6 } from "./images/young_doctor.webp";
+export { default as image7 } from "./images/old_man_weatherly.webp";
+export { default as image8 } from "./images/about-tunza-care.webp";
 
 export { default as young_doctor } from "./images/young_doctor.webp";
 export { default as about_tunza_care } from "./images/about-tunza-care.webp";
