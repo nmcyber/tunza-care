@@ -1,15 +1,13 @@
-"use client"
-
 import { useState } from "react"
 import { Menu, Phone } from "lucide-react"
-import { motion, useScroll, useMotionValueEvent } from "framer-motion"
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { navigation, socials } from "@/constants"
-import Logo from "@/components/shared/Logo"
 import { useMediaQuery } from "@/hooks/use-mobile"
+import { cn } from "@/lib/utils"
 import { Link } from "react-router-dom"
+import Logo from "@/components/shared/Logo"
 
 const Navbar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)")
