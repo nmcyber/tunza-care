@@ -1,6 +1,4 @@
-"use client"
 import { Check } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { holding_hands_banner, logo, verified, young_doctor } from "@/assets"
 import { InvertedBorder } from "../shared/InvertedRadius"

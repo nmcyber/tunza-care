@@ -9,6 +9,7 @@ import HealthcareBanner from "@/components/shared/HealthcareBanner";
 import TrustedPartnership from "@/components/Landing/TrustedPartnerships";
 import { OurPrinciplesSection } from "@/components/Landing/CoreMissionVision/OurPrinciplesSection";
 import { TestimonialsSection } from "@/components/Landing/Testimonials";
+import BookAppointmentBanner from "@/components/Services/BookAppointment";
 
 const healthcareServices = {
   title: "Tunza Care",
@@ -42,6 +43,7 @@ const Home = () => {
       <Gallery />
       {/* <HealthcareBanner /> */}
       <TestimonialsSection />
+      <BookAppointmentBanner />
       <Location />
 
       {/* <ServicesSection {...healthcareServices} /> */}

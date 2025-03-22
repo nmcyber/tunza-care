@@ -240,3 +240,24 @@ button {
   /* padding: 0.75rem 0; */
   border-radius: calc(var(--_br) / 2);
 }
+
+/* .curved-shape {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  clip-path: path('M 0 0 L 100% 0 A 100% 100% 0 0 1 0 100% L 0 0');
+} */
+
+.triangle-top-left {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* .clip-left {
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+} */
+
+.semicircle-left {
+  clip-path: ellipse(50% 100% at 0% 50%);
+}
+
+.semicircle-right {
+  clip-path: ellipse(50% 100% at 100% 50%);
+}
