@@ -1,110 +1,216 @@
-import { logo } from "@/assets";
-import React from "react";
-import { navigation, socials } from "../../constants";
-import { MdOutlineCall } from "react-icons/md";
-import { MdMailOutline } from "react-icons/md";
-import { MdOutlineLocationOn } from "react-icons/md";
+import { motion } from "framer-motion"
+import { navigation, socials } from "@/constants"
+import { Phone, Mail, MapPin, Heart } from "lucide-react"
+import { Link } from "react-router-dom"
+import { logo } from "@/assets"
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  }
+
   return (
-    <footer className='bg-white rounded-t-3xl pt-10 '>
-      <div className='container flex justify-between flex-wrap mx-auto px-12 md:px-16  gap-6 pb-4'>
-        <div className='space-y-4'>
-          <img
-            src={logo}
-            alt='Tunza Care Services Logo'
-            className='w-40 mx-8 '
-          />
-          <div className='flex space-x-4 bg-slate-200 p-3 px-5   rounded-md '>
-            {socials.map(({ link, ariaLabel, iconImage: Icon }, index) => (
-              <a
-                href={link}
-                key={index}
-                className='text-slate-600 hover:text-gray-950 rounded-full border border-black p-1.5'
-              >
-                <span class='sr-only'>{ariaLabel}</span>
+    <footer className="bg-white pt-12 relative rounded-t-xl md:rounded-t-4xl overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
+      <div className="absolute -left-20 top-40 w-40 h-40 rounded-full border-[15px] border-sky-50/50 -z-10"></div>
+      <div className="absolute -right-10 bottom-40 w-32 h-32 rounded-full border-[12px] border-teal-50/40 -z-10"></div>
 
-                <Icon size={`22`} />
-                <span className=' w-4 h-4 outline outline-lime-600'></span>
-              </a>
-            ))}
-          </div>
-        </div>
+      <motion.div
+        className="container mx-auto px-6 lg:px-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10">
+          {/* Company Info */}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <Link to="/" className="inline-block">
+              <img src={logo} alt="Tunza Care Services Logo" className="h-24 w-auto" />
+            </Link>
+            <p className="text-gray-600 max-w-xs">
+              Tunza Care Services is a WA NDIS provider, offering a range of in-home care and support services across
+              Western Australia.
+            </p>
 
-        {/* Quick Links Sections */}
-
-        <div>
-          <h4 className='font-semibold text-xl text-[#64cdf6]/60 mb-4'>
-            Quick Links
-          </h4>
-          <div>
-            <div className='flex flex-col space-y-2 text-center'>
-              {navigation.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.url}
-                  className='font-semibold text-gray-600  text-md hover:text-gray-800 cursor-pointer'
+            <div className="flex space-x-3">
+              {socials.map(({ link, ariaLabel, iconImage: Icon }, index) => (
+                <motion.a
+                  href={link}
+                  key={index}
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label={ariaLabel}
                 >
-                  {item.title}
-                </a>
+                  <Icon size={18} />
+                </motion.a>
               ))}
             </div>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <h4 className="font-semibold text-xl text-primary">Quick Links</h4>
+            <ul className="space-y-3">
+              {navigation.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    to={item.url}
+                    className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                  >
+                    <span className="mr-2">›</span>
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Our Services */}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <h4 className="font-semibold text-xl text-primary">Our Services</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  to="/services"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                >
+                  <span className="mr-2">›</span>
+                  Personal Care
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                >
+                  <span className="mr-2">›</span>
+                  Transport Options
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                >
+                  <span className="mr-2">›</span>
+                  Community Participation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                >
+                  <span className="mr-2">›</span>
+                  Independent Living
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                >
+                  <span className="mr-2">›</span>
+                  Support Coordination
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Contact Info */}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <h4 className="font-semibold text-xl text-primary">Contact Us</h4>
+            <ul className="space-y-4">
+              <li className="flex items-center space-x-3">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <Phone size={18} />
+                </div>
+                <a href="tel:0893876326" className="text-gray-600 hover:text-primary transition-colors duration-200">
+                  08 9387 6326
+                </a>
+              </li>
+              <li className="flex items-center space-x-3">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <Mail size={18} />
+                </div>
+                <a
+                  href="mailto:info@tunzacare.com.au"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200"
+                >
+                  info@tunzacare.com.au
+                </a>
+              </li>
+              <li className="flex space-x-3">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1">
+                  <MapPin size={18} />
+                </div>
+                <address className="text-gray-600 not-italic">
+                  6/15 Pattie Street
+                  <br />
+                  Cannington WA 6107
+                </address>
+              </li>
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Acknowledgment of Country */}
+        <motion.div variants={itemVariants} className="border-t border-gray-100 pt-6 pb-4 text-center">
+          <p className="text-gray-600 text-sm max-w-3xl mx-auto">
+            We pay our respects to the Traditional Owners of the land on which we work and live, and to their cultures;
+            and to Elders past, present and emerging.
+          </p>
+        </motion.div>
+
+        {/* Bottom Bar */}
+        <motion.div
+          variants={itemVariants}
+          className="border-t border-gray-100 py-6 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p className="text-gray-500 text-sm mb-4 md:mb-0">
+            © {currentYear} Tunza Care Services. All Rights Reserved.
+          </p>
+
+          <div className="flex items-center space-x-6">
+            <Link
+              to="/privacy-policy"
+              className="text-sm text-gray-500 hover:text-primary transition-colors duration-200"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms-conditions"
+              className="text-sm text-gray-500 hover:text-primary transition-colors duration-200"
+            >
+              Terms & Conditions
+            </Link>
+            <div className="flex items-center text-primary">
+              <span className="text-sm mr-1">Made with</span>
+              <Heart size={14} className="fill-primary" />
+            </div>
           </div>
-        </div>
-
-        {/* Contact Section */}
-        <div>
-          <h4 className='font-semibold text-xl  text-[#64cdf6]/60 text-center mb-4'>
-            Contact
-          </h4>
-          <ul className='space-y-4 text-center font-semibold '>
-            <li className='flex items-center space-x-3 text-gray-600'>
-              <span className=' bg-[#64cdf6]/60 text-white p-2 rounded-full'>
-                <MdOutlineCall size={"22"} />
-              </span>
-              <a href=''>
-                <span className='text-md'>08 9387 6326</span>
-              </a>
-            </li>
-            <li className='flex items-center space-x-3 text-gray-600'>
-              <span className=' bg-[#64cdf6]/60 text-white p-2 rounded-full'>
-                <MdMailOutline size={"22"} />
-              </span>
-              <span className='text-md'>loremipsum@email.com</span>
-            </li>
-            <li className='flex items-center text-start space-x-3 text-gray-600'>
-              <span className=' bg-[#64cdf6]/60 text-white p-2 rounded-full'>
-                <MdOutlineLocationOn size={"22"} />
-              </span>
-              <span className='text-md'>
-                6/15 Pattie St
-                <br />
-                Cannington WA 6107
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <hr />
-
-      {/* Privacy Policy Section */}
-      <div className=' flex justify-between mx-36 p-4 text-center '>
-        <p className='text-gray-500 text-sm'>
-          © Copyright 2025. All Rights Reserved
-        </p>
-
-        <div>
-          <a href='#' className='text-sm text-gray-500 hover:text-gray-700'>
-            Privacy Policy
-          </a>
-          <span className='mx-2 text-gray-400'>|</span>
-          <a href='#' className='text-sm text-gray-500 hover:text-gray-700'>
-            Terms of Use
-          </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
+

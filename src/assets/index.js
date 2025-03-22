@@ -3,6 +3,7 @@
 export { default as logo } from "./svg/TUNZA-CARE-Logo.svg";
 
 // SVG
+export { default as quotes } from "./svg/quotes.svg";
 export { default as verified } from "./svg/verified.svg";
 export { default as heart_icon } from "./svg/heart_icon.svg";
 export { default as wheelchair } from "./svg/wheelchair.svg";
