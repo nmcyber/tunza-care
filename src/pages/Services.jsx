@@ -1,3 +1,5 @@
+import BookAppointmentBanner from "@/components/Services/BookAppointment"
+import HealthcareBanner from "@/components/Services/BookAppointment"
 import JobSupportSection from "@/components/Services/job-support-section"
 import PersonalCareSection from "@/components/Services/personal-care-section"
 import ServicesSection from "@/components/Services/ServicesSection"

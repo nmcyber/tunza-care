@@ -12,29 +12,48 @@ const Typography = ({ variant, children, className, h1Parts }) => {
     heading: "text-black font-almarai text-[85px] font-normal leading-[85px] tracking-[-0.85px] capitalize",
   };
 
-  if ((variant === "h1" || variant === "heading") && Array.isArray(h1Parts)) {
-    const baseStyles =
-      variant === "h1"
-        ? "font-normal md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-6xl leading-[60px] tracking-[-0.6px] capitalize"
-        : variantClasses.heading;
+  const baseH1Styles = "font-normal md:text-5xl lg:text-7xl xl:text-5xl 2xl:text-6xl leading-[60px] tracking-[-0.8px] capitalize";
 
-    return (
-      <h1 className={cn(baseStyles, className)}>
-        {h1Parts.map((part, index) => (
-          <React.Fragment key={index}>
-            <span
-              className={
-                part.color === "color1" ? "text-black" : "text-[#13668E]"
-              }
-            >
-              {part.text}
-            </span>
-            {/* Add space between parts */}
-            {index < h1Parts.length - 1 && " "}
-          </React.Fragment>
-        ))}
-      </h1>
-    );
+  if ((variant === "h1" || variant === "heading")) {
+    const baseStyles = variant === "h1" ? baseH1Styles : variantClasses.heading;
+
+    // Handle cases where h1Parts is an array
+    if (Array.isArray(h1Parts)) {
+      return (
+        <h1 className={cn(baseStyles, className)}>
+          {h1Parts.map((part, index) => (
+            <React.Fragment key={index}>
+              <span
+                className={
+                  part.color === "color1" ? "text-black" : "text-[#13668E]"
+                }
+              >
+                {part.text}
+              </span>
+              {index < h1Parts.length - 1 && " "}
+            </React.Fragment>
+          ))}
+        </h1>
+      );
+    }
+
+    // Handle case where h1Parts is a single object
+    if (typeof h1Parts === 'object' && h1Parts !== null && 'text' in h1Parts) {
+      return (
+        <h1 className={cn(baseStyles, className)}>
+          <span
+            className={
+              h1Parts.color === "color1" ? "text-black" : "text-[#13668E]"
+            }
+          >
+            {h1Parts.text}
+          </span>
+        </h1>
+      );
+    }
+
+    // Handle case where h1Parts is not provided (undefined) or null
+    return <h1 className={cn(baseStyles, className)}>{children}</h1>;
   }
 
   if (variant === "subtitle") {
