@@ -4,12 +4,14 @@ import logos from "../data/logos";
 import NDIS from "@/components/Landing/NDIS";
 import Hero from "@/components/Hero/Hero";
 import Location from "@/components/Footer/location";
-import Gallery from "@/components/shared/Gallery";
+// import Gallery from "@/components/shared/Gallery";
 import HealthcareBanner from "@/components/shared/HealthcareBanner";
 import TrustedPartnership from "@/components/Landing/TrustedPartnerships";
 import { OurPrinciplesSection } from "@/components/Landing/CoreMissionVision/OurPrinciplesSection";
 import { TestimonialsSection } from "@/components/Landing/Testimonials";
 import BookAppointmentBanner from "@/components/Services/BookAppointment";
+import Gallery from "@/components/shared/Gallery";
+import { images1, images2 } from "@/constants";
 
 const healthcareServices = {
   title: "Tunza Care",
@@ -40,7 +42,7 @@ const Home = () => {
       <TrustedPartnership />
       <NDIS {...healthcareServices} />
       <OurPrinciplesSection />
-      <Gallery />
+      <Gallery images1={images1} images2={images2} />
       {/* <HealthcareBanner /> */}
       <TestimonialsSection />
       <BookAppointmentBanner />
