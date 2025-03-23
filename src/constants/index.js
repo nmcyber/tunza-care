@@ -21,12 +21,12 @@ export const navigation = [
   {
     id: "3",
     title: "Employment",
-    url: "/",
+    url: "/employment",
   },
   {
     id: "4",
     title: "Contact",
-    url: "/",
+    url: "/contact",
   },
 ];
 
