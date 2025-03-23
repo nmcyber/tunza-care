@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
-import { Badge } from "../ui/badge";
 import { InvertedBorder } from "../shared/InvertedRadius";
 import Typography from "../shared/Typography";
 import { verified, young_doctor } from "@/assets";
@@ -31,7 +30,7 @@ export default function NDIS({
               <div className='w-full md:w-1/2 p-6 bg-background md:p-10 relative rounded-lg border-0 border-lime-500'>
                 <div className=' space-y-6 '>
                   <>
-                    <Typography variant='subtitle'>Testimonials</Typography>
+                    <Typography variant='subtitle'>What We Offer</Typography>
                     <Typography
                       variant='h1'
                       className={"pt-0 pb-2"}
@@ -41,7 +40,7 @@ export default function NDIS({
                       ]}
                     />
                   </>
-
+                <Typography variant='span' className='text-lg max-w-xl'>We provide a wide range of NDIS-registered services tailored to meet your individual needs and goals:</Typography>
                   <ul className='space-y-2'>
                     {services.map((service, index) => (
                       <li key={index} className='flex items-start gap-2'>
