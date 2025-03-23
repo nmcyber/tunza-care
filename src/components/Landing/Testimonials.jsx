@@ -236,7 +236,7 @@ export const TestimonialsSection = ({ className }) => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Typography variant="subtitle">Testimonials</Typography>
+          {/* <Typography variant="subtitle">Testimonials</Typography> */}
           <Typography
             variant="h1"
             className={"py-4"}

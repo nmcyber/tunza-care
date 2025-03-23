@@ -10,6 +10,7 @@ import { avatar_1, avatar_2, avatar_3, banner, heart_icon } from "@/assets"
 import Typography from "../shared/Typography"
 import { ShimmerButton } from "../magicui/shimmer-button"
 import { NumberTicker } from "../magicui/number-ticker"
+import { Link } from "react-router-dom"
 
 const Hero = () => {
   const progressRef = useRef(null)
@@ -50,16 +51,18 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-<ShimmerButton className="shadow-2xl bg-primary hover:bg-[#155a87] text-white rounded-full px-6 py-2 text-lg font-medium"  > {/* Add any specific styling for the shimmer container if needed */}
-    Book Appointment
-    <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
-</ShimmerButton>
+          // TODO: Add a Link to Calendly
+          <ShimmerButton className="shadow-2xl bg-primary hover:bg-[#155a87] text-white rounded-full px-6 py-2 text-lg font-medium"  > {/* Add any specific styling for the shimmer container if needed */}
+              Book Appointment
+              <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </ShimmerButton>
 
             <div className="flex items-center gap-2">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e6f2f5]">
                 <Play className="h-5 w-5 text-primary ml-0.5" />
               </div>
-              <span className="text-primary font-medium">Learn More</span>
+              <Link to="/about" className="text-primary font-medium">Learn More</Link>
+              {/* <span className="text-primary font-medium"></span>s */}
             </div>
           </motion.div>
 
