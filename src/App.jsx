@@ -1,13 +1,27 @@
 import React from 'react';
-import RootLayout from './layouts/RootLayout';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/footer';
+import EmploymentPage from './pages/Employment';
+import ContactPage from './pages/Contact';
 
-const App = ({ children }) => {
+function App() {
   return (
-    <RootLayout>
-      {children}
-    </RootLayout>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/employment" element={<EmploymentPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+        <Footer />
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
-// <p>&copy; {new Date().getFullYear()} Vite React Template. All rights reserved.</p>

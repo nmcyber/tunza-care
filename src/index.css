@@ -6,12 +6,12 @@
 @layer base {
   :root {
     --background: 230 33% 96%;
-    --foreground: 20 14.3% 4.1%;
+    --foreground: 200 76% 32%;
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
-    --primary: 24 9.8% 10%;
+    --primary: 200 76% 32%;
     --primary-foreground: 60 9.1% 97.8%;
     --secondary: 60 4.8% 95.9%;
     --secondary-foreground: 24 9.8% 10%;
@@ -239,4 +239,25 @@ button {
   /* background: white; */
   /* padding: 0.75rem 0; */
   border-radius: calc(var(--_br) / 2);
+}
+
+/* .curved-shape {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  clip-path: path('M 0 0 L 100% 0 A 100% 100% 0 0 1 0 100% L 0 0');
+} */
+
+.triangle-top-left {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* .clip-left {
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+} */
+
+.semicircle-left {
+  clip-path: ellipse(50% 100% at 0% 50%);
+}
+
+.semicircle-right {
+  clip-path: ellipse(50% 100% at 100% 50%);
 }
