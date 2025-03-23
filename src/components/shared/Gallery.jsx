@@ -193,7 +193,7 @@ const Gallery = () => {
     >
       <div className="max-w-[90vw] md:max-w-[85vw] mx-auto px-4">
         <div className="text-center mb-8">
-          <Typography variant="heading">Our Gallery</Typography>
+          <Typography variant="heading" isAurora="false">Our Gallery</Typography>
           <p className="text-gray-600 mt-2">Browse through our collection of memorable moments</p>
         </div>
 

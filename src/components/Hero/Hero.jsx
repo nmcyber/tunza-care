@@ -2,12 +2,14 @@
 
 import { useEffect, useRef } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
-import { MapPin, Play } from "lucide-react"
+import { ChevronRightIcon, MapPin, Play } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { AvatarGroup } from "@/components/ui/avatar-group"
 import { avatar_1, avatar_2, avatar_3, banner, heart_icon } from "@/assets"
 import Typography from "../shared/Typography"
+import { ShimmerButton } from "../magicui/shimmer-button"
+import { NumberTicker } from "../magicui/number-ticker"
 
 const Hero = () => {
   const progressRef = useRef(null)
@@ -34,7 +36,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Typography variant="heading" h1Parts={[ { text: 'Quality', color: 'color1' }, { text: 'Home Healthcare', color: 'color2' }, { text: 'You Can Trust.', color: 'color1' }, ]} />
+            <Typography variant="heading" h1Parts={[ { text: 'Quality', color: 'color1' }, { text: 'Home Healthcare', color: 'color2',  }, { text: 'You Can Trust.', color: 'color1' }, ]} />
 
             <Typography variant="p" className="mt-4 text-lg max-w-xl">
               Tunza Care Services is a WA NDIS provider, offering a range of in-home care, community participation,
@@ -48,18 +50,16 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Button
-              size="lg"
-              className="bg-[#1a6b9f] hover:bg-[#155a87] text-white rounded-full px-8 py-6 text-lg font-medium"
-            >
-              Book Appointment →
-            </Button>
+<ShimmerButton className="shadow-2xl bg-primary hover:bg-[#155a87] text-white rounded-full px-6 py-2 text-lg font-medium"  > {/* Add any specific styling for the shimmer container if needed */}
+    Book Appointment
+    <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+</ShimmerButton>
 
             <div className="flex items-center gap-2">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e6f2f5]">
-                <Play className="h-5 w-5 text-[#1a6b9f] ml-0.5" />
+                <Play className="h-5 w-5 text-primary ml-0.5" />
               </div>
-              <span className="text-[#1a6b9f] font-medium">Learn More</span>
+              <span className="text-primary font-medium">Learn More</span>
             </div>
           </motion.div>
 
@@ -89,7 +89,8 @@ const Hero = () => {
             </AvatarGroup>
 
             <div>
-              <p className="text-lg font-semibold text-gray-800">3.2K</p>
+              {/* <p className="text-lg font-semibold text-gray-800">3.2K</p> */}
+              <NumberTicker value={3200} className="whitespace-pre-wrap ext-lg font-semibold text-gray-800 tracking-tighter " >K</NumberTicker>
               <p className="text-sm text-gray-500">People with us</p>
             </div>
 
@@ -137,7 +138,7 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <p className="text-2xl font-bold text-[#1a6b9f]">100+</p>
+            <p className="text-2xl font-bold text-primary">100+</p>
             <div className="w-full h-px bg-gray-200 my-2"></div>
             <p className="text-sm text-gray-500">Qualified Staff</p>
           </motion.div>
@@ -164,7 +165,7 @@ const Hero = () => {
               {/* Progressbar */}
               <div className="w-full flex items-center px-2 bg-gray-200 rounded-full h-5 mt-1">
                 <motion.div
-                  className="bg-[#1a6b9f] h-2 rounded-full"
+                  className="bg-primary h-2 rounded-full"
                   initial={{ width: "0%" }}
                   animate={progressControls}
                 ></motion.div>
