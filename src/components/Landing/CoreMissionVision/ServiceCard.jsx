@@ -20,13 +20,13 @@ function ServiceCard({ iconSrc, altText, title, description, iconBgColor, whileH
           className="w-[72px] h-[72px] rounded-md p-4"
           style={{ backgroundColor: iconBgColor }}
           as={motion.img}
-          whileHover={{ backgroundColor: whileHoverIconBgColor }}
+          whilehover={{ backgroundColor: whileHoverIconBgColor }}
           transition={{ duration: 0.2 }}
         />
         <Typography variant='h2' className="mt-4 mb-2 text-foreground group-hover:text-white transition-colors duration-200">{title}</Typography>
         {description && (
             <div className="flex-grow"> {/* Added flex-grow to push description to the top if needed */}
-            <Typography variant='p' className="text-muted-foreground group-hover:text-white transition-colors duration-200">
+            <Typography variant='span' className="text-muted-foreground group-hover:text-white transition-colors duration-200">
               {description}
             </Typography>
           </div>

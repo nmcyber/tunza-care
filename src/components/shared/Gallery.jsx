@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useRef, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
@@ -206,7 +204,7 @@ const Gallery = () => {
           style={{ WebkitOverflowScrolling: "touch" }}
           onTouchStart={handleTouchStart}
         >
-          <style jsx global>{`
+          <style global="true">{`
             .hide-scrollbar::-webkit-scrollbar {
               display: none;
             }
