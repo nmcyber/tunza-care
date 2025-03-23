@@ -8,13 +8,13 @@ import { TestimonialsSection } from "@/components/Landing/Testimonials"
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen ">
       <AboutHero />
       <OurValues />
       <OurStory />
       <OurApproach />
       <OurTeam />
-      <TestimonialsSection className="bg-gray-50" />
+      <TestimonialsSection />
       <CallToAction />
     </main>
   )

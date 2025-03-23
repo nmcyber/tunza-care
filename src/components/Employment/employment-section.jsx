@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Check, MapPin, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ApplicationFormDialog } from "./application-form-dialog"
 
 const EmploymentSection = () => {
   const containerVariants = {
@@ -153,9 +154,10 @@ const EmploymentSection = () => {
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center">
               <span className="text-gray-700 mr-4 mb-4 sm:mb-0">To apply, send your resume using the</span>
-              <Button className="bg-[#2DBA98] hover:bg-[#25a385] text-white rounded-md">
+              {/* <Button className="bg-[#2DBA98] hover:bg-[#25a385] text-white rounded-md">
                 Contact Form <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
+              <ApplicationFormDialog />
             </motion.div>
           </div>
         </motion.div>

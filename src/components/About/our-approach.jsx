@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Users, Heart, Globe, Sparkles, Shield, Clock } from "lucide-react"
+import Typography from "../shared/Typography"
 
 const OurApproach = () => {
   const approaches = [
@@ -64,7 +65,7 @@ const OurApproach = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our <span className="text-[#1a6b9f]">Approach</span>
+            Our <span className="text-primary">Approach</span>
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Tunza Care Services celebrates our differences and works with you to create services that are tailored to
@@ -84,7 +85,7 @@ const OurApproach = () => {
               <Card className="h-full border-none shadow-sm hover:shadow-md transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 mr-4 w-12 h-12 rounded-full bg-[#1a6b9f]/10 flex items-center justify-center text-[#1a6b9f]">
+                    <div className="flex-shrink-0 mr-4 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                       {approach.icon}
                     </div>
                     <div>
@@ -99,7 +100,7 @@ const OurApproach = () => {
         </motion.div>
 
         <motion.div
-          className="mt-16 bg-[#1a6b9f]/5 rounded-2xl p-8 md:p-10"
+          className="mt-16 bg-primary rounded-2xl p-8 md:p-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -107,16 +108,16 @@ const OurApproach = () => {
         >
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-2/3 mb-6 md:mb-0 md:pr-8">
-              <h3 className="text-2xl font-semibold mb-4">Culturally Inclusive Care</h3>
-              <p className="text-gray-700">
+              <Typography variant="h2" className="t text-white mb-4">Culturally Inclusive Care</Typography>
+              <Typography variant="p" className=" text-white" >
                 Tunza Care Services is culturally inclusive, allowing people to make choices and have full control of
                 their way of living, feeling accepted and belonging to the team and the community. We work together with
                 you to personalize your needs according to your choices, ability, and your unique experience.
-              </p>
+              </Typography>
             </div>
-            <div className="md:w-1/3 flex justify-center">
-              <div className="w-32 h-32 rounded-full bg-white shadow-md flex items-center justify-center">
-                <Globe className="h-16 w-16 text-[#1a6b9f]/70" />
+            <div className=" relative md:w-1/3 flex justify-center">
+              <div className=" relative w-32 h-32 rounded-full bg-white shadow-md flex items-center justify-center overflow-visible after:mx-auto after:absolute after:-z-10 after:rounded-full after:bg-primary/10 after:w-44 after:h-44">
+                <Globe className="h-16 w-16 text-primary/70" />
               </div>
             </div>
           </div>
