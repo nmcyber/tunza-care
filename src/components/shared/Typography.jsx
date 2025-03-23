@@ -12,7 +12,7 @@ const Typography = ({ variant, children, className, h1Parts }) => {
     heading: "text-black font-almarai text-[85px] font-normal leading-[85px] tracking-[-0.85px] capitalize",
   };
 
-  const baseH1Styles = "font-normal md:text-5xl lg:text-7xl xl:text-5xl 2xl:text-6xl leading-[60px] tracking-[-0.8px] capitalize";
+  const baseH1Styles = "font-normal md:text-5xl lg:text-7xl xl:text-5xl 2xl:text-5xl leading-[60px] tracking-[-0.8px] capitalize";
 
   if ((variant === "h1" || variant === "heading")) {
     const baseStyles = variant === "h1" ? baseH1Styles : variantClasses.heading;
@@ -58,7 +58,7 @@ const Typography = ({ variant, children, className, h1Parts }) => {
 
   if (variant === "subtitle") {
     const subtitleClasses =
-      "text-[#13668E] text-center font-inter text-[18px] capitalize hover:cursor-pointer hover:text-white hover:bg-[#2DBA98] font-medium leading-normal rounded-[51px] bg-[rgba(212,227,235,0.70)] py-1 px-12";
+      "text-[#13668E] text-center font-inter text-[16px] capitalize hover:cursor-pointer hover:text-white hover:bg-[#2DBA98] font-medium leading-normal rounded-[51px] bg-[rgba(212,227,235,0.70)] py-1 px-8";
     return (
       <div className='flex justify-center '>
         <Badge className={cn(subtitleClasses, className)}>{children}</Badge>

@@ -60,7 +60,7 @@ const ServiceCards = () => {
 
 const Services = () => {
   return (
-    <div className="min-h-screen">
+    <section className="min-h-screen">
       {/* Main Services Banner and Overview */}
       <ServicesSection />
 
@@ -85,7 +85,7 @@ const Services = () => {
           </button>
         </div>
       </section>
-    </div>
+    </section>
   )
 }
 

@@ -1,6 +1,6 @@
 import { Check } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { holding_hands_banner, logo, verified, young_doctor } from "@/assets"
+import { Check_mark_custom, holding_hands_banner, logo, verified, young_doctor } from "@/assets"
 import { InvertedBorder } from "../shared/InvertedRadius"
 import Typography from "../shared/Typography"
 
@@ -39,14 +39,14 @@ const ServicesSection = () => {
 
       {/* Content Section */}
       <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="md:max-w-6xl 2xl:max-w-7xl mx-auto">
           <Card className="rounded-xl overflow-hidden border-none shadow-lg">
             <CardContent className="p-0">
               <div className="flex flex-col p-8 md:gap-16 md:py-11 md:px-10 lg:flex-row border-0 border-indigo-800 ">
                 {/* Left Side - Our Approach */}
-                <div className="w-full lg:w-1/2 bg-white">
-                  <Typography variant="span">Our Approach</Typography>
-                  <Typography variant="h1" className={"py-4"}
+                <div className=" grid justify-items-start items-start w-full lg:w-1/2  bg-white">
+                  <Typography variant="subtitle" className=" text-left">Our Approach</Typography>
+                  <Typography variant="h1" className="py-0 "
                     h1Parts={[
                       { text: "welcome", color: "color1" },
                       { text: "communities", color: "color2" },
@@ -66,7 +66,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Right Side - Services List */}
-                <div className="w-full lg:w-1/2 bg-[#f8f9fa] md:px-8 md:py-4 relative rounded-lg outline-0 outline-lime-400">
+                <div className="w-full lg:w-1/2 2xl:w-2/5 bg-[#f8f9fa] md:px-8 md:py-4 relative rounded-lg outline-0 outline-lime-400">
                 <InvertedBorder
                   right='0'
                   top='0'
@@ -96,7 +96,7 @@ const ServicesSection = () => {
                     {services.map((service, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <span className="flex-shrink-0 mt-1 text-green-500 bg-green-100 rounded-full p-0.5">
-                          <Check className="h-4 w-4" />
+                        <Check_mark_custom className="h-5 w-5" />
                         </span>
                         <span className="text-gray-700 font-medium">{service.text}</span>
                       </li>

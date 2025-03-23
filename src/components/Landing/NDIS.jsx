@@ -35,8 +35,8 @@ export default function NDIS({
                       variant='h1'
                       className={"pt-0 pb-2"}
                       h1Parts={[
-                        { text: title, color: "color1" },
                         { text: highlightedTitle, color: "color2" },
+                        { text: title, color: "color1" },
                       ]}
                     />
                   </>

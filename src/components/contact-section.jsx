@@ -1,10 +1,10 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
-import { Phone, Mail, MapPin, Twitter, Youtube, Anchor } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { FaTiktok } from "react-icons/fa"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Textarea } from "@/components/ui/textarea"
+import { Phone, Mail, MapPin, Twitter, Youtube, Anchor } from "lucide-react"
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -71,8 +71,8 @@ const ContactSection = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-full h-64 bg-[#1a6b9f]/5 -skew-y-6 transform -translate-y-32 rounded-bl-[100px] z-0"></div>
-      <div className="absolute bottom-0 left-0 w-full h-64 bg-[#1a6b9f]/5 -skew-y-6 transform translate-y-32 rounded-tr-[100px] z-0"></div>
+      <div className="absolute top-0 right-0 w-full h-64 bg-primary/5 -skew-y-6 transform -translate-y-32 rounded-bl-[100px] z-0"></div>
+      <div className="absolute bottom-0 left-0 w-full h-64 bg-primary/5 -skew-y-6 transform translate-y-32 rounded-tr-[100px] z-0"></div>
 
       <motion.div
         className="max-w-6xl mx-auto relative z-10"
@@ -84,7 +84,7 @@ const ContactSection = () => {
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden p-8 md:p-10">
           <motion.div variants={itemVariants} className="max-w-3xl mx-auto mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-[#1a6b9f]">Stay Touch</span> With Us
+              <span className="text-primary">Stay Touch</span> With Us
             </h2>
             <p className="text-gray-600">
               Talk to us anytime, we are quick to respond and have full capacity to intake clients and answer all
@@ -173,10 +173,12 @@ const ContactSection = () => {
                   />
                 </div>
 
-                <div className="mb-8">
+                {/* ==== File Upload ==== */}
+
+                {/* <div className="mb-8">
                   <div
                     className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
-                      isDragging ? "border-[#1a6b9f] bg-[#1a6b9f]/5" : "border-gray-300 hover:border-[#1a6b9f]/50"
+                      isDragging ? "border-primary bg-primary/5" : "border-gray-300 hover:border-primary/50"
                     }`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
@@ -184,21 +186,21 @@ const ContactSection = () => {
                     onClick={() => document.getElementById("file-upload").click()}
                   >
                     <div className="flex flex-col items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-[#1a6b9f] flex items-center justify-center text-white mb-3">
+                      <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white mb-3">
                         <Anchor className="h-5 w-5" />
                       </div>
                       <p className="text-gray-700 mb-1">
-                        Drop files here or <span className="text-[#1a6b9f] underline">Upload</span>
+                        Drop files here or <span className="text-primary underline">Upload</span>
                       </p>
                       <p className="text-gray-500 text-sm">Max. File size: 50MB</p>
                       <input id="file-upload" type="file" multiple className="hidden" onChange={handleFileChange} />
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <Button
                   type="submit"
-                  className="bg-[#1a6b9f] hover:bg-[#155a87] text-white px-8 py-6 h-auto rounded-full text-base"
+                  className="bg-primary hover:bg-primary text-white px-8 py-6 h-auto rounded-full text-base"
                 >
                   Submit Now
                 </Button>
@@ -252,25 +254,25 @@ const ContactSection = () => {
                   <div className="flex space-x-3">
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-[#1a6b9f] hover:bg-[#1a6b9f] hover:text-white transition-colors"
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Twitter className="h-5 w-5" />
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-[#1a6b9f] hover:bg-[#1a6b9f] hover:text-white transition-colors"
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Youtube className="h-5 w-5" />
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-[#1a6b9f] hover:bg-[#1a6b9f] hover:text-white transition-colors"
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <FaTiktok className="h-4 w-4" />
                     </a>
                     <a
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-[#1a6b9f] hover:bg-[#1a6b9f] hover:text-white transition-colors"
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

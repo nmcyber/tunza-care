@@ -31,7 +31,7 @@ export default function EmploymentPage() {
 
       <StaffingOpportunities />
 
-      <section className="py-4 px-4 bg-white">
+      <section className="py-4 px-4 bg-transparent">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Why Work With Us?</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-10">

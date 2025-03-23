@@ -1,0 +1,18 @@
+<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="check-mark (1) 14">
+<g id="15-Checked">
+<path id="Vector" d="M11.6334 25.9329C17.0703 25.9329 21.4778 21.5254 21.4778 16.0885C21.4778 10.6516 17.0703 6.24414 11.6334 6.24414C6.19654 6.24414 1.78906 10.6516 1.78906 16.0885C1.78906 21.5254 6.19654 25.9329 11.6334 25.9329Z" fill="url(#paint0_linear_9_89)" fill-opacity="0.2"/>
+<path id="Vector_2" d="M11.7483 23.6976L11.6235 23.4848C9.71617 20.2352 4.64775 13.3388 4.59655 13.2696L4.52344 13.1703L6.25022 11.4637L11.7163 15.2805C15.1578 10.8146 18.3686 7.74715 20.463 5.95589C22.754 3.99644 24.2453 3.09437 24.2604 3.08573L24.2943 3.06543H27.2234L26.9436 3.31461C19.7478 9.72394 11.9482 23.3464 11.8705 23.4832L11.7483 23.6976Z" fill="url(#paint1_linear_9_89)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_9_89" x1="11.6311" y1="2.87379" x2="11.6311" y2="25.8035" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D5F101"/>
+<stop offset="1" stop-color="#2DBA98"/>
+</linearGradient>
+<linearGradient id="paint1_linear_9_89" x1="0.360543" y1="11.5478" x2="31.3809" y2="11.5478" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2DBA98"/>
+<stop offset="1" stop-color="#D5F101"/>
+</linearGradient>
+</defs>
+</svg>
