@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Typography from "../shared/Typography";
-import { about_tunza_care, nurse_patient_care, tunza_play_icon, verified } from "@/assets";
+import { about_tunza_care, nurse_patient_care, tunza_play_icon } from "@/assets";
 import { InvertedBorder } from "../shared/InvertedRadius";
 
 const partners = [
@@ -82,11 +82,12 @@ export default function TrustedPartnership() {
                   {/* TODO: I need to further make the inverted radius support different dimensions eg. rectangles, circles  */}
                   <div
                     id='house-price'
-                    className=' absolute z-20 p-4 -bottom-6 -left-7 outline-0 outline-red-400 '
+                    className=' absolute z-20 p-4  -bottom-6 -left-7 outline-0 outline-red-400 '
                   >
                     <div className='grid grid-cols-1 text-white gap-0 space-y-0 items-center border-0 border-lime-400'>
                       <span className='text-xl font-bold '>150+</span>
-                      <span className='text-xs '>Lorem ipsum dum</span>
+                      <span className='text-xs '>Support hours</span>
+                      {/* 150+ Support hours delivered weekly */}
                     </div>
                   </div>
                 </div>

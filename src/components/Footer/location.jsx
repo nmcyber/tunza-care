@@ -1,8 +1,5 @@
 import React from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import { MdOutlineCall } from "react-icons/md";
-import { MdMailOutline } from "react-icons/md";
-import { MdOutlineLocationOn } from "react-icons/md";
 import MapComponent from "../shared/MapComponent";
 import Typography from "../shared/Typography";
 import { MapPin } from "lucide-react";
