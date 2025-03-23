@@ -15,9 +15,14 @@ const RootLayout = ({ children }) => {
               </Link>
             </li>
             <li>
-              <a href="/about" className="text-indigo-600 hover:text-indigo-800">
+              <Link to="/about" className="text-indigo-600 hover:text-indigo-800">
                 About
-              </a>
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="text-indigo-600 hover:text-indigo-800">
+                Services
+              </Link>
             </li>
           </ul>
         </nav>
