@@ -3,17 +3,19 @@
 export { default as logo } from "./svg/TUNZA-CARE-Logo.svg";
 
 // SVG
-export { default as target } from "./svg/targeting.svg";
 export { default as quotes } from "./svg/quotes.svg";
-export { default as mapPin } from "./svg/Location.svg";
-export { default as messageIcon } from "./svg/Message.svg";
+export { default as Check_mark_custom } from "./svg/check-mark.svg?react";
 export { default as callIcon } from "./svg/Call.svg";
+export { default as charity_icon } from "./svg/charity.svg";
+export { default as mapPin } from "./svg/Location.svg";
+export { default as target } from "./svg/targeting.svg";
 export { default as verified } from "./svg/verified.svg";
 export { default as handshake } from "./svg/handshake.svg";
 export { default as heart_icon } from "./svg/heart_icon.svg";
 export { default as wheelchair } from "./svg/wheelchair.svg";
-export { default as tunza_care_full_silhoutte_logo } from "./svg/tunza_care_full_silhoutte_logo.svg"
+export { default as messageIcon } from "./svg/Message.svg";
 export { default as tunza_play_icon } from "./icons/tunza_play_icon.png";
+export { default as tunza_care_full_silhoutte_logo } from "./svg/tunza_care_full_silhoutte_logo.svg"
 
 // Images
 export { default as stars } from "./images/stars.png";
@@ -34,6 +36,8 @@ export { default as image7 } from "./images/old_man_weatherly.webp";
 export { default as image8 } from "./images/about-tunza-care.webp";
 
 export { default as young_doctor } from "./images/young_doctor.webp";
+export { default as personal_care } from "./images/personal_care.webp";
+export { default as dr_stethoscope } from "./images/dr_stethoscope.webp";
 export { default as about_tunza_care } from "./images/about-tunza-care.webp";
 export { default as nurse_patient_care } from "./images/nurse_patient_care.webp";
 export { default as holding_hands_banner } from "./images/holding_hands_services_page_banner.webp";

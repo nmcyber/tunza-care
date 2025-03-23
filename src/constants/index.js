@@ -1,6 +1,7 @@
-import { image1, image2, image3, image4, image6, image7, image8 } from "@/assets";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { callIcon, mapPin, messageIcon } from "@/assets";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { image1, image2, image3, image4, image6, image7, image8 } from "@/assets";
 
 export const navigation = [
   {
@@ -84,4 +85,27 @@ export const images2 = [
   { id: 11, src: `https://picsum.photos/id/${Math.floor(Math.random() * 900) + 1}/1024/480` },
   { id: 12, src: `https://picsum.photos/id/${Math.floor(Math.random() * 1000) + 1}/1024/480` },
   { id: 13, src: image7 },
+];
+
+export const contactData = [
+  {
+    title: "Address",
+    iconSrc: mapPin,
+    altText: "Location Pin",
+    value: `6/15 Pattie St<br />Cannington WA 6107`,
+  },
+  {
+    title: "Email",
+    iconSrc: messageIcon,
+    altText: "Mail icon",
+    value: "admin@tunzacare.com.au",
+    linkType: "mailto",
+  },
+  {
+    title: "Phone",
+    iconSrc: callIcon,
+    altText: "Phone icon",
+    value: "08 9387 6326",
+    linkType: "tel",
+  },
 ];
