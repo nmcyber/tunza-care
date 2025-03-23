@@ -19,7 +19,7 @@ const ServicesSection = () => {
   return (
     <div className="w-full relative md:inset-y-20 flex flex-col">
       {/* Banner Section */}
-      <section className="relative w-full bg-[#1a6b9f]/90 text-white">
+      <section className="relative w-full bg-primary/90 text-white">
         <div className="absolute inset-0 z-0">
           <img
             src={holding_hands_banner}
@@ -90,7 +90,7 @@ const ServicesSection = () => {
                   afterLeft='-left-6'
                   spanBgColor='bg-[#2DBA98]'
                 />
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#1a6b9f] mb-8 mt-4">OUR SERVICES ARE</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-primary mb-8 mt-4">OUR SERVICES ARE</h3>
 
                   <ul className="space-y-4">
                     {services.map((service, index) => (
