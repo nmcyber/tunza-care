@@ -1,19 +1,39 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { navigation, socials } from "@/constants"
 import { useMediaQuery } from "@/hooks/use-mobile"
-import { cn } from "@/lib/utils"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import Logo from "@/components/shared/Logo"
+import { cn } from "@/lib/utils"
 
 const Navbar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)")
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const { scrollY } = useScroll()
+  const location = useLocation()
+  const [activeItem, setActiveItem] = useState("")
+
+  // Set active item based on current path
+  useEffect(() => {
+    const path = location.pathname
+
+    // Find the navigation item that matches the current path
+    const currentNavItem = navigation.find((item) => {
+      // Handle root path specially
+      if (path === "/" && item.url === "/") {
+        return true
+      }
+      // For other paths, check if the current path starts with the nav item's URL
+      // This handles nested routes like /services/something
+      return path !== "/" && item.url !== "/" && path.startsWith(item.url)
+    })
+
+    setActiveItem(currentNavItem ? currentNavItem.title : "")
+  }, [location.pathname])
 
   // Track scroll direction and hide/show navbar accordingly
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -43,34 +63,33 @@ const Navbar = () => {
     >
       <div className="px-4 sm:px-8 md:px-16 xl:px-20">
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-between outline-0 outline-lime-800">
-          {/* <div className="flex items-center gap-16 ">
-          </div> */}
-            <Logo />
+        <nav className="hidden lg:flex items-center justify-between border-0 border-lime-800">
+          <Logo />
 
-            <div className="flex items-center outline-0 outline-fuchsia-800">
-              {navigation.map((item, index) => (
-                <Link
-                  key={item.id}
-                  to={item.url}
-                  className={cn(
-                    "relative font-sans text-[16px] font-medium px-6 py-2 rounded-md transition-colors duration-300",
-                    item.title === "Home"
-                      ? "bg-gray-100 text-gray-900"
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50",
-                  )}
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </div>
+          <div className="flex items-center space-x-2 border-0 border-fuchsia-800">
+            {navigation.map((item) => (
+              <Link
+                key={item.id}
+                to={item.url}
+                className={cn(
+                  "relative font-sans text-[16px] font-medium px-6 py-2 rounded-md transition-colors duration-300",
+                  item.title === activeItem
+                    ? "bg-gray-100 text-primary"
+                    : "text-gray-600 hover:text-[#30B996] hover:bg-gray-50",
+                )}
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
 
-          <>
-            <Button className="rounded-full bg-[#e6f2f5] text-[#0469842] hover:bg-[#d6eaef] px-6 outline-0 outline-blue-800 " variant="ghost">
-              <Phone className="mr-2 h-4 w-4 text-teal-600" />
-              <span className="text-teal-600 font-medium">0469 842 289</span>
-            </Button>
-          </>
+          <Button
+            className="rounded-full bg-[#e6f2f5] text-[#0469842] hover:bg-[#d6eaef] px-6 outline-0 outline-blue-800"
+            variant="ghost"
+          >
+            <Phone className="mr-2 h-4 w-4 text-teal-600" />
+            <span className="text-teal-600 font-medium">0469 842 289</span>
+          </Button>
         </nav>
 
         {/* Mobile Navigation */}
@@ -93,17 +112,18 @@ const Navbar = () => {
 
               <div className="my-8 flex flex-col">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.id}
-                    href={item.url}
+                    to={item.url}
                     className={cn(
-                      "block relative font-sans text-[18px] text-gray-700 hover:text-teal-600 transition-colors duration-300",
-                      item.title === "Home" ? "font-semibold text-teal-600" : "font-medium",
-                      "px-2 py-4",
+                      "block relative font-sans text-[18px] transition-colors duration-300 my-1 px-4 py-3",
+                      item.title === activeItem
+                        ? "rounded-[11px] border border-[rgba(0,0,0,0.1)] bg-[linear-gradient(180deg,rgba(255,255,255,0.26)_0%,rgba(115,115,115,0.26)_100%)] font-semibold"
+                        : "text-gray-700 hover:text-teal-600 font-medium",
                     )}
                   >
                     {item.title}
-                  </a>
+                  </Link>
                 ))}
 
                 <Button className="mt-6 rounded-full bg-[#e6f2f5] text-[#0469842] hover:bg-[#d6eaef]" variant="ghost">

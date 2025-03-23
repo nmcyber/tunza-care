@@ -192,10 +192,6 @@ const Gallery = () => {
       animate="animate"
     >
       <div className="max-w-[90vw] md:max-w-[85vw] mx-auto px-4">
-        <div className="text-center mb-8">
-          <Typography variant="heading">Our Gallery</Typography>
-          <p className="text-gray-600 mt-2">Browse through our collection of memorable moments</p>
-        </div>
 
         {/* Scrollable Grid */}
         <div
@@ -258,9 +254,9 @@ const Gallery = () => {
                 >
                   {item.type === "text" ? (
                     <div className="grid text-center gap-2 md:gap-4 justify-center w-full p-4">
-                      <Typography variant="subtitle" className="text-xs md:text-sm">
+                      {/* <Typography variant="subtitle" className="text-xs md:text-sm">
                         {item.subtitle}
-                      </Typography>
+                      </Typography> */}
                       <Typography variant="h1" className="text-lg md:text-xl" h1Parts={item.titleParts} />
                     </div>
                   ) : (

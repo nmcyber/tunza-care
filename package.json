@@ -27,6 +27,7 @@
     "leaflet": "^1.9.4",
     "lucide-react": "^0.293.0",
     "maplibre-gl": "^5.2.0",
+    "motion": "^12.5.0",
     "msw": "^2.7.0",
     "prettier": "^3.4.2",
     "radix-ui": "^1.1.3",
