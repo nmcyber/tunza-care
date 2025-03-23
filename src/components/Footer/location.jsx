@@ -4,6 +4,9 @@ import { MdOutlineCall } from "react-icons/md";
 import { MdMailOutline } from "react-icons/md";
 import { MdOutlineLocationOn } from "react-icons/md";
 import MapComponent from "../shared/MapComponent";
+import Typography from "../shared/Typography";
+import { MapPin } from "lucide-react";
+import { callIcon, mapPin, messageIcon } from "@/assets";
 // import { bgMaps } from "@/assets";
 
 
@@ -24,12 +27,15 @@ const Location = () => {
     <div className="bg-gray-100 py-5 ">
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         {/* Contact Info Section */}
-        <div>
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Say <span className="text-sky-700">Hello..!</span></h2>
-          <ul className="space-y-6 ">
-            <li className="flex items-center space-x-4 bg-white shadow-md p-4 rounded-lg">
-              <span className=" bg-[#50bfeb] text-white p-3 rounded-full">
-                <MdOutlineLocationOn  size={'32'}/>
+        <div className=" space-y-8">
+          <div className=" grid place-items-start space-y-4 ">
+        <Typography variant='subtitle'>Tunza</Typography>
+          <Typography variant="h1" className=" mb-4" h1Parts={[ { text: 'Say', color: 'color1' }, { text: 'Hello..!', color: 'color2' } ]} />
+          </div>
+          <ul className="space-y-6 md:pr-8 ">
+            <li className="flex items-center space-x-4 bg-white shadow-md p-4 rounded-md">
+              <span className=" bg-[#13668E33] p-3 rounded-md">
+                <img src={mapPin} alt="Location Pin" size={32} className="" />
               </span>
               <div>
                 <h4 className="text-sm text-gray-500">Address</h4>
@@ -40,9 +46,9 @@ const Location = () => {
                 </p>
               </div>
             </li>
-            <li className="flex items-center space-x-4 bg-white shadow-md p-4 rounded-lg">
-              <span className=" bg-[#60b360] text-white p-3 rounded-full">
-              <MdMailOutline size={'32'} />
+            <li className="flex items-center space-x-4 bg-white shadow-md p-4 rounded-md">
+              <span className=" bg-[#30B99633] p-3 rounded-md">
+              <img src={messageIcon} alt="mail icon" size={32} />
               </span>
               <div>
                 <h4 className="text-sm text-gray-500">Email</h4>
@@ -51,9 +57,9 @@ const Location = () => {
                 </p>
               </div>
             </li>
-            <li className="flex items-center space-x-4 bg-white shadow-md p-4 rounded-lg">
-              <span className=" bg-[#e06565] text-white p-3 rounded-full">
-              <MdOutlineCall size={'32'}/>
+            <li className="flex items-center space-x-4 bg-white shadow-md p-4 rounded-md">
+              <span className=" bg-[#FF990033] p-3 rounded-md">
+              <img src={callIcon} alt="phone icon" size={32} />
               </span>
               <div>
                 <h4 className="text-sm text-gray-500">Phone</h4>
@@ -61,7 +67,7 @@ const Location = () => {
               </div>
             </li>
           </ul>
-          <button className="mt-6 px-6 py-3 w-48  bg-[#64cdf6]/60 text-white rounded-lg shadow-lg hover:bg-blue-300">
+          <button className="mt-6 px-6 py-3 w-48  bg-primary text-white rounded-md outline outline-transparent shadow-xl hover:outline-white hover:shadow-2xl hover:bg-primary/95">
             Contact Form
           </button>
         </div>

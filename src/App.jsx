@@ -7,6 +7,8 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/footer';
 import EmploymentPage from './pages/Employment';
 import ContactPage from './pages/Contact';
+import PrivacyPolicy from './pages/Privacy-Policy';
+import TermsConditions from './pages/Terms-Conditions';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/employment" element={<EmploymentPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>
         <Footer />
     </BrowserRouter>

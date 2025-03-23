@@ -5,7 +5,7 @@ import Typography from "@/components/shared/Typography";
 
 export default function EmploymentPage() {
   return (
-    <main className="min-h-screen w-full relative md:inset-y-20 flex flex-col">
+    <main className="min-h-screen w-full relative mt-20 flex flex-col">
       {/* Banner Section */}
       <section className="relative w-full items-center justify-center  md:min-h-[35dvh] md:max-h-[40dvh] bg-primary/90 text-white">
         <div className="absolute inset-0 z-0">

@@ -3,8 +3,8 @@ import { MapPin, Clock, Phone } from "lucide-react"
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen">
-      <div className="bg-[#1a6b9f] text-white py-16 px-4">
+    <main className="min-h-screen relative mt-20 md:mt-20 ">
+      <div className="bg-primary text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl max-w-2xl mx-auto">
@@ -27,8 +27,8 @@ export default function ContactPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-6 rounded-xl text-center">
-              <div className="w-16 h-16 bg-[#1a6b9f]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-[#1a6b9f]" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Office Hours</h3>
               <p className="text-gray-600">Monday - Friday: 8:30 AM - 5:00 PM</p>
@@ -37,8 +37,8 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl text-center">
-              <div className="w-16 h-16 bg-[#1a6b9f]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-8 w-8 text-[#1a6b9f]" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Support Hours</h3>
               <p className="text-gray-600">24/7 Support Available</p>
@@ -47,8 +47,8 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl text-center">
-              <div className="w-16 h-16 bg-[#1a6b9f]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="h-8 w-8 text-[#1a6b9f]" />
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Service Areas</h3>
               <p className="text-gray-600">Perth Metropolitan Area</p>

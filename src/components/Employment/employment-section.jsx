@@ -21,7 +21,7 @@ const EmploymentSection = () => {
 
   return (
     <motion.section
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"

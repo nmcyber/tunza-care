@@ -23,7 +23,7 @@ export default function NDIS({
             {/* defines the white background color that will appear in the gap between the two seperate columns */}
             <div
               id='house-info'
-              className=' relative md:max-h-[85dvh] flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 '
+              className=' relative md:max-h-[85dvh] 2xl:max-h-[65dvh] flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 '
             >
               {/* ============================================= */}
               {/* LEFT Side - Content */}

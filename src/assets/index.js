@@ -4,6 +4,10 @@ export { default as logo } from "./svg/TUNZA-CARE-Logo.svg";
 
 // SVG
 export { default as target } from "./svg/targeting.svg";
+export { default as quotes } from "./svg/quotes.svg";
+export { default as mapPin } from "./svg/Location.svg";
+export { default as messageIcon } from "./svg/Message.svg";
+export { default as callIcon } from "./svg/Call.svg";
 export { default as verified } from "./svg/verified.svg";
 export { default as handshake } from "./svg/handshake.svg";
 export { default as heart_icon } from "./svg/heart_icon.svg";
