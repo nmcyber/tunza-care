@@ -14,8 +14,8 @@ import Gallery from "@/components/shared/Gallery";
 import { images1, images2 } from "@/constants";
 
 const healthcareServices = {
-  title: "Tunza Care",
-  highlightedTitle: "Australia",
+  highlightedTitle: "Comprehensive",
+  title: "Care Solutions",
   services: [
     { text: "Personal care and daily living" },
     { text: "Transport options" },
