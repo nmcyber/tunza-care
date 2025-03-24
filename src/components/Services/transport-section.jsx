@@ -1,41 +1,84 @@
+import { Card, CardContent } from "@/components/ui/card"
+import { charity_icon, Check_mark_custom, holding_hands_banner, logo, participation, verified, young_doctor } from "@/assets"
+import { InvertedBorder } from "../shared/InvertedRadius"
+import Typography from "../shared/Typography"
+
 const TransportSection = () => {
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col md:flex-row-reverse">
-          {/* Right side - Image */}
-          <div className="w-full md:w-2/5 relative">
-            <img
-              src="/placeholder.svg?height=400&width=400"
-              alt="Caregiver helping person in wheelchair into a van"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute bottom-4 left-4 bg-[#1a6b9f] text-white p-3 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-3.45c1.29 1.07 3.25 1.94 5 1.95zm-9 7c-1.66 0-3-1.34-3-3 0-1.31.84-2.41 2-2.83V12.1c-2.28.46-4 2.48-4 4.9 0 2.76 2.24 5 5 5 2.42 0 4.44-1.72 4.9-4h-2.07c-.41 1.16-1.52 2-2.83 2z" />
-              </svg>
-            </div>
-          </div>
+    <section className="w-full relative md:inset-y-20 flex flex-col">
+    {/* Content Section */}
+    <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="md:max-w-6xl 2xl:max-w-7xl mx-auto">
+        <Card className="rounded-xl overflow-hidden border-none shadow-lg">
+          <CardContent className="p-0">
+            <div className="flex flex-col p-8 md:gap-16 md:py-11 md:px-9 lg:flex-row border-0 border-indigo-800 ">
+              {/* Left Side - Our Approach */}
+              <div className=" grid justify-items-start items-start w-full lg:w-1/2 md:px-8 md:py-4 bg-[#f8f9fa] rounded-lg ">
+                {/* <Typography variant="subtitle" className=" text-left">Our Approach</Typography>
+                <Typography variant="h1" className="py-0 "
+                  h1Parts={[
+                    { text: "welcome", color: "color1" },
+                    { text: "communities", color: "color2" },
+                  ]} /> */}
 
-          {/* Left side - Content */}
-          <div className="w-full md:w-3/5 p-8">
-            <h2 className="text-3xl font-bold mb-4">
-              <span className="text-[#1a6b9f]">Transport</span> Options...
-            </h2>
-            <p className="text-gray-600 mb-4">
-              For every individual to be able to undertake both activities of daily living and meeting social needs,
-              there is a need for transportation from one place to the other.
-            </p>
-            <p className="text-gray-600">
-              At Tunza Care Services we will be able to provide all the client transport needs to ensure they meet their
-              personal and social integration.
-            </p>
-          </div>
-        </div>
+                <div className="space-y-4 text-gray-600">
+                <h2 className="text-3xl font-bold mb-4">
+                    <span className="text-[#1a6b9f]">Transport</span> Options...
+                  </h2>
+                  <p className="text-gray-600 mb-4">
+                    For every individual to be able to undertake both activities of daily living and meeting social needs,
+                    there is a need for transportation from one place to the other.
+                  </p>
+                  <p className="text-gray-600">
+                    At Tunza Care Services we will be able to provide all the client transport needs to ensure they meet their
+                    personal and social integration.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Side - Services List */}
+              <div id='house-image'
+                className='relative z-0 w-full md:w-1/2 outline-none border-0 border-fuchsia-500'>
+              <img
+                  src={participation}
+                  alt='Caregiver and client smiling together'
+                  className='w-full rounded-lg'
+                  style={{
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center top",
+                  }}
+                />
+              <InvertedBorder
+                bottom='0'
+                left='0'
+                padding='3'
+                rotation='-rotate-180'
+                innerColor={"bg-[#E1ECF1]"}
+                imgSrc={charity_icon}
+                imgAlt='Star Icon'
+                imgSize='36px'
+                imageRotation="-rotate-180"
+                afterTop='-top-2'
+                afterLeft='-left-6'
+                beforeRight='-right-3'
+                beforeBottom='-bottom-6'
+                spanBgColor='bg-primary'
+                afterRotation='rotate-[0deg]'
+                beforeRotation='rotate-[0deg]'
+                innerBorderRadius='rounded-bl-xl'
+              />
+                
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
+  </section>
   )
 }
 
 export default TransportSection
+          
 
