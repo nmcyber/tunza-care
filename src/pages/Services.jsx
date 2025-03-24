@@ -78,7 +78,7 @@ const Services = () => {
       <ServiceCards />
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-[#1a6b9f] text-white">
+      <section className=" pt-16 pb-36 -mb-20 bg-[#1a6b9f] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
