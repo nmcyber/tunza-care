@@ -1,9 +1,7 @@
-"use client"
 import { motion } from "framer-motion"
 import { ArrowRight, Heart } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { doctor_avatar, tunza_care_full_silhoutte_logo } from "@/assets"
-import { object } from "zod"
+import { doctor_avatar, dr_stethoscope, tunza_care_full_silhoutte_logo } from "@/assets"
 
 const BookAppointmentBanner = () => {
   return (
@@ -51,22 +49,14 @@ const BookAppointmentBanner = () => {
           >
             <div className="relative w-full flex justify-center h-full border-0 border-yellow-600">
               {/* Circular frame with doctor image */}
-              {/* w-[280px] h-[280px] md:w-[350px] md:h-[350px] mx-auto */}
-              <div className="relative aspect-square outline-0 outline-white ">
-                {/* <div className="absolute inset-0 rounded-tl-lg rounded-tr-full bg-red-500 p-2">
-                  <div className="w-full h-full rounded-tl-lg rounded-tr-full bg-[#2DBA98] overflow-hidden relative">
-                    <img
-                      src="/placeholder.svg?height=400&width=400"
-                      alt="Doctor with stethoscope"
-                      className="w-full h-full object-cover object-center"
-                    />
-                  </div>
-                </div> */}
-               
-               <div className=" relative z-0 aspect-square rounded-tl-lg border-0 border-pink-700">
+              <div className="relative aspect-square outline-0 outline-white ">               
+                <div className=" absolute z-20 overflow-hidden bbg-orange-300 bottom-4 left-4 aspect-square w-[80%] border-2 border-red-600">
+               <img src={dr_stethoscope} alt="doctor with stethoscope" className="absolute z-10 inset-0"/>
+                </div>
+               <div className=" relative z-0 aspect-square rounded-tl-lg border-2 border-pink-700">
                 {/* Right Angle Triangle */}
                 <div className=" absolute z-10 inset-0 aspect-square w-1/2 rounded-tl-md bg-lime-500 " />
-                 <div className=" absolute z-10 -top-0 -left-0 aspect-square w-[95%]  bg-lime-500 rounded-full" />
+                 <div className=" absolute z-10 -top-0 -left-0 aspect-square w-[95%] bg-lime-500 rounded-full" />
                  {/* Outer scaled white shape */}
                  <div className=" relative z-0 -inset-x-0 -inset-y-4 transform scale-[1.1]">
                  {/* Right Angle Triangle */}

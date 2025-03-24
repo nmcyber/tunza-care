@@ -231,6 +231,9 @@ export default function ApplicationPage() {
                     <SelectItem value="registered-nurse">
                       Registered Nurse
                     </SelectItem>
+                    <SelectItem value="enrolled-nurse">
+                      Enrolled Nurse
+                    </SelectItem>
                     <SelectItem value="assistant-nurse">
                       Assistant in Nursing
                     </SelectItem>

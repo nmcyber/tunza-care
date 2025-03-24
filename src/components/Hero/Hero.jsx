@@ -97,6 +97,7 @@ const Hero = () => {
               <p className="text-sm text-gray-500">People with us</p>
             </div>
 
+            {/* TODO:Staggered animation for stars */}
             <div className="flex">
               {[1, 2, 3, 4, 5].map((star) => (
                 <svg

@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Phone, Mail, MapPin, Twitter, Youtube, Anchor } from "lucide-react"
 
 const ContactSection = () => {
+  // TODO:Include ZOD for checking input
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -175,6 +176,9 @@ const ContactSection = () => {
 
                 {/* ==== File Upload ==== */}
 
+                TODO:To Add Backend Logic @Sagar
+                TODO:Feasable Databases eg. managed hosting Supabase, MongoDB
+
                 {/* <div className="mb-8">
                   <div
                     className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
@@ -242,9 +246,9 @@ const ContactSection = () => {
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Address</p>
                     <p className="font-medium">
-                      4 Dorchester Turn
+                      6/15 Pattie Street
                       <br />
-                      Canning Vale 6155
+                      Cannington WA 6107
                     </p>
                   </div>
                 </div>
