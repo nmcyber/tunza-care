@@ -11,6 +11,7 @@ import PrivacyPolicy from './pages/Privacy-Policy';
 import TermsConditions from './pages/Terms-Conditions';
 import ScrollToTop from './utlis/ScrollToTop';
 import ApplicationPage from './pages/Applications';
+import CareersPage from './pages/Careers';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/employment" element={<EmploymentPage />} />
-        <Route path="/careers" element={<ApplicationPage />} />
+        <Route path="/careers" element={<CareersPage />} />
         <Route path="/careers/apply" element={<ApplicationPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

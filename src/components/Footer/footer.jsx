@@ -79,6 +79,15 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                  <Link
+                    to={'/careers'}
+                    className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                  >
+                    <span className="mr-2">›</span>
+                    careers
+                  </Link>
+                </li>
             </ul>
           </motion.div>
 
