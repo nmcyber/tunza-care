@@ -22,13 +22,13 @@ export default function NDIS({
             {/* defines the white background color that will appear in the gap between the two seperate columns */}
             <div
               id='house-info'
-              className=' relative md:max-h-[85dvh] 2xl:max-h-[65dvh] flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 '
+              className=' relative md:max-h-screen 2xl:max-h-[70dvh] flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 '
             >
               {/* ============================================= */}
               {/* LEFT Side - Content */}
               {/* ============================================= */}
               <div className='w-full md:w-1/2 p-6 bg-background md:p-10 relative rounded-lg border-0 border-lime-500'>
-                <div className=' space-y-6 '>
+                <div className=' space-y-4 '>
                   <>
                     <Typography variant='subtitle'>What We Offer</Typography>
                     <Typography
@@ -39,8 +39,8 @@ export default function NDIS({
                         { text: title, color: "color1" },
                       ]}
                     />
+                <Typography variant='p' className='text-lg p-0 m-0 max-w-xl'>We provide a wide range of NDIS-registered services tailored to meet your individual needs and goals:</Typography>
                   </>
-                <Typography variant='span' className='text-lg max-w-xl'>We provide a wide range of NDIS-registered services tailored to meet your individual needs and goals:</Typography>
                   <ul className='space-y-2'>
                     {services.map((service, index) => (
                       <li key={index} className='flex items-start gap-2'>
