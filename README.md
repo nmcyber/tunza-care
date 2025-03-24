@@ -26,8 +26,8 @@ Tunza Care Services is a Western Australian NDIS provider offering a range of in
             <td align="center"><strong>After</strong></td>
         </tr>
         <tr>
-            <td><img src="https://github.com/nmcyber/tunza-care/blob/main/tunza_care_landing_page_before.png" alt="Old Tunza Care Website" /></td>
-            <td><img src="https://github.com/nmcyber/tunza-care/blob/main/laptop_tunza-nmcyber-2025-03-25-02_14_33_after.png" alt="New Tunza Care Website" /></td>
+            <td><img src="https://github.com/nmcyber/tunza-care/blob/main/public/tunza_care_landing_page_before.png" alt="Old Tunza Care Website" /></td>
+            <td><img src="https://github.com/nmcyber/tunza-care/blob/main/public/laptop_tunza-nmcyber-2025-03-25-02_14_33_after.png" alt="New Tunza Care Website" /></td>
         </tr>
         <tr>
             <td>Static design with limited functionality</td>
