@@ -13,11 +13,11 @@ export default function NDIS({
   className,
 }) {
   return (
-    <section className=' relative z-10 flex flex-col outline-0 outline-pink-700 container mx-auto py-12 bg-background overflow-hiddenn bbg-[url(/left_.svg)] bg-no-repeat after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 '>
+    <section className=' relative z-10 flex flex-col container mx-auto py-12 bg-background overflow-hiddenn bbg-[url(/left_.svg)] bg-no-repeat after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:top-0 after:-right-[2.15%] after:z-0 '>
       {/* Main Content Card */}
       <div className=' flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none '>
         {/* Controls where the overflow is at for the inverted border radius */}
-        <Card className='rounded-lg bg-none overflow-hiddenn border-0 border-lime-500 outline-none shadow-none'>
+        <Card className='rounded-lg bg-none outline-none shadow-none'>
           <CardContent className='p-0 bg-none '>
             {/* defines the white background color that will appear in the gap between the two seperate columns */}
             <div
@@ -57,7 +57,7 @@ export default function NDIS({
               {/* Right Side - Image with Play Button and inverted border radius */}
               <div
                 id='house-image'
-                className='relative z-0 w-full md:w-1/2 outline-none border-0 border-fuchsia-500'
+                className='relative z-0 w-full md:w-1/2 outline-none'
               >
                 <img
                   src={young_doctor}
