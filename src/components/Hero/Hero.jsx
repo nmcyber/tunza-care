@@ -1,10 +1,7 @@
-"use client"
-
 import { useEffect, useRef } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
-import { ChevronRightIcon, MapPin, Play } from "lucide-react"
+import { ChevronRightIcon, Play } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
 import { AvatarGroup } from "@/components/ui/avatar-group"
 import { avatar_1, avatar_2, avatar_3, banner, heart_icon } from "@/assets"
 import Typography from "../shared/Typography"
@@ -28,7 +25,7 @@ const Hero = () => {
 
   return (
     <section className=" px-4 sm:px-6 lg:px-8 py-8 md:py-12  bg-white">
-      <div className=" md:max-w-[90svw] mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-12 outline-0 outline-lime-500">
+      <div className=" md:max-w-[90svw] mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-12 ">
         {/* Left Section */}
         <div className="w-full md:w-1/2 space-y-6">
           <motion.div
@@ -51,8 +48,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-          // TODO: Add a Link to Calendly
-          <ShimmerButton className="shadow-2xl bg-primary hover:bg-[#155a87] text-white rounded-full px-6 py-2 text-lg font-medium"  > {/* Add any specific styling for the shimmer container if needed */}
+          {/* // TODO: Add a Link to Calendly */}
+          <ShimmerButton className="shadow-2xl bg-primary hover:bg-primary text-white rounded-full px-6 py-2 text-lg font-medium"  > {/* Add any specific styling for the shimmer container if needed */}
               Book Appointment
               <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
           </ShimmerButton>
