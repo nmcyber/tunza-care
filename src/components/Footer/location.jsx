@@ -3,6 +3,7 @@ import MapComponent from "../shared/MapComponent";
 import Typography from "../shared/Typography";
 import { contactData } from "@/constants";
 import { handleObfuscatedClick, obfuscateValue } from "@/utlis/obfuscation";
+import { Link } from "react-router-dom";
 
 const Location = () => {
   const ContactItem = ({ iconSrc, altText, title, value, linkType }) => {
@@ -65,9 +66,9 @@ const Location = () => {
               <ContactItem key={index} {...item} />
             ))}
           </ul>
-          <button className="mt-6 px-6 py-3 w-48  bg-primary text-white rounded-md outline outline-transparent shadow-xl hover:outline-white hover:shadow-2xl hover:bg-primary/95">
+          <Link to="/contact" className="mt-6 px-6 py-3 w-48 bg-primary text-white rounded-md outline outline-transparent shadow-xl hover:outline-white hover:shadow-2xl hover:bg-primary/95">
             Contact Form
-          </button>
+          </Link>
         </div>
 
         {/* Google Map Section */}

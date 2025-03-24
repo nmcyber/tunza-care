@@ -9,7 +9,7 @@ const StaffingOpportunities = () => {
   const jobCategories = [
     {
       id: "1",
-      title: "Registered Nurses",
+      title: "Enrolled Nurses",
       services: [
         "Personal care and daily living",
         "Transport options",
