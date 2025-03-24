@@ -17,7 +17,7 @@ const ServicesSection = () => {
   ]
 
   return (
-    <div className="w-full relative md:inset-y-20 flex flex-col">
+    <section className="w-full relative md:inset-y-20 flex flex-col">
       {/* Banner Section */}
       <section className="relative w-full bg-primary/90 text-white">
         <div className="absolute inset-0 z-0">
@@ -108,7 +108,7 @@ const ServicesSection = () => {
           </Card>
         </div>
       </section>
-    </div>
+    </section>
   )
 }
 

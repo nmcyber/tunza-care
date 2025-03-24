@@ -1,9 +1,11 @@
 import BookAppointmentBanner from "@/components/Services/BookAppointment"
 import HealthcareBanner from "@/components/Services/BookAppointment"
+import IndependentLivingSection from "@/components/Services/independent-living-section"
 import JobSupportSection from "@/components/Services/job-support-section"
 import PersonalCareSection from "@/components/Services/personal-care-section"
 import ServicesSection from "@/components/Services/ServicesSection"
 import SocialParticipationSection from "@/components/Services/social-participation-section"
+import SupportSection from "@/components/Services/support-section"
 import TransportSection from "@/components/Services/transport-section"
 
 // Additional service-related components or sections could be added here
@@ -69,6 +71,8 @@ const Services = () => {
       <TransportSection />
       <SocialParticipationSection />
       <JobSupportSection />
+      <SupportSection />
+      <IndependentLivingSection />
 
       {/* Additional Service Details */}
       <ServiceCards />

@@ -1,4 +1,7 @@
-import { Check } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { charity_icon, Check_mark_custom, personal_care, social } from "@/assets"
+import { InvertedBorder } from "../shared/InvertedRadius"
+import Typography from "../shared/Typography"
 
 const SocialParticipationSection = () => {
   const benefits = [
@@ -14,47 +17,77 @@ const SocialParticipationSection = () => {
   ]
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-white rounded-2xl overflow-hidden shadow-md flex flex-col md:flex-row">
-          {/* Left side - Image */}
-          <div className="w-full md:w-2/5 relative">
-            <img
-              src="/placeholder.svg?height=400&width=400"
-              alt="People in wheelchairs playing basketball"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute top-4 right-4 bg-[#1a6b9f] text-white p-3 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
-              </svg>
-            </div>
-          </div>
+    <section className="w-full relative md:inset-y-20 flex flex-col ">
+      {/* Content Section */}
+      <section className=" py-12 px-4 sm:px-6 lg:px-8 ">
+        <div className=" md:max-w-6xl 2xl:max-w-7xl mx-auto">
+          <Card className="rounded-xl overflow-hidden border-none shadow-lg">
+            <CardContent className="p-0">
+              <div className="flex flex-col p-8 md:gap-16 md:py-11 md:px-10 lg:flex-row-reverse border-0 border-indigo-600 ">
 
-          {/* Right side - Content */}
-          <div className="w-full md:w-3/5 p-8">
-            <h2 className="text-3xl font-bold mb-4">
-              <span className="text-[#1a6b9f]">Social And Community</span> Participation....
-            </h2>
-            <p className="text-gray-600 mb-6">
-              At Tunza Care Services we are compassionate about our clients and it is our responsibility to ensure that
-              they are well integrated into social and community activities. Support workers at Tunza Care Services will
-              help our clients to join and participate in neighbouring local activities that will help them:
-            </p>
+                  {/* Left side - Content */}
+                <div className=" grid justify-items-start items-start w-full lg:w-1/2 bg-none">
+                  <Typography variant="h1" className={"py-4"}
+                    h1Parts={[
+                      { text: "Personal Care", color: "color1" },
+                      { text: "And Daily Living...", color: "color2" },
+                    ]} />
+                    <Typography variant="p" className="mb-6">
+                    Tunza Care will provide you with assistance in self-care tasks and daily personal care such as:
+                  </Typography>
 
-            <ul className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 mt-1 text-green-500">
-                    <Check className="h-5 w-5" />
-                  </span>
-                  <span className="text-gray-700">{benefit.text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  <ul className="space-y-3">
+                    {benefits.map((service, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <span className="flex-shrink-0 mt-1 text-green-500">
+                          <Check_mark_custom className="h-5 w-5" />
+                        </span>
+                        <span className="text-gray-700">{service.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Right side - Image */}
+
+                <div
+                id='house-image'
+                className='relative z-0 w-full md:w-1/2 outline-none border-0 border-fuchsia-500'
+              >
+                <img
+                  src={social}
+                  alt='Caregiver and client smiling together'
+                  className='w-full rounded-lg'
+                  style={{
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center top",
+                  }}
+                />
+                 <InvertedBorder
+                  top='0'
+                  right='0'
+                  padding='4'
+                  rotation='-rotate-0'
+                  innerColor={"bg-[#E1ECF1]"}
+                  imgSrc={charity_icon}
+                  imgAlt='Star Icon'
+                  imgSize='36px'
+                  afterTop='-top-2'
+                  afterLeft='-left-6'
+                  beforeRight='-right-3'
+                  beforeBottom='-bottom-6'
+                  spanBgColor='bg-primary'
+                  afterRotation='rotate-[0deg]'
+                  beforeRotation='rotate-[0deg]'
+                  innerBorderRadius='rounded-bl-xl'
+                />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
-      </div>
+      </section>
     </section>
   )
 }

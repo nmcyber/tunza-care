@@ -35,9 +35,13 @@ export { default as image6 } from "./images/young_doctor.webp";
 export { default as image7 } from "./images/old_man_weatherly.webp";
 export { default as image8 } from "./images/about-tunza-care.webp";
 
+export { default as social } from "./images/social.webp";
+export { default as support } from "./images/support.webp";
 export { default as young_doctor } from "./images/young_doctor.webp";
 export { default as personal_care } from "./images/personal_care.webp";
+export { default as finding_and_keeping } from "./images/finding_and_keeping.webp";
 export { default as dr_stethoscope } from "./images/dr_stethoscope.webp";
+export { default as participation } from "./images/participation.webp";
 export { default as about_tunza_care } from "./images/about-tunza-care.webp";
 export { default as nurse_patient_care } from "./images/nurse_patient_care.webp";
 export { default as holding_hands_banner } from "./images/holding_hands_services_page_banner.webp";
