@@ -17,7 +17,7 @@
 
 Tunza Care Services is a Western Australian NDIS provider offering a range of in-home care, community participation, supported independent living, clinical care, and allied health services. This project is a complete redesign and development of their website, focusing on improved user experience, accessibility, and modern design principles.
 
-## ✨ Before & After
+## ✨ Landing Page - Laptop/Larger Screens View Comparison Before & After
 
 <div align="center">
     <table>
@@ -34,9 +34,30 @@ Tunza Care Services is a Western Australian NDIS provider offering a range of in
             <td>Dynamic, responsive design with modern UI components</td>
         </tr>
         <tr>
-            <td><img src="/large_desktop_view-dev-tunza-nmcyber-2025-03-25-02_15_47_after.png" alt="Large Desktop View (1920 x 1080)" /></td>
+            <td align="center"><strong>Before</strong></td>
+            <td align="center"><strong>After</strong></td>
+        </tr>
+         <tr>
+            <td>Coming Soon!</td>
+            <td><img src="https://github.com/nmcyber/tunza-care/blob/main/public/large_desktop_view-dev-tunza-nmcyber-2025-03-25-02_15_47_after.png" alt="New Landing Page Large Desktop View (1920 x 1080)" /></td>
         </tr>
     </table>
+</div>
+
+## Landing Page - Mobile View Comparison
+
+This table shows the before and after images of the Landing page on mobile devices.
+<div>
+    <table>
+            <tr>
+                <td align="center"><strong>Before</strong></td>
+                <td align="center"><strong>After</strong></td>
+            </tr>
+            <tr>
+                <td><img src="https://github.com/nmcyber/tunza-care/blob/main/public/mobile_landing_page_-tunzacareservices-au-2025-03-25-03_18_38_before.png" alt="Mobile View Before Image" /></td>
+                <td>Coming Soon!</td>
+            </tr>
+        </table>
 </div>
 
 ## 🚀 Key Features
