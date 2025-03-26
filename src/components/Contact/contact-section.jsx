@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Twitter, Youtube, Anchor } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { ToastAction } from "./ui/toast";
+import { ToastAction } from "../ui/toast";
 
 const ContactSection = () => {
   const [errors, setErrors] = useState({});
@@ -293,8 +293,8 @@ const ContactSection = () => {
                   )}
                 </div>
                 {/* ==== File Upload ==== */}
-                TODO:To Add Backend Logic @Sagar TODO:Feasable Databases eg.
-                managed hosting Supabase, MongoDB
+                {/* TODO:To Add Backend Logic @Sagar TODO:Feasable Databases eg.
+                managed hosting Supabase, MongoDB */}
                 {/* <div className="mb-8">
                   <div
                     className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${

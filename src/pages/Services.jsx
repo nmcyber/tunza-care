@@ -6,6 +6,8 @@ import PersonalCareSection from "@/components/Services/personal-care-section";
 import ServicesSection from "@/components/Services/ServicesSection";
 import SocialParticipationSection from "@/components/Services/social-participation-section";
 import TransportSection from "@/components/Services/transport-section";
+import { Link } from "react-router-dom";
+import ContactPage from "./Contact";
 // Additional service-related components or sections could be added here
 const ServiceCards = () => {
   const serviceDetails = [
@@ -36,29 +38,29 @@ const ServiceCards = () => {
   ];
 
   return (
-    <section className='py-16 bg-white'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-12'>
-          <h2 className='text-3xl font-bold text-gray-900'>
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900">
             Our Service Details
           </h2>
-          <p className='mt-4 text-lg text-gray-600 max-w-3xl mx-auto'>
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             We provide comprehensive care services tailored to meet your
             individual needs and preferences.
           </p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {serviceDetails.map((service, index) => (
             <div
               key={index}
-              className='bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300'
+              className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
             >
-              <div className='text-4xl mb-4'>{service.icon}</div>
-              <h3 className='text-xl font-semibold text-gray-900 mb-2'>
+              <div className="text-4xl mb-4">{service.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {service.title}
               </h3>
-              <p className='text-gray-600'>{service.description}</p>
+              <p className="text-gray-600">{service.description}</p>
             </div>
           ))}
         </div>
@@ -69,7 +71,7 @@ const ServiceCards = () => {
 
 const Services = () => {
   return (
-    <section className='min-h-screen'>
+    <section className="min-h-screen">
       {/* Main Services Banner and Overview */}
       <ServicesSection />
 
@@ -89,11 +91,16 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-lg mb-8 max-w-3xl mx-auto">
-            Contact us today to learn more about how we can tailor our services to meet your specific needs.
+            Contact us today to learn more about how we can tailor our services
+            to meet your specific needs.
           </p>
-          <button className='bg-white text-[#1a6b9f] px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors'>
-            Contact Us
-          </button>
+
+          <Link
+            to="/contact"
+            className="bg-white text-[#1a6b9f] px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+          >
+            Contact us
+          </Link>
         </div>
       </section>
     </section>

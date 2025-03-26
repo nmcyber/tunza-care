@@ -109,3 +109,18 @@ export const contactData = [
     linkType: "tel",
   },
 ];
+
+export const services = [ 
+    "Personal care and daily living",
+    "Transport options",
+    "24/7 support" ,
+    "Social and community participation" ,
+    "Finding and keeping a job",
+    "Individual living options (ILO)",
+    "Supporting independent living (SIL)",
+    "Level 2 Support Coordination",
+    "Respite",
+    "Staffing agent"  
+];
+
+
