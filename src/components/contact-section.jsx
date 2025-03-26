@@ -1,12 +1,20 @@
-import React, { useState } from "react"
-import { motion } from "framer-motion"
-import { FaTiktok } from "react-icons/fa"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Twitter, Youtube, Anchor } from "lucide-react"
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { FaTiktok } from "react-icons/fa";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, Twitter, Youtube, Anchor } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { ToastAction } from "./ui/toast";
 
 const ContactSection = () => {
+  const [errors, setErrors] = useState({});
+  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const { toast } = useToast();
   // TODO:Include ZOD for checking input
   const [formData, setFormData] = useState({
     name: "",
@@ -15,43 +23,113 @@ const ContactSection = () => {
     phone: "",
     message: "",
     files: null,
-  })
+  });
 
-  const [isDragging, setIsDragging] = useState(false)
+  useEffect(() => {
+    setFormData((prevData) => ({ ...prevData, recipient: formData.email }));
+  }, []);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-  const handleFileChange = (e) => {
-    setFormData((prev) => ({ ...prev, files: e.target.files }))
-  }
+  // const handleFileChange = (e) => {
+  //   setFormData((prev) => ({ ...prev, files: e.target.files }))
+  // }
 
-  const handleDragOver = (e) => {
-    e.preventDefault()
-    setIsDragging(true)
-  }
-
-  const handleDragLeave = () => {
-    setIsDragging(false)
-  }
-
-  const handleDrop = (e) => {
-    e.preventDefault()
-    setIsDragging(false)
-
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      setFormData((prev) => ({ ...prev, files: e.dataTransfer.files }))
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = "name is required.";
+    if (!formData.email) {
+      newErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid.";
     }
-  }
+    if (!formData.company) newErrors.company = "company name is required.";
+    if (!formData.phone) {
+      newErrors.phone = "Phone number is required.";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = "Phone number must be 10 digits.";
+    }
+    if (!formData.industry) newErrors.industry = "Please select an industry.";
+    if (!formData.message) newErrors.message = "Message is required.";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle form submission logic here
-    console.log(formData)
-    // Reset form or show success message
-  }
+    e.preventDefault();
+    if (validate()) {
+      setIsSubmiting(true);
+      console.log("Sending message...", formData, turnstileToken);
+      emailjs
+      // need to update the credetials of emailjs with the tunza email
+        .send(
+          import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID,
+          { ...formData, recipient: formData.email },
+          import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID
+        )
+        .then(
+          (response) => {
+            toast({
+              title: "Message Sent",
+              description: "Success! Check your mail box.",
+              duration: 5000,
+              // action: <ToastAction altText="Thank you!">Close</ToastAction>,
+              className:
+                " top-0 right-0 flex before:absolute z-10 before:inset-0 bg-[rgba(0,21,48,0.51)] backdrop-blur-[3.5px] border-none outline outline-1 outline-tertiary/80 ",
+            });
+            setFormData({
+              name: "",
+              email: "",
+              organisation: "",
+              phone: "",
+              industry: "",
+              message: "",
+              to_email: formData.email,
+              recipient: formData.email,
+              confirmation_link:
+                "https://nmcyber.com.au/confirm?email=" +
+                encodeURIComponent(formData.email),
+            });
+          },
+          (error) => {
+            // console.error("FAILED...", error);
+            toast({
+              title: "Error",
+              description: "Failed to send message. Please try again.",
+              action: <ToastAction altText="Try again">Try again</ToastAction>,
+              variant: "destructive",
+              duration: 5000,
+            });
+          }
+        )
+        .finally(() => {
+          setIsSubmiting(false);
+        });
+    }
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setIsDragging(false);
+
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      setFormData((prev) => ({ ...prev, files: e.dataTransfer.files }));
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -62,12 +140,12 @@ const ContactSection = () => {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1 },
-  }
+  };
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
@@ -83,13 +161,16 @@ const ContactSection = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden p-8 md:p-10">
-          <motion.div variants={itemVariants} className="max-w-3xl mx-auto mb-10">
+          <motion.div
+            variants={itemVariants}
+            className="max-w-3xl mx-auto mb-10"
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-primary">Stay Touch</span> With Us
             </h2>
             <p className="text-gray-600">
-              Talk to us anytime, we are quick to respond and have full capacity to intake clients and answer all
-              enquiries.
+              Talk to us anytime, we are quick to respond and have full capacity
+              to intake clients and answer all enquiries.
             </p>
           </motion.div>
 
@@ -98,7 +179,10 @@ const ContactSection = () => {
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Name
                     </label>
                     <Input
@@ -110,10 +194,18 @@ const ContactSection = () => {
                       className="w-full"
                       required
                     />
+                    {errors.name && (
+                      <p className="text-tertiary text-xs mt-1">
+                        {errors.name}
+                      </p>
+                    )}
                   </div>
 
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="company"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Company
                     </label>
                     <Input
@@ -124,12 +216,19 @@ const ContactSection = () => {
                       placeholder="Enter company here"
                       className="w-full"
                     />
+                    {errors.company && (
+                      <p className="text-tertiary text-xs mt-1">
+                        {errors.company}
+                      </p>
+                    )}
                   </div>
                 </div>
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Email Address
                     </label>
                     <Input
@@ -142,10 +241,18 @@ const ContactSection = () => {
                       className="w-full"
                       required
                     />
+                    {errors.email && (
+                      <p className="text-tertiary text-xs mt-1">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Phone No
                     </label>
                     <Input
@@ -156,11 +263,18 @@ const ContactSection = () => {
                       placeholder="Enter phone here"
                       className="w-full"
                     />
+                    {errors.phone && (
+                      <p className="text-tertiary text-xs mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
                 </div>
-
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Message/Inquiry
                   </label>
                   <Textarea
@@ -172,13 +286,15 @@ const ContactSection = () => {
                     className="w-full min-h-[150px]"
                     required
                   />
+                  {errors.message && (
+                    <p className="text-tertiary text-xs mt-1">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
-
                 {/* ==== File Upload ==== */}
-
-                TODO:To Add Backend Logic @Sagar
-                TODO:Feasable Databases eg. managed hosting Supabase, MongoDB
-
+                TODO:To Add Backend Logic @Sagar TODO:Feasable Databases eg.
+                managed hosting Supabase, MongoDB
                 {/* <div className="mb-8">
                   <div
                     className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
@@ -201,17 +317,20 @@ const ContactSection = () => {
                     </div>
                   </div>
                 </div> */}
-
                 <Button
                   type="submit"
                   className="bg-primary hover:bg-primary text-white px-8 py-6 h-auto rounded-full text-base"
+                  disabled={isSubmiting}
                 >
-                  Submit Now
+                  {isSubmiting ? "Submiting..." : "Submit Now"}
                 </Button>
               </form>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="bg-gray-50 rounded-xl p-6">
+            <motion.div
+              variants={itemVariants}
+              className="bg-gray-50 rounded-xl p-6"
+            >
               <div className="space-y-6">
                 <div className="bg-amber-50 rounded-xl p-4 flex items-start">
                   <div className="flex-shrink-0 mr-4">
@@ -299,7 +418,7 @@ const ContactSection = () => {
         </div>
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;
