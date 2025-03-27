@@ -9,7 +9,7 @@ import EmploymentPage from './pages/Employment';
 import ContactPage from './pages/Contact';
 import PrivacyPolicy from './pages/Privacy-Policy';
 import TermsConditions from './pages/Terms-Conditions';
-import ScrollToTop from './utlis/ScrollToTop';
+import ScrollToTop from './utils/ScrollToTop';
 import ApplicationPage from './pages/Applications';
 
 function App() {

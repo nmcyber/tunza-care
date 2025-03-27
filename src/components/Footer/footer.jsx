@@ -1,7 +1,11 @@
+
+// import Link from "next/link"
 import { motion } from "framer-motion"
 import { navigation, socials } from "@/constants"
 import { Phone, Mail, MapPin, Heart } from "lucide-react"
+// import { obfuscateValue, handleObfuscatedClick } from "@/lib/utils"
 import { Link } from "react-router-dom"
+import { handleObfuscatedClick, obfuscateValue } from "@/utils/obfuscation"
 import { logo } from "@/assets"
 
 const Footer = () => {
@@ -23,8 +27,14 @@ const Footer = () => {
     visible: { y: 0, opacity: 1 },
   }
 
+  // Obfuscate contact information
+  const phoneNumber = "0893876326"
+  const emailAddress = "admin@tunzacare.com.au"
+  const obfuscatedPhone = obfuscateValue(phoneNumber)
+  const obfuscatedEmail = obfuscateValue(emailAddress)
+
   return (
-    <footer className="bg-white pt-12 relative rounded-t-xl md:rounded-t-4xl overflow-hidden">
+    <footer className="bg-white pt-16 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
       <div className="absolute -left-20 top-40 w-40 h-40 rounded-full border-[15px] border-sky-50/50 -z-10"></div>
@@ -40,9 +50,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10">
           {/* Company Info */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <Link to="/" className="inline-block">
-              <img src={logo} alt="Tunza Care Services Logo" className="h-24 w-auto" />
+            <Link href="/" className="inline-block">
+              <img src={logo} alt="Tunza Care Services Logo" className="h-16 w-auto" />
             </Link>
+
             <p className="text-gray-600 max-w-xs">
               Tunza Care Services is a WA NDIS provider, offering a range of in-home care and support services across
               Western Australia.
@@ -53,7 +64,7 @@ const Footer = () => {
                 <motion.a
                   href={link}
                   key={index}
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1a6b9f]/10 text-[#1a6b9f] hover:bg-[#1a6b9f] hover:text-white transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={ariaLabel}
@@ -66,13 +77,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h4 className="font-semibold text-xl text-primary">Quick Links</h4>
+            <h4 className="font-semibold text-xl text-[#1a6b9f]">Quick Links</h4>
             <ul className="space-y-3">
               {navigation.map((item) => (
                 <li key={item.id}>
                   <Link
-                    to={item.url}
-                    className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                    href={item.url}
+                    className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
                   >
                     <span className="mr-2">›</span>
                     {item.title}
@@ -84,12 +95,12 @@ const Footer = () => {
 
           {/* Our Services */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h4 className="font-semibold text-xl text-primary">Our Services</h4>
+            <h4 className="font-semibold text-xl text-[#1a6b9f]">Our Services</h4>
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                  href="/services"
+                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Personal Care
@@ -97,8 +108,8 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                  href="/services"
+                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Transport Options
@@ -106,8 +117,8 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                  href="/services"
+                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Community Participation
@@ -115,8 +126,8 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                  href="/services"
+                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Independent Living
@@ -124,8 +135,8 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
+                  href="/services"
+                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Support Coordination
@@ -134,31 +145,40 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Updated with obfuscation */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h4 className="font-semibold text-xl text-primary">Contact Us</h4>
+            <h4 className="font-semibold text-xl text-[#1a6b9f]">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1a6b9f]/10 flex items-center justify-center text-[#1a6b9f]">
                   <Phone size={18} />
                 </div>
-                <a href="tel:0893876326" className="text-gray-600 hover:text-primary transition-colors duration-200">
+                <a
+                  href="#"
+                  data-type="tel"
+                  data-value={obfuscatedPhone}
+                  onClick={handleObfuscatedClick}
+                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200"
+                >
                   08 9387 6326
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1a6b9f]/10 flex items-center justify-center text-[#1a6b9f]">
                   <Mail size={18} />
                 </div>
                 <a
-                  href="mailto:info@tunzacare.com.au"
-                  className="text-gray-600 hover:text-primary transition-colors duration-200"
+                  href="#"
+                  data-type="mailto"
+                  data-value={obfuscatedEmail}
+                  onClick={handleObfuscatedClick}
+                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200"
                 >
                   info@tunzacare.com.au
                 </a>
               </li>
               <li className="flex space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1a6b9f]/10 flex items-center justify-center text-[#1a6b9f] mt-1">
                   <MapPin size={18} />
                 </div>
                 <address className="text-gray-600 not-italic">
@@ -190,20 +210,20 @@ const Footer = () => {
 
           <div className="flex items-center space-x-6">
             <Link
-              to="/privacy-policy"
-              className="text-sm text-gray-500 hover:text-primary transition-colors duration-200"
+              href="/privacy-policy"
+              className="text-sm text-gray-500 hover:text-[#1a6b9f] transition-colors duration-200"
             >
               Privacy Policy
             </Link>
             <Link
-              to="/terms-conditions"
-              className="text-sm text-gray-500 hover:text-primary transition-colors duration-200"
+              href="/terms-conditions"
+              className="text-sm text-gray-500 hover:text-[#1a6b9f] transition-colors duration-200"
             >
               Terms & Conditions
             </Link>
-            <div className="flex items-center text-primary">
+            <div className="flex items-center text-[#1a6b9f]">
               <span className="text-sm mr-1">Made with</span>
-              <Heart size={14} className="fill-primary" />
+              <Heart size={14} className="fill-[#1a6b9f]" />
             </div>
           </div>
         </motion.div>

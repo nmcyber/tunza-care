@@ -1,12 +1,12 @@
-import NDIS from "@/components/Landing/NDIS";
 import Hero from "@/components/Hero/Hero";
+import NDIS from "@/components/Landing/NDIS";
+import { images1, images2 } from "@/constants";
+import Gallery from "@/components/shared/Gallery";
 import Location from "@/components/Footer/location";
 import { TestimonialsSection } from "@/components/Landing/Testimonials";
 import TrustedPartnership from "@/components/Landing/TrustedPartnerships";
 import BookAppointmentBanner from "@/components/Services/BookApppointment/BookAppointment";
 import { OurPrinciplesSection } from "@/components/Landing/CoreMissionVision/OurPrinciplesSection";
-import Gallery from "@/components/shared/Gallery";
-import { images1, images2 } from "@/constants";
 
 const healthcareServices = {
   highlightedTitle: "Comprehensive",
