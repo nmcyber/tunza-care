@@ -1,11 +1,13 @@
 
 // logos
 export { default as logo } from "./svg/TUNZA-CARE-Logo.svg";
+export { default as nmcyber_logo } from "/logos/nmcyber_logo.png";
 
 // SVG
 export { default as quotes } from "./svg/quotes.svg";
 export { default as Check_mark_custom } from "./svg/check-mark.svg?react";
 export { default as callIcon } from "./svg/Call.svg";
+export { default as living_room } from "./svg/living-room.svg";
 export { default as charity_icon } from "./svg/charity.svg";
 export { default as mapPin } from "./svg/Location.svg";
 export { default as target } from "./svg/targeting.svg";
@@ -22,6 +24,7 @@ export { default as stars } from "./images/stars.png";
 export { default as bgMap } from "./images/bgMap.png";
 export { default as reviews } from "./images/reviews.png";
 export { default as doctor } from "./images/doctorlogo.png";
+export { default as indepedent_living } from "./images/individual_living_option.webp";
 export { default as doctor_avatar } from "./images/dr_jones.webp";
 export { default as banner } from "./images/old_man_weatherly.webp";
 export { default as smilling_nurse } from "./images/smiling-nurse-standing.webp";

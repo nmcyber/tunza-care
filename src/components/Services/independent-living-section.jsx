@@ -1,3 +1,7 @@
+import { indepedent_living, living_room } from '@/assets'
+import { Card, CardContent } from "@/components/ui/card"
+import { InvertedBorder } from "../shared/InvertedRadius"
+import Typography from "../shared/Typography"
 import { Check } from "lucide-react"
 
 const IndependentLivingSection = () => {
@@ -11,24 +15,33 @@ const IndependentLivingSection = () => {
   ]
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-gray-50 rounded-3xl overflow-hidden shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-12 items-center">
-            {/* Left side - Content */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold">
-                Individual Living <span className="text-[#1a6b9f]">Option (ILO)....</span>
-              </h2>
+    <section className="w-full relative md:inset-y-20 flex flex-col">
+    {/* Content Section */}
+    <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="md:max-w-6xl 2xl:max-w-7xl mx-auto">
+        <Card className="rounded-xl overflow-hidden border-none shadow-lg">
+          <CardContent className="p-0">
+            <div className="flex flex-col p-8 md:gap-16 md:py-11 md:max-h-[90dvh] 2xl:max-h-[60dvh] md:px-9 lg:flex-row border-0 border-indigo-800 ">
+            <div className=' grid md:flex gap-8 rounded-lg bg-[#f8f9fa]'>
+              {/* Left Side - Our Approach */}
+              <div className=" grid justify-items-start items-start w-full lg:w-1/2 md:px-8 md:py-4 bg-[#f8f9fa] rounded-lg ">
+                {/* <Typography variant="subtitle" className=" text-left">Our Approach</Typography> */}
+                <Typography variant="h1" className="py-0 "
+                  h1Parts={[
+                    { text: "Individual Living", color: "color1" },
+                    { text: "Option (ILO)....", color: "color2" },
+                  ]} />
 
-              <p className="text-gray-600">
+                <div className="space-y-4 text-gray-600">
+                <Typography variant="p" className="text-gray-600">
                 We all need a place to call home, where you can relax and unwind. Where you can make choices and take
                 full control of your independence or a place that feel part of a family with shared living or host
                 arrangement. Tunza Care will help you have that choice and control of who to live with, where to live
                 and how you want to live. The support team will help you to:
-              </p>
-
-              {/* Services list with checkmarks */}
+              </Typography>
+                </div>
+                <>
+                  {/* Services list with checkmarks */}
               <ul className="space-y-2 mt-4">
                 {services.map((service, index) => (
                   <li key={index} className="flex items-start">
@@ -37,56 +50,68 @@ const IndependentLivingSection = () => {
                   </li>
                 ))}
               </ul>
+                </>
+              </div>
 
-              {/* Circular icon */}
-              <div className="relative w-12 h-12 mt-4">
-                <div className="absolute inset-0 bg-[#1a6b9f] rounded-full flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                    />
-                  </svg>
-                </div>
+              {/* Right Side - Services List */}
+              <div id='house-image'
+                className='relative z-0 w-full md:w-1/2 '>
+                <div className=' w-full scale-110 rounded-bl-xl h-full absolute inset-0 z-10 bg-white outline-8 outline-fuchsia-500' />
+
+                <div className=' absolute -top-2 -left-14 w-8 aspect-sqaure bg-radial-[at_100%_100%] border-0 border-yellow-500 from-white to-white aspect-square bg-transparent z-30 shadow-[-0.5rem_0_0_1]' style={{
+              backgroundImage: 'radial-gradient(circle at 0% 100%, transparent 1.4rem, white, white calc(1.4rem + 1px))' }}   />
+              <img
+                  src={indepedent_living}
+                  alt='Caregiver and client smiling together'
+                  className=' relative z-20 w-full rounded-lg bg-contain'
+                  style={{
+                    width: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              <InvertedBorder
+                bottom='0'
+                left='0'
+                padding='3'
+                rotation='-rotate-180'
+                innerColor={"bg-[#E1ECF1]"}
+                imgSrc={living_room}
+                imgAlt='Living Room Chair Icon'
+                imgSize='36px'
+                imageRotation="-rotate-180"
+                afterTop='-top-2'
+                afterLeft='-left-6'
+                beforeRight='-right-3'
+                beforeBottom='-bottom-6'
+                spanBgColor='bg-primary'
+                afterRotation='rotate-[0deg]'
+                beforeRotation='rotate-[0deg]'
+                innerBorderRadius='rounded-bl-xl'
+              />
               </div>
             </div>
-
-            {/* Right side - img */}
-            <div className="relative h-[300px] md:h-[350px] rounded-2xl overflow-hidden">
-              <img
-                src="/placeholder.svg?height=350&width=500"
-                alt="Person in a wheelchair in their home"
-                className="object-cover"
-              />
+            
             </div>
-          </div>
-
-          {/* Supported Independent Living section */}
-          <div className="p-8 md:p-12 border-t border-gray-200">
-            <h2 className="text-3xl font-bold mb-6">
-              Supported Independent <span className="text-[#1a6b9f]">Living (SIL)....</span>
-            </h2>
-
-            <p className="text-gray-600 max-w-4xl">
-              We all need a place to call home, where you can relax and unwind. Where you can make choices and take full
-              control of your independence or a place that feel part of a family with shared living or host arrangement.
-              Tunza Care will help you have that choice and control of who to live with, where to live and how you want
-              to live. The support team will help you to:
-            </p>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
+  </section>
   )
 }
 
 export default IndependentLivingSection
 
+          {/* Supported Independent Living section */}
+          // <div className="p-8 md:p-12 border-t border-gray-200">
+          //   <h2 className="text-3xl font-bold mb-6">
+          //     Supported Independent <span className="text-[#1a6b9f]">Living (SIL)....</span>
+          //   </h2>
+
+          //   <p className="text-gray-600 max-w-4xl">
+          //     We all need a place to call home, where you can relax and unwind. Where you can make choices and take full
+          //     control of your independence or a place that feel part of a family with shared living or host arrangement.
+          //     Tunza Care will help you have that choice and control of who to live with, where to live and how you want
+          //     to live. The support team will help you to:
+          //   </p>
+          // </div>

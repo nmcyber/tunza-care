@@ -17,7 +17,7 @@ const ServicesSection = () => {
   ]
 
   return (
-    <section className="w-full relative md:inset-y-20 flex flex-col">
+    <section className="w-full relative inset-0 mt-8 md:mt-0 md:inset-y-20 flex flex-col">
       {/* Banner Section */}
       <section className="relative w-full bg-primary/90 text-white">
         <div className="absolute inset-0 z-0">

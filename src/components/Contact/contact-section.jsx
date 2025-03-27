@@ -107,24 +107,6 @@ const ContactSection = () => {
     }
   };
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
-
-  const handleDragLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    setIsDragging(false);
-
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      setFormData((prev) => ({ ...prev, files: e.dataTransfer.files }));
-    }
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -286,31 +268,6 @@ const ContactSection = () => {
                     </p>
                   )}
                 </div>
-                {/* ==== File Upload ==== */}
-                {/* TODO:To Add Backend Logic @Sagar TODO:Feasable Databases eg.
-                managed hosting Supabase, MongoDB */}
-                {/* <div className="mb-8">
-                  <div
-                    className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
-                      isDragging ? "border-primary bg-primary/5" : "border-gray-300 hover:border-primary/50"
-                    }`}
-                    onDragOver={handleDragOver}
-                    onDragLeave={handleDragLeave}
-                    onDrop={handleDrop}
-                    onClick={() => document.getElementById("file-upload").click()}
-                  >
-                    <div className="flex flex-col items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white mb-3">
-                        <Anchor className="h-5 w-5" />
-                      </div>
-                      <p className="text-gray-700 mb-1">
-                        Drop files here or <span className="text-primary underline">Upload</span>
-                      </p>
-                      <p className="text-gray-500 text-sm">Max. File size: 50MB</p>
-                      <input id="file-upload" type="file" multiple className="hidden" onChange={handleFileChange} />
-                    </div>
-                  </div>
-                </div> */}
                 <Button
                   type="submit"
                   className="bg-primary hover:bg-primary text-white px-8 py-6 h-auto rounded-full text-base"

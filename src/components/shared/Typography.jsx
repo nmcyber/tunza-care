@@ -12,7 +12,7 @@ const Typography = ({ variant, children, className, h1Parts }) => {
     heading: "text-black font-almarai text-[85px] font-normal leading-[85px] tracking-[-0.85px] capitalize",
   };
 
-  const baseH1Styles = "font-normal md:text-5xl lg:text-7xl xl:text-5xl 2xl:text-5xl leading-[60px] tracking-[-0.8px] capitalize";
+  const baseH1Styles = "font-normal text-4xl md:text-5xl lg:text-7xl xl:text-5xl 2xl:text-5xl leading-[60px] tracking-[-0.8px] capitalize";
 
   if ((variant === "h1" || variant === "heading")) {
     const baseStyles = variant === "h1" ? baseH1Styles : variantClasses.heading;

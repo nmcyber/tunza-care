@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, Heart } from "lucide-react"
 // import { obfuscateValue, handleObfuscatedClick } from "@/lib/utils"
 import { Link } from "react-router-dom"
 import { handleObfuscatedClick, obfuscateValue } from "@/utils/obfuscation"
-import { logo } from "@/assets"
+import { logo, nmcyber_logo } from "@/assets"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -34,7 +34,7 @@ const Footer = () => {
   const obfuscatedEmail = obfuscateValue(emailAddress)
 
   return (
-    <footer className="bg-white pt-16 relative overflow-hidden">
+    <footer className="bg-white pt-16 relative rounded-t-2xl  md:rounded-t-2xl lg:rounded-t-4xl overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
       <div className="absolute -left-20 top-40 w-40 h-40 rounded-full border-[15px] border-sky-50/50 -z-10"></div>
@@ -64,7 +64,7 @@ const Footer = () => {
                 <motion.a
                   href={link}
                   key={index}
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1a6b9f]/10 text-[#1a6b9f] hover:bg-[#1a6b9f] hover:text-white transition-colors duration-300"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={ariaLabel}
@@ -77,13 +77,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h4 className="font-semibold text-xl text-[#1a6b9f]">Quick Links</h4>
+            <h4 className="font-semibold text-xl text-primary">Quick Links</h4>
             <ul className="space-y-3">
               {navigation.map((item) => (
                 <li key={item.id}>
                   <Link
                     href={item.url}
-                    className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
+                    className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                   >
                     <span className="mr-2">›</span>
                     {item.title}
@@ -95,12 +95,12 @@ const Footer = () => {
 
           {/* Our Services */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h4 className="font-semibold text-xl text-[#1a6b9f]">Our Services</h4>
+            <h4 className="font-semibold text-xl text-primary">Our Services</h4>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Personal Care
@@ -109,7 +109,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Transport Options
@@ -118,7 +118,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Community Participation
@@ -127,7 +127,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Independent Living
@@ -136,7 +136,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200 flex items-center"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
                   Support Coordination
@@ -147,10 +147,10 @@ const Footer = () => {
 
           {/* Contact Info - Updated with obfuscation */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h4 className="font-semibold text-xl text-[#1a6b9f]">Contact Us</h4>
+            <h4 className="font-semibold text-xl text-primary">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1a6b9f]/10 flex items-center justify-center text-[#1a6b9f]">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                   <Phone size={18} />
                 </div>
                 <a
@@ -158,13 +158,13 @@ const Footer = () => {
                   data-type="tel"
                   data-value={obfuscatedPhone}
                   onClick={handleObfuscatedClick}
-                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200"
                 >
                   08 9387 6326
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1a6b9f]/10 flex items-center justify-center text-[#1a6b9f]">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                   <Mail size={18} />
                 </div>
                 <a
@@ -172,13 +172,13 @@ const Footer = () => {
                   data-type="mailto"
                   data-value={obfuscatedEmail}
                   onClick={handleObfuscatedClick}
-                  className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary transition-colors duration-200"
                 >
                   admin@tunzacaresevices.com.au
                 </a>
               </li>
               <li className="flex space-x-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#1a6b9f]/10 flex items-center justify-center text-[#1a6b9f] mt-1">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1">
                   <MapPin size={18} />
                 </div>
                 <address className="text-gray-600 not-italic">
@@ -208,22 +208,26 @@ const Footer = () => {
             © {currentYear} Tunza Care Services. All Rights Reserved.
           </p>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-2">
             <Link
               href="/privacy-policy"
-              className="text-sm text-gray-500 hover:text-[#1a6b9f] transition-colors duration-200"
+              className="text-sm text-gray-500 hover:text-primary transition-colors duration-200"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms-conditions"
-              className="text-sm text-gray-500 hover:text-[#1a6b9f] transition-colors duration-200"
+              className="text-sm text-gray-500 hover:text-primary transition-colors duration-200"
             >
               Terms & Conditions
             </Link>
-            <div className="flex items-center text-[#1a6b9f]">
+            <div className="flex space-x-2 items-center justify-between text-primary">
               <span className="text-sm mr-1">Made with</span>
-              <Heart size={14} className="fill-[#1a6b9f]" />
+              <Heart size={14} className="fill-primary" />
+              <span>by</span>
+              <a href="https://nmcyber.com.au" className="text-primary text-xs hover:underline">
+                <img src={nmcyber_logo} alt='nmcyber logo' className=' w-4 aspect-square' style={{ objectFit: "contain" }} />
+              </a>
             </div>
           </div>
         </motion.div>

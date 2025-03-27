@@ -257,7 +257,7 @@ const Gallery = () => {
                       {/* <Typography variant="subtitle" className="text-xs md:text-sm">
                         {item.subtitle}
                       </Typography> */}
-                      <Typography variant="h1" className="text-lg md:text-xl" h1Parts={item.titleParts} />
+                      <Typography variant="h1" className=" md:text-xl" h1Parts={item.titleParts} />
                     </div>
                   ) : (
                     <img

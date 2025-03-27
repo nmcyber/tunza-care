@@ -5,7 +5,7 @@ import Typography from "../shared/Typography"
 
 const TransportSection = () => {
   return (
-    <section className="w-full relative md:inset-y-20 flex flex-col">
+  <section className="w-full relative md:inset-y-20 flex flex-col">
     {/* Content Section */}
     <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="md:max-w-6xl 2xl:max-w-7xl mx-auto">

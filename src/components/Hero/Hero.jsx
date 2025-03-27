@@ -36,6 +36,7 @@ const Hero = () => {
           >
             <Typography
               variant="heading"
+              className=' max-md:text-6xl max-md:leading-[68px]'
               h1Parts={[
                 { text: "Quality", color: "color1" },
                 { text: "Home Healthcare", color: "color2" },

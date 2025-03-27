@@ -4,7 +4,7 @@ import { about_tunza_care, nurse_patient_care, tunza_play_icon } from "@/assets"
 import { InvertedBorder } from "../shared/InvertedRadius";
 
 const partners = [
-  { id: 1, name: "Partner 1", logo: "/logos/logo_minimized.png" },
+  { id: 1, name: "Partner 1", logo: "/logos/nmcyber_logo.png" },
   { id: 2, name: "Partner 2", logo: "/logos/logo_2.svg" },
   { id: 3, name: "Partner 3", logo: "/logos/logo_3.svg" },
   { id: 4, name: "Partner 4", logo: "/logos/logo_4.svg" },

@@ -5,7 +5,7 @@ import { BookAppointmentDialog } from "@/components/Contact/book-appointment-dia
 
 const BookAppointmentBanner = () => {
   return (
-    <section className="relative z-0 max-w-[85svw] mx-auto py-20 overflow-hidden text-white">
+    <section className="relative z-0 w-[90svw] md:max-w-[85svw] mx-auto py-20 overflow-hidden text-white">
       {/* Background pattern circles */}
       <div className="absolute inset-0 z-10 ">
         <div className={`absolute -bottom-[65%] -right-[40%] aspect-square w-2/3 bg-[url(/src/assets/svg/tunza_care_full_silhoutte_logo.svg)] opacity-70 object-contain bg-no-repeat object-center `} />
@@ -14,7 +14,7 @@ const BookAppointmentBanner = () => {
 
       <div className=" relative bg-primary rounded-2xl px-4 sm:px-6 lg:px-8 py-16 md:py-20 2xl:py-24">
       {/* The section below is on top of the Tunza Care Silhouttes z-20 */}
-        <div className=" relative z-20 flex flex-col md:flex-row items-stretch justify-between ">
+        <div className=" relative z-20 flex flex-col gap-8 md:flex-row items-stretch justify-between ">
           {/* Left side - Text and Button */}
           <motion.div
             className="w-full md:w-1/2 mb-10 md:mb-0"
@@ -39,7 +39,7 @@ const BookAppointmentBanner = () => {
 
           {/* Right side - Doctor Image */}
           <motion.div
-            className="w-full md:w-1/2 relative "
+            className="  w-11/12 mx-auto py-2 mt-8 justify-center max-md:aspect-square md:w-1/2 relative "
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
