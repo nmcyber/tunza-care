@@ -1,9 +1,15 @@
-import { motion } from "framer-motion"
-import { Check, Plus, Minus } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { cn } from "@/lib/utils"
+import { motion } from "framer-motion";
+import { Check, Plus, Minus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
+import { ApplicationFormDialog } from "./application-form-dialog";
 
 const StaffingOpportunities = () => {
   const jobCategories = [
@@ -17,13 +23,21 @@ const StaffingOpportunities = () => {
         "Social and community participation",
         "Finding and keeping a job",
       ],
-      description: "At Tunza Care, Integrity is our core value, you feel like you possess it? We are looking for you.",
+      description:
+        "At Tunza Care, Integrity is our core value, you feel like you possess it? We are looking for you.",
     },
     {
       id: "2",
       title: "Registered Nurses",
-      services: ["Medication management", "Clinical assessments", "Care planning", "Health education", "Wound care"],
-      description: "Join our team of dedicated nurses providing exceptional care to our clients.",
+      services: [
+        "Medication management",
+        "Clinical assessments",
+        "Care planning",
+        "Health education",
+        "Wound care",
+      ],
+      description:
+        "Join our team of dedicated nurses providing exceptional care to our clients.",
     },
     {
       id: "3",
@@ -35,7 +49,8 @@ const StaffingOpportunities = () => {
         "Medication reminders",
         "Companionship",
       ],
-      description: "Help make a difference in our clients' daily lives with compassionate support.",
+      description:
+        "Help make a difference in our clients' daily lives with compassionate support.",
     },
     {
       id: "4",
@@ -47,7 +62,8 @@ const StaffingOpportunities = () => {
         "Social engagement",
         "Respite care",
       ],
-      description: "Empower our clients to live independently and participate fully in their communities.",
+      description:
+        "Empower our clients to live independently and participate fully in their communities.",
     },
     {
       id: "5",
@@ -59,9 +75,10 @@ const StaffingOpportunities = () => {
         "Kitchen hygiene",
         "Nutritional support",
       ],
-      description: "Help provide nutritious and enjoyable meals for our clients with diverse needs.",
+      description:
+        "Help provide nutritious and enjoyable meals for our clients with diverse needs.",
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,12 +89,12 @@ const StaffingOpportunities = () => {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1 },
-  }
+  };
 
   return (
     <motion.section
@@ -96,12 +113,19 @@ const StaffingOpportunities = () => {
             Offering <span className="text-[#1a6b9f]">Exemplary Services</span>
           </h2>
           <div className="space-y-4 text-gray-600 max-w-3xl mx-auto">
-            <p>Tunza Care Staffing Agency is here to cater for your staffing requirements/demands.</p>
             <p>
-              Our engagements are with disability service providers, age care and community service institutions looking
-              for high-end solution for both your temporary and permanent staffing.
+              Tunza Care Staffing Agency is here to cater for your staffing
+              requirements/demands.
             </p>
-            <p>We are here to offer exemplary services wherever and whenever you need.</p>
+            <p>
+              Our engagements are with disability service providers, age care
+              and community service institutions looking for high-end solution
+              for both your temporary and permanent staffing.
+            </p>
+            <p>
+              We are here to offer exemplary services wherever and whenever you
+              need.
+            </p>
           </div>
         </motion.div>
 
@@ -116,7 +140,10 @@ const StaffingOpportunities = () => {
               <AccordionItem
                 key={job.id}
                 value={job.id}
-                className={cn("border-b last:border-b-0", index === 0 ? "border-b-gray-200" : "border-b-gray-100")}
+                className={cn(
+                  "border-b last:border-b-0",
+                  index === 0 ? "border-b-gray-200" : "border-b-gray-100"
+                )}
               >
                 <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-gray-50 group">
                   <span className="text-lg font-medium flex items-center">
@@ -141,7 +168,9 @@ const StaffingOpportunities = () => {
                     <p className="text-gray-600">{job.description}</p>
 
                     <div>
-                      <Button className="bg-[#1a6b9f] hover:bg-[#155a87] text-white rounded-md">Apply Now!</Button>
+                      <Button className="bg-[#1a6b9f] hover:bg-[#155a87] text-white rounded-md ">
+                        <ApplicationFormDialog />
+                      </Button>
                     </div>
                   </div>
                 </AccordionContent>
@@ -151,8 +180,7 @@ const StaffingOpportunities = () => {
         </motion.div>
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
-export default StaffingOpportunities
-
+export default StaffingOpportunities;

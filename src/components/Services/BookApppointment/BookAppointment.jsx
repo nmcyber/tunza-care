@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import AnimatedDoctorImage from "./AnimatedDoctor"
+import { BookAppointmentDialog } from "@/components/Contact/book-appointment-dialog"
 
 const BookAppointmentBanner = () => {
   return (
@@ -32,8 +33,7 @@ const BookAppointmentBanner = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Book Appointment now
-              <ArrowRight className="h-4 w-4" />
+              <BookAppointmentDialog />
             </motion.button>
           </motion.div>
 

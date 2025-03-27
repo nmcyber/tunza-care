@@ -21,13 +21,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Anchor, Loader2, ExternalLink } from "lucide-react";
+import { Anchor, Loader2, ExternalLink, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 
 export const ApplicationFormDialog = ({
   buttonText = "Apply Today",
-  buttonVariant = "outline",
+  buttonVariant = "inline",
   position = null,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -124,7 +124,8 @@ export const ApplicationFormDialog = ({
     } catch (error) {
       toast({
         title: "Something went wrong",
-        description: "Your application couldn't be submitted. Please try again.",
+        description:
+          "Your application couldn't be submitted. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -135,7 +136,7 @@ export const ApplicationFormDialog = ({
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant={buttonVariant}>{buttonText}</Button>
+        <Button variant={buttonVariant}>{buttonText}{<ArrowRight className="h-4 w-4" />}</Button>
       </DialogTrigger>
       <DialogContent
         className="sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] max-h-[90vh] custom-scrollbar rounded-lg overflow-hidden"
@@ -242,7 +243,9 @@ export const ApplicationFormDialog = ({
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="support-worker">Support Worker</SelectItem>
-                <SelectItem value="registered-nurse">Registered Nurse</SelectItem>
+                <SelectItem value="registered-nurse">
+                  Registered Nurse
+                </SelectItem>
                 <SelectItem value="assistant-nurse">
                   Assistant in Nursing
                 </SelectItem>
@@ -260,9 +263,7 @@ export const ApplicationFormDialog = ({
             </Label>
             <Select
               value={formData.experience}
-              onValueChange={(value) =>
-                handleSelectChange("experience", value)
-              }
+              onValueChange={(value) => handleSelectChange("experience", value)}
               required
             >
               <SelectTrigger id="experience">

@@ -1,27 +1,27 @@
-import { useEffect, useRef } from "react"
-import { motion, useAnimation, useInView } from "framer-motion"
-import { ChevronRightIcon, Play } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { AvatarGroup } from "@/components/ui/avatar-group"
-import { avatar_1, avatar_2, avatar_3, banner, heart_icon } from "@/assets"
-import Typography from "../shared/Typography"
-import { ShimmerButton } from "../magicui/shimmer-button"
-import { NumberTicker } from "../magicui/number-ticker"
-import { Link } from "react-router-dom"
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { ChevronRightIcon, Play } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { AvatarGroup } from "@/components/ui/avatar-group";
+import { avatar_1, avatar_2, avatar_3, banner, heart_icon } from "@/assets";
+import Typography from "../shared/Typography";
+import { ShimmerButton } from "../magicui/shimmer-button";
+import { NumberTicker } from "../magicui/number-ticker";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const progressRef = useRef(null)
-  const isInView = useInView(progressRef, { once: true })
-  const progressControls = useAnimation()
+  const progressRef = useRef(null);
+  const isInView = useInView(progressRef, { once: true });
+  const progressControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
       progressControls.start({
         width: "78%",
         transition: { duration: 1.5, ease: "easeOut" },
-      })
+      });
     }
-  }, [isInView, progressControls])
+  }, [isInView, progressControls]);
 
   return (
     <section className=" px-4 sm:px-6 lg:px-8 py-8 md:py-12  bg-white">
@@ -34,11 +34,20 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Typography variant="heading" h1Parts={[ { text: 'Quality', color: 'color1' }, { text: 'Home Healthcare', color: 'color2',  }, { text: 'You Can Trust.', color: 'color1' }, ]} />
+            <Typography
+              variant="heading"
+              h1Parts={[
+                { text: "Quality", color: "color1" },
+                { text: "Home Healthcare", color: "color2" },
+                { text: "You Can Trust.", color: "color1" },
+              ]}
+            />
 
             <Typography variant="p" className="mt-4 text-lg max-w-xl">
-              Tunza Care Services is a WA NDIS provider, offering a range of in-home care, community participation,
-              supported independent living, clinical care and allied health services across Western Australia.
+              Tunza Care Services is a WA NDIS provider, offering a range of
+              in-home care, community participation, supported independent
+              living, clinical care and allied health services across Western
+              Australia.
             </Typography>
           </motion.div>
 
@@ -48,17 +57,21 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-          {/* TODO: Add a Link to Calendly */}
-          <ShimmerButton className="shadow-2xl bg-primary hover:bg-[#155a87] text-white rounded-full px-6 py-2 text-lg font-medium"  > {/* Add any specific styling for the shimmer container if needed */}
+            {/* TODO: Add a Link to Calendly */}
+            <ShimmerButton className="shadow-2xl bg-primary hover:bg-[#155a87] text-white rounded-full px-6 py-2 text-lg font-medium">
+              {" "}
+              {/* Add any specific styling for the shimmer container if needed */}
               Book Appointment
               <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </ShimmerButton>
+            </ShimmerButton>
 
             <div className="flex items-center gap-2">
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e6f2f5]">
                 <Play className="h-5 w-5 text-primary ml-0.5" />
               </div>
-              <Link to="/about" className="text-primary font-medium">Learn More</Link>
+              <Link to="/about" className="text-primary font-medium">
+                Learn More
+              </Link>
               {/* <span className="text-primary font-medium"></span>s */}
             </div>
           </motion.div>
@@ -90,7 +103,12 @@ const Hero = () => {
 
             <div>
               {/* <p className="text-lg font-semibold text-gray-800">3.2K</p> */}
-              <NumberTicker value={3200} className="whitespace-pre-wrap ext-lg font-semibold text-gray-800 tracking-tighter " >K</NumberTicker>
+              <NumberTicker
+                value={3200}
+                className="whitespace-pre-wrap ext-lg font-semibold text-gray-800 tracking-tighter "
+              >
+                K
+              </NumberTicker>
               <p className="text-sm text-gray-500">People with us</p>
             </div>
 
@@ -126,7 +144,11 @@ const Hero = () => {
           >
             <img
               src={banner}
-              style={{ objectFit: "cover", objectPosition: "center", height: "100%" }}
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+                height: "100%",
+              }}
               alt="Healthcare professional with patient"
               className="w-full h-full"
             />
@@ -153,33 +175,42 @@ const Hero = () => {
             ref={progressRef}
           >
             <div className="grid grid-cols-[auto_1fr] items-start gap-3">
-            <div className="mt-1 bg-primary p-2  rounded-full">
-              <img src={heart_icon} className={`object-contain h-5 w-5`} style={{ objectFit: 'contain' }} />
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-800">Health Control</p>
-              <p className="text-xs text-gray-500 mt-1">
-                Personalized care plans tailored to your specific health needs
-              </p>
-            </div>
-            <div className=" relative col-span-2"> {/* Span across both columns */}
-              {/* Progressbar */}
-              <div className="w-full flex items-center px-2 bg-gray-200 rounded-full h-5 mt-1">
-                <motion.div
-                  className="bg-primary h-2 rounded-full"
-                  initial={{ width: "0%" }}
-                  animate={progressControls}
-                ></motion.div>
+              <div className="mt-1 bg-primary p-2  rounded-full">
+                <img
+                  src={heart_icon}
+                  className={`object-contain h-5 w-5`}
+                  style={{ objectFit: "contain" }}
+                />
               </div>
-              <p className=" absolute -inset-y-3 inset-x-6 text-xs text-right mt-0 text-gray-500">78%</p>
+              <div>
+                <p className="text-sm font-semibold text-gray-800">
+                  Health Control
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Personalized care plans tailored to your specific health needs
+                </p>
+              </div>
+              <div className=" relative col-span-2">
+                {" "}
+                {/* Span across both columns */}
+                {/* Progressbar */}
+                <div className="w-full flex items-center px-2 bg-gray-200 rounded-full h-5 mt-1">
+                  <motion.div
+                    className="bg-primary h-2 rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={progressControls}
+                  ></motion.div>
+                </div>
+                <p className=" absolute -inset-y-3 inset-x-6 text-xs text-right mt-0 text-gray-500">
+                  78%
+                </p>
+              </div>
             </div>
-          </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
-
+export default Hero;

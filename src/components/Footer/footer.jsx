@@ -174,7 +174,7 @@ const Footer = () => {
                   onClick={handleObfuscatedClick}
                   className="text-gray-600 hover:text-[#1a6b9f] transition-colors duration-200"
                 >
-                  info@tunzacare.com.au
+                  admin@tunzacaresevices.com.au
                 </a>
               </li>
               <li className="flex space-x-3">

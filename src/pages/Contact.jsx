@@ -1,4 +1,4 @@
-import ContactSection from "@/components/contact-section"
+import ContactSection from "@/components/Contact/contact-section"
 import { MapPin, Clock, Phone } from "lucide-react"
 
 export default function ContactPage() {
