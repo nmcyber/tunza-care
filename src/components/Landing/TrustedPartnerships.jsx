@@ -5,10 +5,10 @@ import { InvertedBorder } from "../shared/InvertedRadius";
 
 const partners = [
   { id: 1, name: "Partner 1", logo: "/logos/nmcyber_logo.png" },
-  { id: 2, name: "Partner 2", logo: "/logos/logo_2.svg" },
-  { id: 3, name: "Partner 3", logo: "/logos/logo_3.svg" },
-  { id: 4, name: "Partner 4", logo: "/logos/logo_4.svg" },
-  { id: 5, name: "Partner 5", logo: "/logos/logo_5.svg" },
+  // { id: 2, name: "Partner 2", logo: "/logos/logo_2.svg" },
+  // { id: 3, name: "Partner 3", logo: "/logos/logo_3.svg" },
+  // { id: 4, name: "Partner 4", logo: "/logos/logo_4.svg" },
+  // { id: 5, name: "Partner 5", logo: "/logos/logo_5.svg" },
 ];
 
 export default function TrustedPartnership() {
@@ -16,7 +16,7 @@ export default function TrustedPartnership() {
     <section className=' relative z-10 flex flex-col w-full py-12 bg-background overflow-hidden after:bg-[url(/left_.svg)] after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:border-0 after:border-red-500 after:top-0 after:-right-[2.15%] after:z-0 '>
       <div className='container grid mx-auto px-4'>
         <Typography variant='span' className='text-center text-[#939393]'>
-          Our Trusted Partnership
+          Our Trusted Partnerships
         </Typography>
 
         {/* Partner Logos */}

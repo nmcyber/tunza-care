@@ -2,6 +2,7 @@
 // logos
 export { default as logo } from "./svg/TUNZA-CARE-Logo.svg";
 export { default as nmcyber_logo } from "/logos/nmcyber_logo.png";
+export { default as nmcyber_full_logo } from "/logos/NMCYBER_Logo.jpeg";
 
 // SVG
 export { default as quotes } from "./svg/quotes.svg";
