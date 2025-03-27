@@ -157,7 +157,7 @@ const Hero = () => {
 
           {/* 150+ Card */}
           <motion.div
-            className="absolute top-6 right-6 bg-white p-4 rounded-lg shadow-md"
+            className="absolute -top-6 right-2 md:top-2 md:right-4 bg-white p-4 rounded-lg shadow-md"
             initial={{ opacity: 0, scale: 0.8, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
@@ -169,7 +169,7 @@ const Hero = () => {
 
           {/* Health Control Card */}
           <motion.div
-            className="absolute bottom-6 -left-4 md:-left-12 bg-white p-4 rounded-lg shadow-md max-w-[280px]"
+            className="absolute hidden md:flex bottom-6 -left-4 md:-left-12 bg-white p-4 rounded-lg shadow-md max-w-[280px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 2.5 }}

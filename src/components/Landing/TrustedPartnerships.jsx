@@ -37,7 +37,7 @@ export default function TrustedPartnership() {
         </div>
 
         {/* Main Content Card */}
-        <section className=' flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none '>
+        <section className=' flex rounded-lg py-11 px-4 md:px-11 overflow-hidden bg-white relative z-10 border-none outline-none '>
           {/* Controls where the overflow is at for the inverted border radius */}
           <Card className='rounded-lg bg-none overflow-hiddenn border-0 border-lime-500 outline-none shadow-none'>
             <CardContent className='p-0 bg-none '>
@@ -82,7 +82,7 @@ export default function TrustedPartnership() {
                   {/* TODO: I need to further make the inverted radius support different dimensions eg. rectangles, circles  */}
                   <div
                     id='house-price'
-                    className=' absolute z-20 p-4  -bottom-6 -left-7 outline-0 outline-red-400 '
+                    className=' absolute z-20 p-4  -bottom-6 md:-left-7 outline-0 outline-red-400 '
                   >
                     <div className='grid grid-cols-1 text-white gap-0 space-y-0 items-center border-0 border-lime-400'>
                       <span className='text-xl font-bold '>150+</span>

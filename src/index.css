@@ -284,3 +284,10 @@ button {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: rgba(26, 107, 159, 0.7);
 }
+
+@media (max-width: 768px) {
+  #house-price::before {
+    left: 0%;
+    box-shadow: -0.5rem 0 0 var(--_corner-color);
+  }
+}
