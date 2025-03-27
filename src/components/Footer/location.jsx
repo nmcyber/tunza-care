@@ -2,7 +2,7 @@ import React from "react";
 import MapComponent from "../shared/MapComponent";
 import Typography from "../shared/Typography";
 import { contactData } from "@/constants";
-import { handleObfuscatedClick, obfuscateValue } from "@/utlis/obfuscation";
+import { handleObfuscatedClick, obfuscateValue } from "@/utils/obfuscation";
 import { Link } from "react-router-dom";
 
 const Location = () => {

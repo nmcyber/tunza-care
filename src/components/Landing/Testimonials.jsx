@@ -145,15 +145,15 @@ const TestimonialCard = ({ testimonial, featured = false, delay = 0 }) => {
 const MarqueeTestimonialCard = ({ img, name, content, rating, date }) => {
   return (
     <Card
-      className={cn("p-6 flex flex-col h-full relative overflow-hidden",
+      className={cn("p-6 flex flex-col h-full relative overflow-hidden outline-0 outline-lime-500",
         // You might want to remove or adjust these specific styles for the marquee
         // "border-[#1a6b9f]/30 shadow-md",
         "w-80 mx-2" // Keep the width for marquee layout
       )}
     >
       {/* Quote icon */}
-      <div className="absolute -right-2 -top-2 opacity-5">
-        <img src={quotes} alt="double qoutes" className="w-20 h-20  " />
+      <div className="absolute z-20 right-4 -top-0 ">
+        <img src={quotes} alt="double qoutes" className="w-16 aspect-square " style={{ objectFit: "contain" }} />
       </div>
 
       <div className="flex items-center gap-3 mb-3">
@@ -228,7 +228,7 @@ export const TestimonialsSection = ({ className }) => {
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
       />
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xll mx-auto">
         {/* Section header */}
         <motion.div
           className="text-center mb-12"
@@ -258,7 +258,7 @@ export const TestimonialsSection = ({ className }) => {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden outline-0 outline-pink-500">
             <Marquee pauseOnHover className="[--duration:30s] py-4">
               {firstRow.map((testimonial) => (
                 <MarqueeTestimonialCard

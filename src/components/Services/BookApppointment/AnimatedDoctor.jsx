@@ -55,10 +55,10 @@ const AnimatedDoctorImage = () => {
         <div className="absolute z-10 -top-0 -left-0 aspect-square w-[95%] bg-white rounded-full" />
       </div>
 
-      <div className="absolute z-10 aspect-square w-[95%] overflow-hidden rounded-full">
+      <div className="absolute z-10 aspect-square w-full overflow-hiddenn rounded-full">
         {/* Animated image container */}
         <motion.div
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full outline-0 outline-orange-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.5 }}
@@ -68,8 +68,8 @@ const AnimatedDoctorImage = () => {
             id="image"
             src={dr_stethoscope}
             alt="doctor with stethoscope"
-            style={{ objectFit: "cover", objectPosition: "center", width: "100%" }}
-            className="absolute z-10 inset-0 w-full "
+            style={{ objectFit: "contain", objectPosition: "center", width: "100%" }}
+            className="absolute z-10 -top-14 h-[115%] aspect-square rounded-full outline-0 outline-red-500 "
             initial={{ y: "100%", opacity: 0 }}
             animate={{
               y: isVisible ? 0 : "100%",
@@ -86,7 +86,7 @@ const AnimatedDoctorImage = () => {
 
           {/* Animated overlay gradient for extra flair */}
           <motion.div
-            className="absolute inset-0 z-20 bg-gradient-to-t from-transparent to-pink-300/30"
+            className="absolute inset-0 z-20 bg-gradient-to-t from-transparent to-pink-300/0"
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ duration: 1.5, delay: 1 }}
@@ -120,7 +120,7 @@ const AnimatedDoctorImage = () => {
     </div>
      {/* Doctor info card */}
      <motion.div
-          className="absolute bottom-10 -left-1/2 -translate-x-1/2 bg-white text-black rounded-md p-3 shadow-xl flex items-center gap-3 w-11/12"
+          className="absolute bottom-2 -left-[37%] -ttranslate-x-1/2 bg-white text-black rounded-md p-3 shadow-xl flex items-center gap-3 w-11/12"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}

@@ -5,7 +5,7 @@ import { BookAppointmentDialog } from "@/components/Contact/book-appointment-dia
 
 const BookAppointmentBanner = () => {
   return (
-    <section className="relative z-0 max-w-[85svw] mx-auto py-16 overflow-hidden text-white">
+    <section className="relative z-0 max-w-[85svw] mx-auto py-20 overflow-hidden text-white">
       {/* Background pattern circles */}
       <div className="absolute inset-0 z-10 ">
         <div className={`absolute -bottom-[65%] -right-[40%] aspect-square w-2/3 bg-[url(/src/assets/svg/tunza_care_full_silhoutte_logo.svg)] opacity-70 object-contain bg-no-repeat object-center `} />
