@@ -19,7 +19,7 @@ import { services } from "@/constants";
 
 const BookAppointmentForm = () => {
   const [errors, setErrors] = useState({});
-  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   //   const [isDragging, setIsDragging] = useState(false);
 
   const { toast } = useToast();
@@ -33,9 +33,9 @@ const BookAppointmentForm = () => {
     files: null,
   });
 
-  useEffect(() => {
-    setFormData((prevData) => ({ ...prevData, recipient: formData.email }));
-  }, []);
+  // useEffect(() => {
+  //   setFormData((prevData) => ({ ...prevData, recipient: formData.email }));
+  // }, [formData.email]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,7 +73,7 @@ const BookAppointmentForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      setIsSubmiting(true);
+      setIsSubmitting(true);
       console.log("Sending message...", formData);
       emailjs
         // need to update the credetials of emailjs with the tunza email
@@ -84,7 +84,7 @@ const BookAppointmentForm = () => {
           import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID
         )
         .then(
-          (response) => {
+          () => {
             toast({
               title: "Message Sent",
               description: "Success! Check your mail box.",
@@ -95,19 +95,14 @@ const BookAppointmentForm = () => {
             });
             setFormData({
               FirstName: "",
-              lastName: "",
+              LastName: "",
               email: "",
               phone: "",
               service: "",
               message: "",
-              to_email: formData.email,
-              recipient: formData.email,
-              confirmation_link:
-                "https://nmcyber.com.au/confirm?email=" +
-                encodeURIComponent(formData.email),
             });
           },
-          (error) => {
+          () => {
             // console.error("FAILED...", error);
             toast({
               title: "Error",
@@ -119,7 +114,7 @@ const BookAppointmentForm = () => {
           }
         )
         .finally(() => {
-          setIsSubmiting(false);
+          setIsSubmitting(false);
         });
     }
   };
@@ -145,7 +140,7 @@ const BookAppointmentForm = () => {
             <Input
               id="FirstName"
               name="FirstName"
-              value={formData.name}
+              value={formData.FirstName}
               onChange={handleChange}
               placeholder="Enter your First name"
               className="w-full"
@@ -221,7 +216,7 @@ const BookAppointmentForm = () => {
           </div>
         </div>
         <div className="mb-6 space-y-4">
-          <Label htmlFor="Service">
+          <Label htmlFor="service">
             Service Required <span className="text-red-500">*</span>
           </Label>
           <Select
@@ -233,13 +228,13 @@ const BookAppointmentForm = () => {
               <SelectValue placeholder="Select a service" />
             </SelectTrigger>
             <SelectContent>
-              {services.map((service) => (
-                <SelectItem value={service}>{service}</SelectItem>
+              {services.map((service,index) => (
+                <SelectItem key={index} value={service}>{service}</SelectItem>
               ))}
             </SelectContent>
           </Select>
-          {errors.industry && (
-            <p className="text-tertiary text-xs mt-1">{errors.industry}</p>
+          {errors.service && (
+            <p className="text-tertiary text-xs mt-1">{errors.service}</p>
           )}
         </div>
         <div className="mb-6 space-y-4">
@@ -264,10 +259,10 @@ const BookAppointmentForm = () => {
         </div>
         <Button
           type="submit"
-          className="bg-primary hover:bg-primary text-white px-8 py-6 h-auto rounded-full text-base"
-          disabled={isSubmiting}
+          className="bg-primary hover:bg-primary text-white px-8 py-4 h-auto rounded-full text-base"
+          disabled={isSubmitting}
         >
-          {isSubmiting ? "Submiting..." : "Submit Now"}
+          {isSubmitting ? "Submitting..." : "Submit Now"}
         </Button>
       </form>
     </motion.div>

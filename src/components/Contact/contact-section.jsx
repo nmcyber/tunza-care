@@ -11,7 +11,7 @@ import { ToastAction } from "../ui/toast";
 
 const ContactSection = () => {
   const [errors, setErrors] = useState({});
-  const [isSubmiting, setIsSubmiting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
   const { toast } = useToast();
@@ -25,9 +25,9 @@ const ContactSection = () => {
     files: null,
   });
 
-  useEffect(() => {
-    setFormData((prevData) => ({ ...prevData, recipient: formData.email }));
-  }, []);
+  // useEffect(() => {
+  //   setFormData((prevData) => ({ ...prevData, recipient: formData.email }));
+  // }, [formData.email]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,8 +62,8 @@ const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      setIsSubmiting(true);
-      console.log("Sending message...", formData, turnstileToken);
+      setIsSubmitting(true);
+      console.log("Sending message...", formData);
       emailjs
       // need to update the credetials of emailjs with the tunza email
         .send(
@@ -73,7 +73,7 @@ const ContactSection = () => {
           import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID
         )
         .then(
-          (response) => {
+          () => {
             toast({
               title: "Message Sent",
               description: "Success! Check your mail box.",
@@ -84,16 +84,10 @@ const ContactSection = () => {
             });
             setFormData({
               name: "",
+              company: "",
               email: "",
-              organisation: "",
               phone: "",
-              industry: "",
               message: "",
-              to_email: formData.email,
-              recipient: formData.email,
-              confirmation_link:
-                "https://nmcyber.com.au/confirm?email=" +
-                encodeURIComponent(formData.email),
             });
           },
           (error) => {
@@ -108,7 +102,7 @@ const ContactSection = () => {
           }
         )
         .finally(() => {
-          setIsSubmiting(false);
+          setIsSubmitting(false);
         });
     }
   };
@@ -320,9 +314,9 @@ const ContactSection = () => {
                 <Button
                   type="submit"
                   className="bg-primary hover:bg-primary text-white px-8 py-6 h-auto rounded-full text-base"
-                  disabled={isSubmiting}
+                  disabled={isSubmitting}
                 >
-                  {isSubmiting ? "Submiting..." : "Submit Now"}
+                  {isSubmitting ? "Submiting..." : "Submit Now"}
                 </Button>
               </form>
             </motion.div>
@@ -352,7 +346,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Email</p>
-                    <p className="font-medium">loremipsum@email.com</p>
+                    <p className="font-medium">admin@tunzacaresevices.com.au</p>
                   </div>
                 </div>
 

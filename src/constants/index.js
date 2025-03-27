@@ -98,7 +98,7 @@ export const contactData = [
     title: "Email",
     iconSrc: messageIcon,
     altText: "Mail icon",
-    value: "admin@tunzacare.com.au",
+    value: "admin@tunzacaresevices.com.au",
     linkType: "mailto",
   },
   {

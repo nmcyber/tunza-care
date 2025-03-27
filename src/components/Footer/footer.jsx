@@ -154,7 +154,7 @@ const Footer = () => {
                   href="mailto:info@tunzacare.com.au"
                   className="text-gray-600 hover:text-primary transition-colors duration-200"
                 >
-                  info@tunzacare.com.au
+                  admin@tunzacaresevices.com.au
                 </a>
               </li>
               <li className="flex space-x-3">
