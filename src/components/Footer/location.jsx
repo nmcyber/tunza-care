@@ -57,7 +57,7 @@ const Location = () => {
     <div className="bg-gray-100 py-5 ">
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         {/* Contact Info Section */}
-        <div className=" space-y-8">
+        <div className=" grid space-y-8">
           <div className=" grid place-items-start space-y-4 ">
             <Typography variant="h1" className=" mb-4" h1Parts={[ { text: 'Say', color: 'color1' }, { text: 'Hello..!', color: 'color2' } ]} />
           </div>

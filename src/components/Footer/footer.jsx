@@ -1,5 +1,4 @@
 
-// import Link from "next/link"
 import { motion } from "framer-motion"
 import { navigation, socials } from "@/constants"
 import { Phone, Mail, MapPin, Heart } from "lucide-react"
@@ -50,7 +49,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-10">
           {/* Company Info */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <Link href="/" className="inline-block">
+            <Link to="/" className="inline-block">
               <img src={logo} alt="Tunza Care Services Logo" className="h-16 w-auto" />
             </Link>
 
@@ -82,7 +81,7 @@ const Footer = () => {
               {navigation.map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={item.url}
+                    to={item.url}
                     className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                   >
                     <span className="mr-2">›</span>
@@ -99,7 +98,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/services"
+                  to="/services"
                   className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
@@ -108,7 +107,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  to="/services"
                   className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
@@ -117,7 +116,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  to="/services"
                   className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
@@ -126,7 +125,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  to="/services"
                   className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
@@ -135,7 +134,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  to="/services"
                   className="text-gray-600 hover:text-primary transition-colors duration-200 flex items-center"
                 >
                   <span className="mr-2">›</span>
@@ -210,13 +209,13 @@ const Footer = () => {
 
           <div className="flex items-center space-x-2">
             <Link
-              href="/privacy-policy"
+              to="/privacy-policy"
               className="text-sm text-gray-500 hover:text-primary transition-colors duration-200"
             >
               Privacy Policy
             </Link>
             <Link
-              href="/terms-conditions"
+              to="/terms-conditions"
               className="text-sm text-gray-500 hover:text-primary transition-colors duration-200"
             >
               Terms & Conditions
@@ -225,7 +224,7 @@ const Footer = () => {
               <span className="text-sm mr-1">Made with</span>
               <Heart size={14} className="fill-primary" />
               <span>by</span>
-              <a href="https://nmcyber.com.au" className="text-primary text-xs hover:underline">
+              <a to="https://nmcyber.com.au" className="text-primary text-xs hover:underline">
                 <img src={nmcyber_logo} alt='nmcyber logo' className=' w-4 aspect-square' style={{ objectFit: "contain" }} />
               </a>
             </div>
