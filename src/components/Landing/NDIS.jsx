@@ -8,9 +8,9 @@ export default function NDIS({
   title,
   highlightedTitle,
   services,
-  image,
-  badgeImage,
-  className,
+  // image,
+  // badgeImage,
+  // className,
 }) {
   return (
     <section className=' relative z-10 flex flex-col container mx-auto py-12 bg-background overflow-hiddenn bbg-[url(/left_.svg)] bg-no-repeat after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:top-0 after:-right-[2.15%] after:z-0 '>

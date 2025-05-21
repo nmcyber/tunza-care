@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
-import Typography from "../shared/Typography";
+// import Typography from "../shared/Typography";
 
 export const ServicesSection = ({
   title,

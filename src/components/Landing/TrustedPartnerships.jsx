@@ -123,16 +123,6 @@ export default function TrustedPartnership() {
                     Australian family owned company that will work and deliver
                     services across WA.
                   </Typography>
-                  <Typography variant="p">
-                    Tunza Care Services is culturally inclusive, that allows
-                    people to make choices and have full control of their way of
-                    living, feeling accepted and belonging to the team and the
-                    community. Tunza Care will work together with you, to
-                    personalise your needs according to your choices, ability,
-                    and your unique experience. Tunza Care Services is a Western
-                    Australian family owned company that will work and deliver
-                    services across WA.
-                  </Typography>
                 </article>
               </div>
             </CardContent>
