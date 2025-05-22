@@ -26,6 +26,11 @@ export const navigation = [
   },
   {
     id: "4",
+    title: "Locations",
+    url: "/locations",
+  },
+  {
+    id: "5",
     title: "Contact",
     url: "/contact",
   },
@@ -98,7 +103,7 @@ export const contactData = [
     title: "Email",
     iconSrc: messageIcon,
     altText: "Mail icon",
-    value: "admin@tunzacaresevices.com.au",
+    value: "enquiries@tunzacareservices.com.au",
     linkType: "mailto",
   },
   {

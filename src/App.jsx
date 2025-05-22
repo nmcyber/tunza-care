@@ -1,5 +1,5 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -11,10 +11,12 @@ import PrivacyPolicy from './pages/Privacy-Policy';
 import TermsConditions from './pages/Terms-Conditions';
 import ScrollToTop from './utils/ScrollToTop';
 import ApplicationPage from './pages/Applications';
+import LocationsPage from './pages/Locations';
 
 function App() {
   return (
     <BrowserRouter>
+    <HelmetProvider>
       <Navbar />
       <ScrollToTop />
       <Routes>
@@ -22,6 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/employment" element={<EmploymentPage />} />
+        <Route path='/locations' element={<LocationsPage />} />
         <Route path="/careers" element={<ApplicationPage />} />
         <Route path="/careers/apply" element={<ApplicationPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -29,6 +32,7 @@ function App() {
         <Route path="/terms-conditions" element={<TermsConditions />} />
       </Routes>
         <Footer />
+      </HelmetProvider>
     </BrowserRouter>
   );
 }
