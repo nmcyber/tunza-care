@@ -50,7 +50,7 @@ const Footer = () => {
           {/* Company Info */}
           <motion.div variants={itemVariants} className="space-y-6">
             <Link to="/" className="inline-block">
-              <img src={logo} alt="Tunza Care Services Logo" className="h-16 w-auto" />
+              <img src={logo} alt="Tunza Care Services Logo" title='Tunza Care Logo' className="h-16 w-auto" />
             </Link>
 
             <p className="text-gray-600 max-w-xs">
@@ -225,7 +225,7 @@ const Footer = () => {
               <Heart size={14} className="fill-primary" />
               <span>by</span>
               <a to="https://nmcyber.com.au" className="text-primary text-xs hover:underline">
-                <img src={nmcyber_logo} alt='nmcyber logo' className=' w-4 aspect-square' style={{ objectFit: "contain" }} />
+                <img src={nmcyber_logo} alt='NMCyber logo' title='NMCYBER - Discover. Tranform. Thrive' className=' w-4 aspect-square' style={{ objectFit: "contain" }} />
               </a>
             </div>
           </div>

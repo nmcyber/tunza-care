@@ -22,10 +22,7 @@ const healthcareServices = {
     { text: "Level 2 Support Coordination" },
     { text: "Respite" },
     { text: "Staffing agent" },
-  ],
-  image:
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-lchOxPNqQMlJVc3UogI5X5os8Iw2jQ.png",
-  badgeImage: "/ndis-badge.png",
+  ]
 };
 
 const Home = () => {

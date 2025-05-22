@@ -17,6 +17,7 @@ function ServiceCard({ iconSrc, altText, title, description, iconBgColor, whileH
         <img
           src={iconSrc}
           alt={altText}
+          title={altText}
           className="w-[72px] h-[72px] rounded-md p-4"
           style={{ backgroundColor: iconBgColor }}
           as={motion.img}

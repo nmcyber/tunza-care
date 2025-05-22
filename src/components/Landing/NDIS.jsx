@@ -8,9 +8,6 @@ export default function NDIS({
   title,
   highlightedTitle,
   services,
-  // image,
-  // badgeImage,
-  // className,
 }) {
   return (
     <section className=' relative z-10 flex flex-col container mx-auto py-12 bg-background overflow-hiddenn bbg-[url(/left_.svg)] bg-no-repeat after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:top-0 after:-right-[2.15%] after:z-0 '>
@@ -61,6 +58,7 @@ export default function NDIS({
               >
                 <img
                   src={young_doctor}
+                  title='Caregiver and client smiling together'
                   alt='Caregiver and client smiling together'
                   className='w-full rounded-lg'
                   style={{
@@ -153,7 +151,8 @@ export default function NDIS({
                   <div className='grid grid-cols-1 text-white gap-0 z-30 space-y-0 items-center border-0 border-lime-400'>
                     <img
                       src='/logos/NDIS_logo.png'
-                      alt=''
+                      alt='NDIS Logo'
+                      title='NDIS Logo'
                       style={{ objectFit: "contain", height: "120px" }}
                       className=' object-cover'
                     />

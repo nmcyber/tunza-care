@@ -150,6 +150,7 @@ const Hero = () => {
                 height: "100%",
               }}
               alt="Healthcare professional with patient"
+              title='Healthcare professional with patient'
               className="w-full h-full"
             />
           </motion.div>
@@ -178,6 +179,8 @@ const Hero = () => {
               <div className="mt-1 bg-primary p-2  rounded-full">
                 <img
                   src={heart_icon}
+                  alt="Heart Icon"
+                  title="Heart Icon"
                   className={`object-contain h-5 w-5`}
                   style={{ objectFit: "contain" }}
                 />

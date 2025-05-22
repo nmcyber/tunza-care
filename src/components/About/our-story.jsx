@@ -90,6 +90,8 @@ const OurStory = () => {
               <img
                 src='/placeholder.svg?height=400&width=600'
                 alt='Tunza Care Services journey'
+                title='Tunza Care Services journey'
+                loading='lazy'
                 style={{ objectFit: "cover" }}
                 className='object-cover'
               />

@@ -26,6 +26,7 @@ export default function TrustedPartnership() {
               <img
                 src={partner.logo || "/placeholder.svg"}
                 alt={partner.name}
+                title={partner.name}
                 className='h-8 md:h-10 opacity-70'
                 onError={(e) => {
                   // e.target.src = `/placeholder.svg?height=40&width=120`
@@ -55,6 +56,7 @@ export default function TrustedPartnership() {
                     src={about_tunza_care}
                     style={{ objectPosition: "center" }}
                     alt='Caregiver and client smiling together'
+                    title='Caregiver and client smiling together'
                     className='w-full h-full object-cover object rounded-lg'
                   />
 

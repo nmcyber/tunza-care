@@ -62,7 +62,7 @@ const IndependentLivingSection = () => {
               backgroundImage: 'radial-gradient(circle at 0% 100%, transparent 1.4rem, white, white calc(1.4rem + 1px))' }}   />
               <img
                   src={indepedent_living}
-                  alt='Caregiver and client smiling together'
+                  alt='Independent Living Option'
                   className=' relative z-20 w-full rounded-lg bg-contain'
                   style={{
                     width: "100%",

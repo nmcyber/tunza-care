@@ -54,6 +54,7 @@ export const ServicesSection = ({
           <img
             src='/about-tunza-care.webp'
             alt='Caregiver and client smiling together'
+            title='Caregiver and client smiling together'
             className='w-full h-full object-cover rounded-lg'
           />
 
@@ -69,6 +70,7 @@ export const ServicesSection = ({
                   <img
                     src='/play.svg'
                     alt='Play Button'
+                    title='Play Button'
                     className='object-cover h-4 w-4'
                   />
                 </button>
