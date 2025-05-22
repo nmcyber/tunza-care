@@ -1,8 +1,16 @@
 import ContactSection from "@/components/Contact/contact-section"
+import { Helmet } from 'react-helmet-async';
 import { MapPin, Clock, Phone } from "lucide-react"
 
 export default function ContactPage() {
   return (
+    <>
+      <Helmet>
+        <title>Contact Us | Tunza Care Home Care Support Services</title>
+        <meta name="description" content="Get in touch with Tunza Care. We're here to answer your questions about our home care support services." />
+        <meta name="keywords" content="contact Tunza Care, care support contact, healthcare inquiry, service information, location details" />
+        <link rel="canonical" href="http://192.168.28.25:5174/contact" />
+      </Helmet>
     <main className="min-h-screen relative mt-20 md:mt-20 ">
       <div className="bg-primary text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -73,6 +81,7 @@ export default function ContactPage() {
         ></iframe>
       </section>
     </main>
+    </>
   )
 }
 

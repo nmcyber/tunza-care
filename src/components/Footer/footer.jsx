@@ -159,7 +159,7 @@ const Footer = () => {
                   onClick={handleObfuscatedClick}
                   className="text-gray-600 hover:text-primary transition-colors duration-200"
                 >
-                  08 9387 6326
+                  0469 842 289
                 </a>
               </li>
               <li className="flex items-center space-x-3">
@@ -173,7 +173,7 @@ const Footer = () => {
                   onClick={handleObfuscatedClick}
                   className="text-gray-600 hover:text-primary transition-colors duration-200"
                 >
-                  admin@tunzacaresevices.com.au
+                  enquiries@tunzacareservices.com.au
                 </a>
               </li>
               <li className="flex space-x-3">

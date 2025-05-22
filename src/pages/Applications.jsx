@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet-async';
 import { useSearchParams } from "react-router-dom"; // Import useSearchParams from react-router-dom
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -129,6 +130,13 @@ export default function ApplicationPage() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Apply Now | Tunza Care Home Care Support Services</title>
+        <meta name="description" content="Join the Tunza Care team. Apply for our available positions in healthcare and support services." />
+        <meta name="keywords" content="care jobs, healthcare careers, support worker positions, nursing jobs, care employment" />
+        <link rel="canonical" href="http://192.168.28.25:5174/applications" />
+      </Helmet>
     <main className="min-h-screen py-12">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="mb-8">
@@ -392,5 +400,6 @@ export default function ApplicationPage() {
         </div>
       </div>
     </main>
+    </>
   );
 }
