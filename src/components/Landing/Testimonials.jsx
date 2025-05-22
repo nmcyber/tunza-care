@@ -121,6 +121,7 @@ const TestimonialCard = ({ testimonial, featured = false, delay = 0 }) => {
           <img
             src={testimonial.avatar || "/placeholder.svg"}
             alt={testimonial.name}
+            title={testimonial.name}
             className="w-12 h-12 rounded-full object-cover border-2 border-gray-100"
           />
           <div>
@@ -153,13 +154,14 @@ const MarqueeTestimonialCard = ({ img, name, content, rating, date }) => {
     >
       {/* Quote icon */}
       <div className="absolute z-20 right-4 -top-0 ">
-        <img src={quotes} alt="double qoutes" className="w-16 aspect-square " style={{ objectFit: "contain" }} />
+        <img src={quotes} alt="double qoutes" title='double quotes' className="w-16 aspect-square " style={{ objectFit: "contain" }} />
       </div>
 
       <div className="flex items-center gap-3 mb-3">
         <img
           src={img || "/placeholder.svg"}
           alt={name}
+          title={name}
           className="w-12 h-12 rounded-full object-cover border-2 border-gray-100"
         />
         <div>

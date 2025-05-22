@@ -26,6 +26,7 @@ export default function TrustedPartnership() {
               <img
                 src={partner.logo || "/placeholder.svg"}
                 alt={partner.name}
+                title={partner.name}
                 className='h-8 md:h-10 opacity-70'
                 onError={(e) => {
                   // e.target.src = `/placeholder.svg?height=40&width=120`
@@ -55,6 +56,7 @@ export default function TrustedPartnership() {
                     src={about_tunza_care}
                     style={{ objectPosition: "center" }}
                     alt='Caregiver and client smiling together'
+                    title='Caregiver and client smiling together'
                     className='w-full h-full object-cover object rounded-lg'
                   />
 
@@ -113,16 +115,6 @@ export default function TrustedPartnership() {
                     community.
                   </Typography>
 
-                  <Typography variant="p">
-                    Tunza Care Services is culturally inclusive, that allows
-                    people to make choices and have full control of their way of
-                    living, feeling accepted and belonging to the team and the
-                    community. Tunza Care will work together with you, to
-                    personalise your needs according to your choices, ability,
-                    and your unique experience. Tunza Care Services is a Western
-                    Australian family owned company that will work and deliver
-                    services across WA.
-                  </Typography>
                   <Typography variant="p">
                     Tunza Care Services is culturally inclusive, that allows
                     people to make choices and have full control of their way of

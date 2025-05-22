@@ -36,6 +36,7 @@ const AboutHero = () => {
               <img
                 src="/placeholder.svg?height=400&width=600"
                 alt="Tunza Care team members helping clients"
+                title='Tunza Care team members helping clients'
                 style={{ objectFit: "cover" }}
                 className="object-cover"
                 loading="lazy"

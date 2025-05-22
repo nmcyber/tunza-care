@@ -45,10 +45,9 @@ const Hero = () => {
             />
 
             <Typography variant="p" className="mt-4 text-lg max-w-xl">
-              Tunza Care Services is a WA NDIS provider, offering a range of
-              in-home care, community participation, supported independent
-              living, clinical care and allied health services across Western
-              Australia.
+            Tunza Care Services is a registered NDIS provider offering a range of in-home care, social &
+            community participation, supported independent living (SIL), individual living option (ILO),
+            clinical care and allied health services through Western Australia.
             </Typography>
           </motion.div>
 
@@ -151,6 +150,7 @@ const Hero = () => {
                 height: "100%",
               }}
               alt="Healthcare professional with patient"
+              title='Healthcare professional with patient'
               className="w-full h-full"
             />
           </motion.div>
@@ -179,6 +179,8 @@ const Hero = () => {
               <div className="mt-1 bg-primary p-2  rounded-full">
                 <img
                   src={heart_icon}
+                  alt="Heart Icon"
+                  title="Heart Icon"
                   className={`object-contain h-5 w-5`}
                   style={{ objectFit: "contain" }}
                 />

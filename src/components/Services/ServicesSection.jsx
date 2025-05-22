@@ -9,11 +9,14 @@ const ServicesSection = () => {
   const services = [
     { text: "Personal care and daily living" },
     { text: "Transport options" },
+    { text: "Cleaners" },
     { text: "24/7 support" },
     { text: "Social and community participation" },
     { text: "Finding and keeping a job" },
     { text: "Individual living options (ILO)" },
     { text: "Supporting independent living (SIL)" },
+    { text: "Registered Nurse (RN)- Continence Assessment" },
+    { text: "Assistant in Nursing (AIN)- Medication Administration" },
   ]
 
   return (

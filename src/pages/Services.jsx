@@ -1,11 +1,14 @@
+import OurBranches from '@/components/About/our-branches';
 import IndependentLivingSection from "@/components/Services/independent-living-section";
 import JobSupportSection from "@/components/Services/job-support-section";
 import PersonalCareSection from "@/components/Services/personal-care-section";
+import ServiceAreas from '@/components/Services/service-areas';
 import ServicesSection from "@/components/Services/ServicesSection";
 import SocialParticipationSection from "@/components/Services/social-participation-section";
 import TransportSection from "@/components/Services/transport-section";
 import { Link } from "react-router-dom";
-import ContactPage from "./Contact";
+// import ServiceAreas from '../components/ServiceAreas'; 
+// import OurBranches from '../components/OurBranches'; 
 // Additional service-related components or sections could be added here
 const ServiceCards = () => {
   const serviceDetails = [
@@ -79,6 +82,8 @@ const Services = () => {
       <SocialParticipationSection />
       <JobSupportSection />
       <IndependentLivingSection />
+      <ServiceAreas />
+      <OurBranches />
 
       {/* Additional Service Details */}
       {/* <ServiceCards /> */}

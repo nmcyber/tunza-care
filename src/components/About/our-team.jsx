@@ -84,7 +84,7 @@ const OurTeam = () => {
             <motion.div key={index} variants={itemVariants}>
               <Card className="h-full overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300">
                 <div className="relative h-64 w-full">
-                  <img src={member.image || "/placeholder.svg"} alt={member.name} style={{ objectFit: "cover" }} className="object-cover" />
+                  <img src={member.image || "/placeholder.svg"} alt={member.name} title={member.name} style={{ objectFit: "cover" }} className="object-cover" />
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
