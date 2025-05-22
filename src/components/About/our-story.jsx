@@ -99,7 +99,7 @@ const OurStory = () => {
           </motion.div>
 
           <div ref={ref}>
-            <div className='relative pl-0 border-l-2 border-primary/30'>
+            <div className='relative pl-8 border-l-2 border-primary/30'>
               {timelineEvents.map((event, index) => (
                 <motion.div
                   key={index}
