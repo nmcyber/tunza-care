@@ -6,6 +6,7 @@ import ServiceAreas from '@/components/Services/service-areas';
 import ServicesSection from "@/components/Services/ServicesSection";
 import SocialParticipationSection from "@/components/Services/social-participation-section";
 import TransportSection from "@/components/Services/transport-section";
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 // import ServiceAreas from '../components/ServiceAreas'; 
 // import OurBranches from '../components/OurBranches'; 
