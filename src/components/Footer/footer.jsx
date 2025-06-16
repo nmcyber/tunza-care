@@ -224,7 +224,7 @@ const Footer = () => {
               <span className="text-sm mr-1">Made with</span>
               <Heart size={14} className="fill-primary" />
               <span>by</span>
-              <a to="https://nmcyber.com.au" className="text-primary text-xs hover:underline">
+              <a to="https://nmcyber.com.au" alt='NMCyber Website Link' className="text-primary text-xs hover:underline">
                 <img src={nmcyber_logo} alt='NMCyber logo' title='NMCYBER - Discover. Tranform. Thrive' className=' w-4 aspect-square' style={{ objectFit: "contain" }} />
               </a>
             </div>
