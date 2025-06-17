@@ -8,6 +8,8 @@ const ServiceAreas = () => {
     "Merredin",
     "Narrogin",
     "Northam",
+    "Kununura",
+    "Wyndham",
     "York",
   ]
 

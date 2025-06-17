@@ -15,7 +15,7 @@ const StaffingOpportunities = () => {
   const jobCategories = [
     {
       id: "1",
-      title: "Cleaners",
+      title: "Cleaners & Gardeners",
       services: [
         "Personal care and daily living",
         "Transport options",
@@ -65,19 +65,19 @@ const StaffingOpportunities = () => {
       description:
         "Empower our clients to live independently and participate fully in their communities.",
     },
-    {
-      id: "5",
-      title: "Catering Assistants",
-      services: [
-        "Meal planning",
-        "Food preparation",
-        "Special dietary requirements",
-        "Kitchen hygiene",
-        "Nutritional support",
-      ],
-      description:
-        "Help provide nutritious and enjoyable meals for our clients with diverse needs.",
-    },
+    // {
+    //   id: "5",
+    //   title: "Catering Assistants",
+    //   services: [
+    //     "Meal planning",
+    //     "Food preparation",
+    //     "Special dietary requirements",
+    //     "Kitchen hygiene",
+    //     "Nutritional support",
+    //   ],
+    //   description:
+    //     "Help provide nutritious and enjoyable meals for our clients with diverse needs.",
+    // },
   ];
 
   const containerVariants = {

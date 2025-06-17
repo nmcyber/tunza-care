@@ -3,7 +3,7 @@ const OurBranches = () => {
     {
       state: "Northern Territory (NT)",
       locations: "Alice Springs, Tenant Creek",
-      address: "160 Woods Terrace, Braitling NT 0870",
+      address: "4/8 Gregory terrace",
     },
   ]
 

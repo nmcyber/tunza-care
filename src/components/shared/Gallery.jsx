@@ -191,7 +191,7 @@ const Gallery = () => {
       initial="initial"
       animate="animate"
     >
-      <div className="max-w-[90vw] md:max-w-[85vw] mx-auto px-4">
+      <div className="max-w-[95vw] md:max-w-[85vw] mx-auto px-4">
 
         {/* Scrollable Grid */}
         <div
@@ -226,8 +226,8 @@ const Gallery = () => {
               }
               
               .gallery-item-even {
-                min-width: 220px !important;
-                max-width: 220px !important;
+                min-width: 120px !important;
+                max-width: 130px !important;
               }
             }
           `}</style>
@@ -240,7 +240,7 @@ const Gallery = () => {
                   key={item.id}
                   className={`
                     ${item.type === "text" ? "gallery-item-text" : item.id % 2 === 1 ? "gallery-item-odd" : "gallery-item-even"}
-                    ${item.id % 2 === 1 ? "w-[395px]" : "w-[290px]"}
+                    ${item.id % 2 === 1 ? " w-10 md:w-[395px]" : "w-[290px]"}
                     h-[180px] md:h-[200px] rounded-xl overflow-hidden shadow-md flex-shrink-0 flex items-center 
                     ${item.type !== "text" ? "cursor-pointer" : ""}
                   `}

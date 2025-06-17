@@ -17,6 +17,7 @@ const LocationsPage = () => {
       <main className="min-h-screen">
         {/* Hero Section */}
         <div className="relative bg-gradient-to-r from-primary to-primary-dark text-white py-16 md:py-24">
+        {/* Add Hero image */}
           <div className="absolute inset-0 opacity-10 bg-[url('/src/assets/images/pattern-bg.svg')] bg-repeat"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
@@ -67,7 +68,7 @@ const LocationsPage = () => {
                 Contact Us
               </a>
               <a href="tel:+61123456789" className="inline-block bg-white hover:bg-gray-100 text-primary font-medium py-3 px-6 rounded-md transition duration-300 border border-primary">
-              Emergency Line: 0469 842 289
+              Emergency Line: 0415 - 523 323 / 0469 - 842 289
               </a>
             </div>
           </div>

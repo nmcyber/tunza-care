@@ -5,7 +5,7 @@ import { FaTiktok } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Twitter, Youtube, Anchor } from "lucide-react";
+import { Phone, Mail, MapPin, Twitter, Youtube, Anchor, FacebookIcon, LinkedinIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "../ui/toast";
 
@@ -142,7 +142,7 @@ const ContactSection = () => {
             className="max-w-3xl mx-auto mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-primary">Stay Touch</span> With Us
+              <span className="text-primary">Stay in Touch</span> With Us
             </h2>
             <p className="text-gray-600">
               Talk to us anytime, we are quick to respond and have full capacity
@@ -316,6 +316,11 @@ const ContactSection = () => {
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Address</p>
                     <p className="font-medium">
+                      4/8 Gregory terrace
+                      <br />
+                      Alice springs
+                    </p>{' '}
+                    <p className="font-medium">
                       6/15 Pattie Street
                       <br />
                       Cannington WA 6107
@@ -330,15 +335,15 @@ const ContactSection = () => {
                       href="#"
                       className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
-                      <Twitter className="h-5 w-5" />
+                      <FacebookIcon className="h-5 w-5" />
                     </a>
                     <a
                       href="#"
                       className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
-                      <Youtube className="h-5 w-5" />
+                      <LinkedinIcon className="h-5 w-5" />
                     </a>
-                    <a
+                    {/* <a
                       href="#"
                       className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
@@ -360,7 +365,7 @@ const ContactSection = () => {
                       >
                         <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
                       </svg>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

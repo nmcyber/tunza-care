@@ -54,8 +54,8 @@ const Footer = () => {
             </Link>
 
             <p className="text-gray-600 max-w-xs">
-              Tunza Care Services is a WA NDIS provider, offering a range of in-home care and support services across
-              Western Australia.
+              Tunza Care Services is a registered NDIS provider, offering a range of in-home care and support services across
+              Australia.
             </p>
 
             <div className="flex space-x-3">

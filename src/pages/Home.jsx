@@ -1,3 +1,4 @@
+import React from "react";
 import Hero from "@/components/Hero/Hero";
 import NDIS from "@/components/Landing/NDIS";
 import { images1, images2 } from "@/constants";

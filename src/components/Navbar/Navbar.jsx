@@ -88,7 +88,7 @@ const Navbar = () => {
             variant="ghost"
           >
             <Phone className="mr-2 h-4 w-4 text-teal-600" />
-            <span className="text-teal-600 font-medium">0469 842 289</span>
+            <span className="text-teal-600 font-medium">08 9387 6326</span>
           </Button>
         </nav>
 

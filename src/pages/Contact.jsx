@@ -24,7 +24,7 @@ export default function ContactPage() {
       <ContactSection />
 
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Office Hours</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -33,7 +33,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <div className="bg-gray-50 p-6 rounded-xl text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="h-8 w-8 text-primary" />
@@ -50,8 +50,18 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Support Hours</h3>
               <p className="text-gray-600">24/7 Support Available</p>
-              <p className="text-gray-600">Emergency Line: 0469 842 289</p>
+              <p className="text-gray-600">Support Line: 0469 842 289</p>
               <p className="text-gray-600 mt-2">For non-urgent matters, please use the contact form.</p>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-xl text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Emergency Line</h3>
+              <p className="text-gray-600">24/7</p>
+              <p className="text-gray-600">Call:  0469 842 289</p>
+              <p className="text-gray-600">Life threating, call: 000</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl text-center">
@@ -81,6 +91,7 @@ export default function ContactPage() {
         ></iframe>
       </section>
     </main>
+    {/* 6/15 Pattie Street */}
     </>
   )
 }

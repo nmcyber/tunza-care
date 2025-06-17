@@ -61,14 +61,14 @@ const Hero = () => {
             <ShimmerButton className="shadow-2xl bg-primary hover:bg-[#155a87] text-white rounded-full px-6 py-2 text-lg font-medium">
               {" "}
               {/* Add any specific styling for the shimmer container if needed */}
-              Book Appointment
+              Inquiries
               <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </ShimmerButton>
 
             <div className="flex items-center gap-2">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e6f2f5]">
+              {/* <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e6f2f5]">
                 <Play className="h-5 w-5 text-primary ml-0.5" />
-              </div>
+              </div> */}
               <Link to="/about" className="text-primary font-medium">
                 Learn More
               </Link>
