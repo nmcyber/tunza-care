@@ -28,13 +28,24 @@ export { default as doctor } from "./images/doctorlogo.png";
 export { default as indepedent_living } from "./images/individual_living_option.webp";
 export { default as doctor_avatar } from "./images/dr_jones.webp";
 export { default as banner } from "./images/old_man_weatherly.webp";
+export { default as travel_perth } from "./images/travel_perth.webp";
 export { default as smilling_nurse } from "./images/smiling-nurse-standing.webp";
 
 export { default as image1 } from "./images/image1.png";
 export { default as image2 } from "./images/image2.png";
 export { default as image3 } from "./images/image3.png";
 export { default as image4 } from "./images/image4.png";
-// export { default as image5 } from "./images/image5.png";
+export { default as image9 } from "./images/1.webp";
+export { default as image10 } from "./images/2.webp";
+export { default as image11 } from "./images/3.webp";
+export { default as image_4 } from "./images/4.webp";
+export { default as image_5 } from "./images/5.webp";
+export { default as image_6 } from "./images/6.webp";
+export { default as image_7 } from "./images/7.webp";
+export { default as image_8 } from "./images/8.webp";
+export { default as image_9 } from "./images/9.webp";
+export { default as image_10 } from "./images/10.webp";
+export { default as image_11 } from "./images/11.webp";
 export { default as image6 } from "./images/young_doctor.webp";
 export { default as image7 } from "./images/old_man_weatherly.webp";
 export { default as image8 } from "./images/about-tunza-care.webp";
@@ -50,9 +61,9 @@ export { default as about_tunza_care } from "./images/about-tunza-care.webp";
 export { default as nurse_patient_care } from "./images/nurse_patient_care.webp";
 export { default as holding_hands_banner } from "./images/holding_hands_services_page_banner.webp";
 
-export {default as avatar_1 } from "./images/avatar_1.png";
-export {default as avatar_2 } from "./images/avatar_2.png";
-export {default as avatar_3 } from "./images/avatar_3.png";
+export {default as avatar_1 } from "./images/avatar_1.webp";
+export {default as avatar_2 } from "./images/avatar_2.webp";
+export {default as avatar_3 } from "./images/avatar_3.webp";
 
 // Icons
 export { default as playIcon} from "./icons/playIcon.png"

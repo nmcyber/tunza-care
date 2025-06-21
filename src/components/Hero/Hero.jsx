@@ -24,12 +24,12 @@ const Hero = () => {
   }, [isInView, progressControls]);
 
   return (
-    <section className=" px-4 sm:px-6 lg:px-8 py-8 md:py-12  bg-white">
-      <div className=" md:max-w-[90svw] mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-12 ">
+    <section className=" px-4 pt-10 pb-16 sm:px-6 lg:px-8 min-md:py-8 md:py-12 bg-white">
+      <div className=" md:max-w-[90svw] md:max-h-[65dvh] mx-auto flex flex-col md:flex-row items-center max-md:gap-16 md:gap-8 lg:gap-12 ">
         {/* Left Section */}
         <div className="w-full md:w-1/2 space-y-6">
           <motion.div
-            className="space-y-2"
+            className="space-y-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -45,9 +45,10 @@ const Hero = () => {
             />
 
             <Typography variant="p" className="mt-4 text-lg max-w-xl">
-            Tunza Care Services is a registered NDIS provider offering a range of in-home care, social &
+            {/* Tunza Care Services is a registered NDIS provider offering a range of in-home care, social &
             community participation, supported independent living (SIL), individual living option (ILO),
-            clinical care and allied health services through Western Australia.
+            clinical care and allied health services through Australia. */}
+            Tunza Care Services is a registered NDIS provider offering a range of in-home care and support services in Australia.
             </Typography>
           </motion.div>
 

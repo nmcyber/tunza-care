@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Typography from "../shared/Typography";
-import { about_tunza_care, nurse_patient_care, tunza_play_icon } from "@/assets";
+import { about_tunza_care, nmcyber_logo, nurse_patient_care, tunza_play_icon } from "@/assets";
 import { InvertedBorder } from "../shared/InvertedRadius";
 
 const partners = [
@@ -21,7 +21,17 @@ export default function TrustedPartnership() {
 
         {/* Partner Logos */}
         <div className='flex flex-wrap py-8 justify-center items-center gap-8 md:gap-12 mb-10'>
-          {partners.map((partner) => (
+        <div className="flex flex-row w-10 space-x-2 text-3xl justify-center items-center">
+          <img
+              src={nmcyber_logo}
+              className=" ~w-4/10"
+              alt="logo"
+            />
+            <p>
+            NM<span className="bg-clip-text uppercase text-transparent font-medium bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
+            </p>
+        </div>  
+          {/* {partners.map((partner) => (
             <div key={partner.id} className='flex items-center'>
               <img
                 src={partner.logo || "/placeholder.svg"}
@@ -34,7 +44,7 @@ export default function TrustedPartnership() {
                 }}
               />
             </div>
-          ))}
+          ))} */}
         </div>
 
         {/* Main Content Card */}

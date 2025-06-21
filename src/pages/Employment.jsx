@@ -31,10 +31,10 @@ export default function EmploymentPage() {
 
       <StaffingOpportunities />
 
-      <section className="py-4 px-4 bg-transparent">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-16 px-4 bg-transparent">
+        <div className=" max-xl:max-w-7xl max-w-[90svw] mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">Why Work With Us?</h2>
-          <div className="grid md:grid-cols-3 gap-8 mt-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
             <div className="bg-gray-50 p-6 rounded-xl">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
@@ -53,7 +53,7 @@ export default function EmploymentPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Flexible Hours</h3>
-              <p className="text-gray-600">Work schedules that fit your lifestyle and commitments</p>
+              <p className="text-gray-600">We understand the importance of work-life balance. Our flexible working hours allow you to manage your time effectively, accommodating both personal and professional commitments.</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl">
@@ -74,7 +74,7 @@ export default function EmploymentPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Career Growth</h3>
-              <p className="text-gray-600">Opportunities for professional development and advancement</p>
+              <p className="text-gray-600">We are committed to your professional development. Our organization offers various opportunities for training and advancement, ensuring that you can build a successful and fulfilling career with us.</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl">
@@ -95,7 +95,28 @@ export default function EmploymentPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Rewarding Work</h3>
-              <p className="text-gray-600">Make a meaningful difference in people's lives every day</p>
+              <p className="text-gray-600">At our organization, you will find meaningful work that makes difference. We value your contributions and strive to create an environment where you can feel proud of the impact you make every day.</p>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-xl">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-8 w-8 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Diversity and Inclusion</h3>
+              <p className="text-gray-600">We celebrate diversity and are committed to creating an inclusive workplace. We believe that different perspectives enrich our organization and drive creativity.</p>
             </div>
           </div>
         </div>

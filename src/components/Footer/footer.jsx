@@ -33,14 +33,14 @@ const Footer = () => {
   const obfuscatedEmail = obfuscateValue(emailAddress)
 
   return (
-    <footer className="bg-white pt-16 relative rounded-t-2xl  md:rounded-t-2xl lg:rounded-t-4xl overflow-hidden">
+    <footer className="bg-white pt-16 relative rounded-t-2xl md:rounded-t-2xl lg:rounded-t-4xl overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-50 to-transparent"></div>
       <div className="absolute -left-20 top-40 w-40 h-40 rounded-full border-[15px] border-sky-50/50 -z-10"></div>
       <div className="absolute -right-10 bottom-40 w-32 h-32 rounded-full border-[12px] border-teal-50/40 -z-10"></div>
 
       <motion.div
-        className="container mx-auto px-6 lg:px-8"
+        className="containerr max-w-[90svw] mx-auto px-6 lg:px-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -54,8 +54,7 @@ const Footer = () => {
             </Link>
 
             <p className="text-gray-600 max-w-xs">
-              Tunza Care Services is a registered NDIS provider, offering a range of in-home care and support services across
-              Australia.
+              Tunza Care Services is a registered NDIS provider offering a range of in-home care and support services in Australia.
             </p>
 
             <div className="flex space-x-3">
@@ -194,7 +193,7 @@ const Footer = () => {
         <motion.div variants={itemVariants} className="border-t border-gray-100 pt-6 pb-4 text-center">
           <p className="text-gray-600 text-sm max-w-3xl mx-auto">
             We pay our respects to the Traditional Owners of the land on which we work and live, and to their cultures;
-            and to Elders past, present and emerging.
+            <br/>And to Elders past, present and emerging.
           </p>
         </motion.div>
 

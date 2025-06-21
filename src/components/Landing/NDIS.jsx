@@ -10,16 +10,16 @@ export default function NDIS({
   services,
 }) {
   return (
-    <section className=' relative z-10 flex flex-col container mx-auto py-12 bg-background overflow-hiddenn bbg-[url(/left_.svg)] bg-no-repeat after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:top-0 after:-right-[2.15%] after:z-0 '>
+    <section className='relative z-10 flex flex-col max-w-[95svw] mx-auto py-12 bg-background overflow-hidden bbg-[url(/left_.svg)] bg-no-repeat after:bg-no-repeat after:bg-right-top after:object-contain after:absolute after:aspect-square after:h-full after:top-0 after:-right-[2.15%] after:z-0 '>
       {/* Main Content Card */}
-      <div className=' flex rounded-lg py-11 px-11 overflow-hidden bg-white relative z-10 border-none outline-none '>
+      <div className=' flex rounded-lg py-8 px-6 md:py-11 md:px-11 overflow-hidden bg-white relative z-10 border-none outline-none '>
         {/* Controls where the overflow is at for the inverted border radius */}
-        <Card className='rounded-lg bg-none outline-none shadow-none'>
-          <CardContent className='p-0 bg-none '>
+        <Card className='rounded-lg bg-none border-none outline-none shadow-none'>
+          <CardContent className='p-0 bg-none'>
             {/* defines the white background color that will appear in the gap between the two seperate columns */}
             <div
               id='house-info'
-              className=' relative md:max-h-screen 2xl:max-h-[70dvh] flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8 '
+              className='relative md:max-h-screen 2xl:max-h-[80dvh] flex flex-col space-y-10 md:space-y-0 md:flex-row md:gap-8'
             >
               {/* ============================================= */}
               {/* LEFT Side - Content */}
@@ -146,7 +146,7 @@ export default function NDIS({
                 {/* INVERTED BORDER COMPONENT */}
                 <div
                   id='house-pricee'
-                  className=' absolute flex z-20 p-4 -bottom-6 -left-[32%] bg-white rounded-xl border-0 border-red-400 '
+                  className=' absolute flex z-20 p-4 -bottom-6 -left-4 md:-left-[32%] bg-white rounded-xl border-0 border-red-400 max-md:w-3/4'
                 >
                   <div className='grid grid-cols-1 text-white gap-0 z-30 space-y-0 items-center border-0 border-lime-400'>
                     <img
@@ -154,7 +154,7 @@ export default function NDIS({
                       alt='NDIS Logo'
                       title='NDIS Logo'
                       style={{ objectFit: "contain", height: "120px" }}
-                      className=' object-cover'
+                      className='object-cover'
                     />
                   </div>
                 </div>

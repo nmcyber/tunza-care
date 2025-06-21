@@ -1,6 +1,7 @@
 import React from 'react';
 import ServiceAreas from '../components/Services/service-areas';
 import OurBranches from '../components/About/our-branches';
+import { travel_perth } from "@/assets";
 import { Helmet } from 'react-helmet-async';
 
 const LocationsPage = () => {
@@ -18,7 +19,14 @@ const LocationsPage = () => {
         {/* Hero Section */}
         <div className="relative bg-gradient-to-r from-primary to-primary-dark text-white py-16 md:py-24">
         {/* Add Hero image */}
-          <div className="absolute inset-0 opacity-10 bg-[url('/src/assets/images/pattern-bg.svg')] bg-repeat"></div>
+        <div className="absolute inset-0 z-0">
+          <img
+            src={travel_perth}
+            alt="Caring hands"
+            style={{ objectPosition: "50% 30%", objectFit: "cover", height: "100%", width: "100%", backgroundRepeat: "no-repeat" }}
+            className="w-full h-full object-cover opacity-40"
+          />
+        </div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Locations</h1>

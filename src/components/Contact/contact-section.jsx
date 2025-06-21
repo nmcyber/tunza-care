@@ -1,133 +1,120 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import * as z from "zod"
 import emailjs from "@emailjs/browser";
-import { FaTiktok } from "react-icons/fa";
+import { ToastAction } from "../ui/toast";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Twitter, Youtube, Anchor, FacebookIcon, LinkedinIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { ToastAction } from "../ui/toast";
+import { Textarea } from "@/components/ui/textarea";
+import { Phone, Mail, MapPin, FacebookIcon, LinkedinIcon } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+
+const ENQUIRY_TYPES = [
+  "Assistance in daily living",
+  "Social and community participation",
+  "Support Coordination",
+  "Staffing",
+  "Cleaning / Gardening",
+  "Respite",
+  "Short Term Accommodation (STA)",
+  "Others"
+];
+
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  company: z.string().min(2, { message: "Company name must be at least 2 characters" }),
+  enquiryType: z.enum(ENQUIRY_TYPES, { required_error: "Please select an enquiry type",
+  }),
+  email: z.string().email({ message: "Invalid email address" }),
+  phone: z.string().regex(/^\d{10}$/, { message: "Phone number must be 10 digits" }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
+})
 
 const ContactSection = () => {
-  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-
   const { toast } = useToast();
-  // TODO:Include ZOD for checking input
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    message: "",
-    files: null,
-  });
 
-  // useEffect(() => {
-  //   setFormData((prevData) => ({ ...prevData, recipient: formData.email }));
-  // }, [formData.email]);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  // const handleFileChange = (e) => {
-  //   setFormData((prev) => ({ ...prev, files: e.target.files }))
-  // }
-
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.name) newErrors.name = "name is required.";
-    if (!formData.email) {
-      newErrors.email = "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid.";
-    }
-    if (!formData.company) newErrors.company = "company name is required.";
-    if (!formData.phone) {
-      newErrors.phone = "Phone number is required.";
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = "Phone number must be 10 digits.";
-    }
-    if (!formData.industry) newErrors.industry = "Please select an industry.";
-    if (!formData.message) newErrors.message = "Message is required.";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      setIsSubmitting(true);
-      console.log("Sending message...", formData);
-      emailjs
-      // need to update the credetials of emailjs with the tunza email
-        .send(
-          import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID,
-          { ...formData, recipient: formData.email },
-          import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID
-        )
-        .then(
-          () => {
-            toast({
-              title: "Message Sent",
-              description: "Success! Check your mail box.",
-              duration: 5000,
-              // action: <ToastAction altText="Thank you!">Close</ToastAction>,
-              className:
-                " top-0 right-0 flex before:absolute z-10 before:inset-0 bg-[rgba(0,21,48,0.51)] backdrop-blur-[3.5px] border-none outline outline-1 outline-tertiary/80 ",
-            });
-            setFormData({
-              name: "",
-              company: "",
-              email: "",
-              phone: "",
-              message: "",
-            });
-          },
-          (error) => {
-            // console.error("FAILED...", error);
-            toast({
-              title: "Error",
-              description: "Failed to send message. Please try again.",
-              action: <ToastAction altText="Try again">Try again</ToastAction>,
-              variant: "destructive",
-              duration: 5000,
-            });
-          }
-        )
-        .finally(() => {
-          setIsSubmitting(false);
-        });
-    }
-  };
-
+  // Enhanced animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.15,
         delayChildren: 0.3,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
+    hidden: { y: 30, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    },
+  };
+
+  // Form definition using react-hook-form
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      company: "",
+      email: "",
+      phone: "",
+      message: "",
+      enquiryType: undefined,
+    },
+  })
+
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID,
+        { ...data, 
+          recipient: "enquiries@tunzacareservices.com.au",
+          subject: `New Enquiry: ${data.enquiryType}`
+        },
+        import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID
+      );
+
+      toast({
+        title: "Message Sent",
+        description: "Success! Check your mail box.",
+        duration: 5000,
+        className: "top-0 right-0 flex before:absolute z-10 before:inset-0 bg-[rgba(0,21,48,0.51)] backdrop-blur-[3.5px] border-none outline outline-1 outline-tertiary/80",
+      });
+      
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        action: <ToastAction altText="Try again">Try again</ToastAction>,
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-full h-64 bg-primary/5 -skew-y-6 transform -translate-y-32 rounded-bl-[100px] z-0"></div>
-      <div className="absolute bottom-0 left-0 w-full h-64 bg-primary/5 -skew-y-6 transform translate-y-32 rounded-tr-[100px] z-0"></div>
+      <div className="absolute top-0 right-0 w-full h-64 bg-primary/5 -skew-y-6 transform -translate-y-32 rounded-bl-[100px] z-0" />
+      <div className="absolute bottom-0 left-0 w-full h-64 bg-primary/5 -skew-y-6 transform translate-y-32 rounded-tr-[100px] z-0" />
 
       <motion.div
         className="max-w-6xl mx-auto relative z-10"
@@ -136,11 +123,8 @@ const ContactSection = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        <div className="bg-white rounded-2xl shadow-sm overflow-hidden p-8 md:p-10">
-          <motion.div
-            variants={itemVariants}
-            className="max-w-3xl mx-auto mb-10"
-          >
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden p-8 md:p-10">
+          <motion.div variants={itemVariants} className="max-w-3xl mx-auto mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-primary">Stay in Touch</span> With Us
             </h2>
@@ -152,220 +136,216 @@ const ContactSection = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div variants={itemVariants} className="md:col-span-2">
-              <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Name
-                    </label>
-                    <Input
-                      id="name"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                      control={form.control}
+                      name="enquiryType"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Enquiry Type</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Select the purpose of your enquiry" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {ENQUIRY_TYPES.map((type) => (
+                                <SelectItem key={type} value={type}>
+                                  {type}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Enter your name"
-                      className="w-full"
-                      required
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Enter your name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                    {errors.name && (
-                      <p className="text-tertiary text-xs mt-1">
-                        {errors.name}
-                      </p>
-                    )}
-                  </div>
 
-                  <div>
-                    <label
-                      htmlFor="company"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Company
-                    </label>
-                    <Input
-                      id="company"
+                    <FormField
+                      control={form.control}
                       name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder="Enter company here"
-                      className="w-full"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Company</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Enter company name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                    {errors.company && (
-                      <p className="text-tertiary text-xs mt-1">
-                        {errors.company}
-                      </p>
-                    )}
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Email Address
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Email address here"
-                      className="w-full"
-                      required
-                    />
-                    {errors.email && (
-                      <p className="text-tertiary text-xs mt-1">
-                        {errors.email}
-                      </p>
-                    )}
                   </div>
 
-                  <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Phone No
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Enter phone here"
-                      className="w-full"
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email Address</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Enter email address" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                    {errors.phone && (
-                      <p className="text-tertiary text-xs mt-1">
-                        {errors.phone}
-                      </p>
-                    )}
+
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Phone Number</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Enter phone number" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                   </div>
-                </div>
-                <div className="mb-6">
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Message/Inquiry
-                  </label>
-                  <Textarea
-                    id="message"
+
+                  <FormField
+                    control={form.control}
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Type your message here"
-                    className="w-full min-h-[150px]"
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message/Inquiry</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Type your message here" 
+                            className="min-h-[150px]"
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                  {errors.message && (
-                    <p className="text-tertiary text-xs mt-1">
-                      {errors.message}
-                    </p>
-                  )}
-                </div>
-                <Button
-                  type="submit"
-                  className="bg-primary hover:bg-primary text-white px-8 py-6 h-auto rounded-full text-base"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Submiting..." : "Submit Now"}
-                </Button>
-              </form>
+
+                  <Button
+                    type="submit"
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-6 h-auto rounded-full text-base"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit Now"}
+                  </Button>
+                </form>
+              </Form>
             </motion.div>
 
+            {/* Contact Information Section - keeping the existing motion effects */}
             <motion.div
               variants={itemVariants}
-              className="bg-gray-50 rounded-xl p-6"
+              className="bg-gray-50 rounded-xl p-6 lg:p-8"
             >
               <div className="space-y-6">
-                <div className="bg-amber-50 rounded-xl p-4 flex items-start">
+                {/* Phone Contact */}
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-amber-50 rounded-xl p-4 flex items-start hover:shadow-md transition-shadow"
+                >
                   <div className="flex-shrink-0 mr-4">
                     <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
                       <Phone className="h-5 w-5 text-amber-500" />
                     </div>
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-sm text-gray-500 mb-1">Phone</p>
-                    <p className="font-medium">0469 842 289</p>
+                    <a 
+                      href="tel:0469842289" 
+                      className="font-medium hover:text-primary transition-colors"
+                    >
+                      0469 842 289
+                    </a>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="bg-green-50 rounded-xl p-4 flex items-start">
+                {/* Email Contact */}
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-green-50 rounded-xl p-4 flex items-start hover:shadow-md transition-shadow"
+                >
                   <div className="flex-shrink-0 mr-4">
                     <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
                       <Mail className="h-5 w-5 text-green-500" />
                     </div>
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0"> {/* Added min-w-0 to handle text overflow */}
                     <p className="text-sm text-gray-500 mb-1">Email</p>
-                    <p className="font-medium">admin@tunzacaresevices.com.au</p>
+                    <a 
+                      href="mailto:admin@tunzacaresevices.com.au"
+                      className="font-medium hover:text-primary transition-colors break-words"
+                    >
+                      admin@tunzacaresevices.com.au
+                    </a>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="bg-blue-50 rounded-xl p-4 flex items-start">
+                {/* Address Contact */}
+                <motion.div 
+                  whileHover={{ scale: 1.02 }}
+                  className="bg-blue-50 rounded-xl p-4 flex items-start hover:shadow-md transition-shadow"
+                >
                   <div className="flex-shrink-0 mr-4">
                     <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
                       <MapPin className="h-5 w-5 text-blue-500" />
                     </div>
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-sm text-gray-500 mb-1">Address</p>
-                    <p className="font-medium">
-                      4/8 Gregory terrace
-                      <br />
-                      Alice springs
-                    </p>{' '}
-                    <p className="font-medium">
-                      6/15 Pattie Street
-                      <br />
-                      Cannington WA 6107
-                    </p>
+                    <div className="space-y-2">
+                      <address className="font-medium not-italic">
+                        4/8 Gregory terrace<br />
+                        Alice springs
+                      </address>
+                      <address className="font-medium not-italic">
+                        6/15 Pattie Street<br />
+                        Cannington WA 6107
+                      </address>
+                    </div>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="pt-6">
-                  <p className="font-medium mb-4">Connect with us:</p>
-                  <div className="flex space-x-3">
-                    <a
+                {/* Social Links */}
+                <div className="pt-6 border-t border-gray-100">
+                  <p className="font-medium mb-4 text-gray-700">Connect with us:</p>
+                  <div className="flex space-x-4">
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                      className="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                      aria-label="Facebook"
                     >
                       <FacebookIcon className="h-5 w-5" />
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
                       href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                      className="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                      aria-label="LinkedIn"
                     >
                       <LinkedinIcon className="h-5 w-5" />
-                    </a>
-                    {/* <a
-                      href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    >
-                      <FaTiktok className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="h-5 w-5"
-                      >
-                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                      </svg>
-                    </a> */}
+                    </motion.a>
                   </div>
                 </div>
               </div>

@@ -1,172 +1,209 @@
-import { useState, useRef, useEffect, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight, X } from "lucide-react"
-import { images1, images2 } from "@/constants"
-import Typography from "./Typography"
+import { useState, useRef, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Gallery = () => {
-  const [previewImage, setPreviewImage] = useState(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const scrollableRef = useRef(null)
-  const scrollbarRef = useRef(null)
-  const thumbRef = useRef(null)
-  const [thumbPosition, setThumbPosition] = useState(0)
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [startScrollLeft, setStartScrollLeft] = useState(0)
-  const [isMobile, setIsMobile] = useState(false)
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+// REMOVED: import { images1, images2 } from "@/constants"; // No longer needed here as they are passed as props
+import Typography from "./Typography";
+
+// New: ImageWithSkeleton Component
+// This component displays a skeleton until the actual image is loaded.
+const ImageWithSkeleton = ({ src, alt, className, ...props }) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  return (
+    <>
+      {/* Show skeleton if the image hasn't loaded yet */}
+      {!isImageLoaded && <Skeleton className={className} />}
+      <img
+        src={src || "/placeholder.svg"}
+        alt={alt}
+        // Apply the same className for consistent sizing with the skeleton
+        // Hide the image until it's loaded to prevent a broken image icon or partial rendering
+        className={`${className} ${isImageLoaded ? "block" : "hidden"}`}
+        onLoad={() => setIsImageLoaded(true)}
+        onError={() => setIsImageLoaded(true)} // In case image fails to load, still hide skeleton
+        {...props}
+      />
+    </>
+  );
+};
+
+// Modified: Gallery component now accepts images1 and images2 as props
+const Gallery = ({ images1, images2 }) => {
+  const [previewImage, setPreviewImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollableRef = useRef(null);
+  const scrollbarRef = useRef(null);
+  const thumbRef = useRef(null);
+  const [thumbPosition, setThumbPosition] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [startScrollLeft, setStartScrollLeft] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
+      setIsMobile(window.innerWidth < 768);
+    };
 
-    checkMobile()
-    window.addEventListener("resize", checkMobile)
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
 
     return () => {
-      window.removeEventListener("resize", checkMobile)
-    }
-  }, [])
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   const openPreview = (src, allImages) => {
-    setPreviewImage(src)
+    setPreviewImage(src);
     // Find the index of the clicked image
-    const index = [...allImages].findIndex((img) => img.src === src)
-    setCurrentIndex(index)
-  }
+    const index = [...allImages].findIndex((img) => img.src === src);
+    setCurrentIndex(index);
+  };
 
   const closePreview = () => {
-    setPreviewImage(null)
-  }
+    setPreviewImage(null);
+  };
 
   const navigatePreview = (direction, allImages) => {
-    const filteredImages = allImages.filter((img) => img.type !== "text")
-    let newIndex = currentIndex + direction
+    const filteredImages = allImages.filter((img) => img.type !== "text");
+    let newIndex = currentIndex + direction;
 
-    if (newIndex < 0) newIndex = filteredImages.length - 1
-    if (newIndex >= filteredImages.length) newIndex = 0
+    if (newIndex < 0) newIndex = filteredImages.length - 1;
+    if (newIndex >= filteredImages.length) newIndex = 0;
 
-    setCurrentIndex(newIndex)
-    setPreviewImage(filteredImages[newIndex].src)
-  }
+    setCurrentIndex(newIndex);
+    setPreviewImage(filteredImages[newIndex].src);
+  };
 
   const handleMouseDown = (e) => {
-    setIsDragging(true)
-    setStartX(e.clientX || (e.touches && e.touches[0].clientX))
+    setIsDragging(true);
+    setStartX(e.clientX || (e.touches && e.touches[0].clientX));
     if (scrollableRef.current) {
-      setStartScrollLeft(scrollableRef.current.scrollLeft)
+      setStartScrollLeft(scrollableRef.current.scrollLeft);
     }
     if (thumbRef.current) {
-      thumbRef.current.style.cursor = "grabbing"
+      thumbRef.current.style.cursor = "grabbing";
     }
-  }
+  };
 
   const handleTouchStart = (e) => {
-    setIsDragging(true)
-    setStartX(e.touches[0].clientX)
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
     if (scrollableRef.current) {
-      setStartScrollLeft(scrollableRef.current.scrollLeft)
+      setStartScrollLeft(scrollableRef.current.scrollLeft);
     }
-  }
+  };
 
   const handleMouseMove = useCallback(
     (e) => {
-      if (!isDragging || !scrollableRef.current || !scrollbarRef.current || !thumbRef.current) return
+      if (
+        !isDragging ||
+        !scrollableRef.current ||
+        !scrollbarRef.current ||
+        !thumbRef.current
+      )
+        return;
 
-      const clientX = e.clientX || (e.touches && e.touches[0].clientX)
-      if (!clientX) return
+      const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+      if (!clientX) return;
 
-      const deltaX = clientX - startX
-      const scrollableWidth = scrollableRef.current.scrollWidth - scrollableRef.current.clientWidth
-      const scrollbarWidth = scrollbarRef.current.offsetWidth
-      const thumbWidth = thumbRef.current.offsetWidth
+      const deltaX = clientX - startX;
+      const scrollableWidth =
+        scrollableRef.current.scrollWidth - scrollableRef.current.clientWidth;
+      const scrollbarWidth = scrollbarRef.current.offsetWidth;
+      const thumbWidth = thumbRef.current.offsetWidth;
 
       // Calculate the ratio of thumb movement to content scroll
-      const scrollRatio = scrollableWidth / (scrollbarWidth - thumbWidth)
+      const scrollRatio = scrollableWidth / (scrollbarWidth - thumbWidth);
 
       // Calculate the new scrollLeft value
-      const newScrollLeft = startScrollLeft + deltaX * scrollRatio
+      const newScrollLeft = startScrollLeft + deltaX * scrollRatio;
 
-      scrollableRef.current.scrollLeft = newScrollLeft
+      scrollableRef.current.scrollLeft = newScrollLeft;
     },
-    [isDragging, startX, startScrollLeft],
-  )
+    [isDragging, startX, startScrollLeft]
+  );
 
   const handleTouchMove = useCallback(
     (e) => {
-      if (!isDragging || !scrollableRef.current) return
+      if (!isDragging || !scrollableRef.current) return;
 
-      const deltaX = e.touches[0].clientX - startX
-      const newScrollLeft = startScrollLeft - deltaX
+      const deltaX = e.touches[0].clientX - startX;
+      const newScrollLeft = startScrollLeft - deltaX;
 
-      scrollableRef.current.scrollLeft = newScrollLeft
+      scrollableRef.current.scrollLeft = newScrollLeft;
     },
-    [isDragging, startX, startScrollLeft],
-  )
+    [isDragging, startX, startScrollLeft]
+  );
 
   const handleMouseUp = () => {
-    setIsDragging(false)
+    setIsDragging(false);
     if (thumbRef.current) {
-      thumbRef.current.style.cursor = "grab"
+      thumbRef.current.style.cursor = "grab";
     }
-  }
+  };
 
   useEffect(() => {
-    document.addEventListener("mousemove", handleMouseMove)
-    document.addEventListener("mouseup", handleMouseUp)
-    document.addEventListener("touchmove", handleTouchMove)
-    document.addEventListener("touchend", handleMouseUp)
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("touchmove", handleTouchMove);
+    document.addEventListener("touchend", handleMouseUp);
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove)
-      document.removeEventListener("mouseup", handleMouseUp)
-      document.removeEventListener("touchmove", handleTouchMove)
-      document.removeEventListener("touchend", handleMouseUp)
-    }
-  }, [handleMouseMove, handleTouchMove])
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleMouseUp);
+    };
+  }, [handleMouseMove, handleTouchMove]);
 
   useEffect(() => {
-    const scrollableElement = scrollableRef.current
-    const scrollbarElement = scrollbarRef.current
-    const thumbElement = thumbRef.current
+    const scrollableElement = scrollableRef.current;
+    const scrollbarElement = scrollbarRef.current;
+    const thumbElement = thumbRef.current;
 
     if (scrollableElement && scrollbarElement && thumbElement) {
       const handleScroll = () => {
-        const scrollableWidth = scrollableElement.scrollWidth - scrollableElement.clientWidth
-        const scrollLeft = scrollableElement.scrollLeft
-        const scrollbarWidth = scrollbarElement.offsetWidth
-        const thumbWidth = thumbElement.offsetWidth
+        const scrollableWidth =
+          scrollableElement.scrollWidth - scrollableElement.clientWidth;
+        const scrollLeft = scrollableElement.scrollLeft;
+        const scrollbarWidth = scrollbarElement.offsetWidth;
+        const thumbWidth = thumbElement.offsetWidth;
 
         if (scrollableWidth <= 0) {
-          setThumbPosition(0)
-          return
+          setThumbPosition(0);
+          return;
         }
 
-        const thumbPositionRatio = scrollLeft / scrollableWidth
-        const maxThumbPosition = scrollbarWidth - thumbWidth
-        const newThumbPosition = Math.max(0, Math.min(maxThumbPosition, thumbPositionRatio * maxThumbPosition))
-        setThumbPosition(newThumbPosition)
-      }
+        const thumbPositionRatio = scrollLeft / scrollableWidth;
+        const maxThumbPosition = scrollbarWidth - thumbWidth;
+        const newThumbPosition = Math.max(
+          0,
+          Math.min(maxThumbPosition, thumbPositionRatio * maxThumbPosition)
+        );
+        setThumbPosition(newThumbPosition);
+      };
 
-      scrollableElement.addEventListener("scroll", handleScroll)
-      window.addEventListener("resize", handleScroll) // Update thumb on window resize
+      scrollableElement.addEventListener("scroll", handleScroll);
+      window.addEventListener("resize", handleScroll); // Update thumb on window resize
 
       // Initial calculation
-      handleScroll()
+      handleScroll();
 
       return () => {
-        scrollableElement.removeEventListener("scroll", handleScroll)
-        window.removeEventListener("resize", handleScroll)
-      }
+        scrollableElement.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("resize", handleScroll);
+      };
     }
-  }, [])
+  }, []);
 
   const sectionVariants = {
     initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  }
+  };
 
   const imageVariants = {
     initial: { opacity: 0, scale: 0.8 },
@@ -179,10 +216,10 @@ const Gallery = () => {
         stiffness: 100,
       },
     },
-  }
+  };
 
-  // Combine all images for preview navigation
-  const allImages = [...images1, ...images2].filter((img) => img.type !== "text")
+  // Combine all images for preview navigation, using the images from props
+  const allImages = [...images1, ...images2].filter((img) => img.type !== "text");
 
   return (
     <motion.section
@@ -192,7 +229,6 @@ const Gallery = () => {
       animate="animate"
     >
       <div className="max-w-[95vw] md:max-w-[85vw] mx-auto px-4">
-
         {/* Scrollable Grid */}
         <div
           ref={scrollableRef}
@@ -209,22 +245,22 @@ const Gallery = () => {
               scrollbar-width: none;
               padding-bottom: 20px;
             }
-            
+           
             @media (max-width: 767px) {
               .gallery-row {
                 padding-left: 16px;
                 padding-right: 16px;
               }
-              
+             
               .gallery-item-text {
                 min-width: 260px !important;
               }
-              
+             
               .gallery-item-odd {
                 min-width: 260px !important;
                 max-width: 260px !important;
               }
-              
+             
               .gallery-item-even {
                 min-width: 120px !important;
                 max-width: 130px !important;
@@ -239,7 +275,13 @@ const Gallery = () => {
                 <motion.div
                   key={item.id}
                   className={`
-                    ${item.type === "text" ? "gallery-item-text" : item.id % 2 === 1 ? "gallery-item-odd" : "gallery-item-even"}
+                    ${
+                      item.type === "text"
+                        ? "gallery-item-text"
+                        : item.id % 2 === 1
+                        ? "gallery-item-odd"
+                        : "gallery-item-even"
+                    }
                     ${item.id % 2 === 1 ? " w-10 md:w-[395px]" : "w-[290px]"}
                     h-[180px] md:h-[200px] rounded-xl overflow-hidden shadow-md flex-shrink-0 flex items-center 
                     ${item.type !== "text" ? "cursor-pointer" : ""}
@@ -254,14 +296,12 @@ const Gallery = () => {
                 >
                   {item.type === "text" ? (
                     <div className="grid text-center gap-2 md:gap-4 justify-center w-full p-4">
-                      {/* <Typography variant="subtitle" className="text-xs md:text-sm">
-                        {item.subtitle}
-                      </Typography> */}
                       <Typography variant="h1" className=" md:text-xl" h1Parts={item.titleParts} />
                     </div>
                   ) : (
-                    <img
-                      src={item.src || "/placeholder.svg"}
+                    // Use ImageWithSkeleton for actual images
+                    <ImageWithSkeleton
+                      src={item.src}
                       alt={`Gallery ${item.id}`}
                       className="w-full h-full object-cover"
                     />
@@ -288,8 +328,9 @@ const Gallery = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ ...imageVariants.whileInView.transition, delay: index * 0.1 }}
                 >
-                  <img
-                    src={image.src || "/placeholder.svg"}
+                  {/* Use ImageWithSkeleton for actual images */}
+                  <ImageWithSkeleton
+                    src={image.src}
                     alt={`Gallery ${image.id}`}
                     className="w-full h-full object-cover"
                   />
@@ -340,8 +381,8 @@ const Gallery = () => {
                 <button
                   className="absolute top-2 right-2 md:top-4 md:right-4 bg-white/20 hover:bg-white/40 rounded-full p-2 text-white"
                   onClick={(e) => {
-                    e.stopPropagation()
-                    closePreview()
+                    e.stopPropagation();
+                    closePreview();
                   }}
                 >
                   <X className="h-5 w-5 md:h-6 md:w-6" />
@@ -352,8 +393,8 @@ const Gallery = () => {
                     <button
                       className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-2 md:p-3 text-white"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        navigatePreview(-1, allImages)
+                        e.stopPropagation();
+                        navigatePreview(-1, allImages);
                       }}
                     >
                       <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
@@ -362,8 +403,8 @@ const Gallery = () => {
                     <button
                       className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-2 md:p-3 text-white"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        navigatePreview(1, allImages)
+                        e.stopPropagation();
+                        navigatePreview(1, allImages);
                       }}
                     >
                       <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
@@ -376,8 +417,8 @@ const Gallery = () => {
                     <button
                       className="bg-white/20 hover:bg-white/40 rounded-full p-3 text-white"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        navigatePreview(-1, allImages)
+                        e.stopPropagation();
+                        navigatePreview(-1, allImages);
                       }}
                     >
                       <ChevronLeft className="h-5 w-5" />
@@ -386,8 +427,8 @@ const Gallery = () => {
                     <button
                       className="bg-white/20 hover:bg-white/40 rounded-full p-3 text-white"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        navigatePreview(1, allImages)
+                        e.stopPropagation();
+                        navigatePreview(1, allImages);
                       }}
                     >
                       <ChevronRight className="h-5 w-5" />
@@ -400,8 +441,7 @@ const Gallery = () => {
         </AnimatePresence>
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
-export default Gallery
-
+export default Gallery;

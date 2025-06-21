@@ -17,11 +17,17 @@ const StaffingOpportunities = () => {
       id: "1",
       title: "Cleaners & Gardeners",
       services: [
-        "Personal care and daily living",
-        "Transport options",
-        "24/7 support",
-        "Social and community participation",
-        "Finding and keeping a job",
+        "Maintain clean environment",
+        "Sweeping, mopping, vacuuming floors",
+        "Dusting surfaces and furniture",
+        "Cleaning bathroom and toilets",
+        "Empty rubbish and bin replacing liners",
+        "Respect the privacy, dignity, and personal space of participants",
+        // Gardening Services
+        "Mowing lawns with precision and care",
+        "Having understood how to install and maintain irrigation system",
+        "Experience in weeding, fertilizing, and pest control",
+        "Ensuring gardens are lush, healthy, and thriving"
       ],
       description:
         "At Tunza Care, Integrity is our core value, you feel like you possess it? We are looking for you.",

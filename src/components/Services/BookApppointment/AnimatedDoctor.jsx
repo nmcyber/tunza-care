@@ -42,7 +42,7 @@ const AnimatedDoctorImage = () => {
   )
 
   return (
-    <div className="relative aspect-square ">
+    <div className="relative aspect-square mx-auto">
     <div className="relative z-0 aspect-square rounded-tl-lg ">
       {/* Right Angle Triangle */}
       <div className="absolute z-10 inset-0 aspect-square w-1/2 rounded-tl-md bg-lime-500" />
@@ -58,7 +58,7 @@ const AnimatedDoctorImage = () => {
       <div className="absolute z-10 aspect-square w-full overflow-hiddenn rounded-full">
         {/* Animated image container */}
         <motion.div
-          className="absolute inset-0 w-full h-full outline-0 outline-orange-500"
+          className="absolute inset-0 w-full h-full outline-4 outline-orange-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.5 }}
@@ -120,7 +120,7 @@ const AnimatedDoctorImage = () => {
     </div>
      {/* Doctor info card */}
      <motion.div
-          className="absolute bottom-2 -left-[37%] -ttranslate-x-1/2 bg-white text-black rounded-md p-3 shadow-xl flex items-center gap-3 w-11/12"
+          className="absolute bottom-3 md:bottom-2 -left-8 md:-left-[37%] bg-white text-black rounded-md p-3 shadow-xl flex items-center gap-3 md:w-11/12"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
@@ -131,11 +131,11 @@ const AnimatedDoctorImage = () => {
           </Avatar>
           <div>
             <p className="font-medium text-sm">Dr. Charles Jones</p>
-            <div className="h-2 w-44 bg-gray-200 rounded-full mt-1"></div>
+            <div className="h-2 w-full bg-gray-200 rounded-full mt-1" />
           </div>
           {/* Heart icon */}
-        <div className="absolute -top-1/3 right-6 bg-[#FF9500] p-2 rounded-[8px] shadow-lg">
-          <Heart className="h-6 w-6 text-white" />
+        <div className="absolute flex justify-center align-middle -top-6 right-4 md:-top-1/3 md:right-6 bg-[#FF9500] p-2 rounded-[8px] shadow-lg">
+          <Heart className="h-5 w-5 md:h-6 md:w-6 text-white aspect-square" />
         </div>
     </motion.div>
     </div>
