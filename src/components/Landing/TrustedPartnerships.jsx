@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Typography from "../shared/Typography";
 import { about_tunza_care, nmcyber_logo, nurse_patient_care, tunza_play_icon } from "@/assets";
 import { InvertedBorder } from "../shared/InvertedRadius";
+import { AuroraText } from '../magicui/aurora-text';
 
 const partners = [
   { id: 1, name: "Partner 1", logo: "/logos/nmcyber_logo.png" },
@@ -21,15 +22,20 @@ export default function TrustedPartnership() {
 
         {/* Partner Logos */}
         <div className='flex flex-wrap py-8 justify-center items-center gap-8 md:gap-12 mb-10'>
-        <div className="flex flex-row w-10 space-x-2 text-3xl justify-center items-center">
+        <div className="flex flex-row w-full space-x-2 text-3xl justify-center items-center">
+        <span className='flex flex-1 align-middle max-w-fit'>
           <img
               src={nmcyber_logo}
               className=" ~w-4/10"
               alt="logo"
             />
             <p>
-            NM<span className="bg-clip-text uppercase text-transparent font-medium bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
+            NM<span className="bg-clip-text self-center uppercase text-transparent font-medium bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
             </p>
+          </span>
+          <span>
+            <AuroraText>Nextclick</AuroraText>
+          </span>
         </div>  
           {/* {partners.map((partner) => (
             <div key={partner.id} className='flex items-center'>
@@ -131,9 +137,7 @@ export default function TrustedPartnership() {
                     living, feeling accepted and belonging to the team and the
                     community. Tunza Care will work together with you, to
                     personalise your needs according to your choices, ability,
-                    and your unique experience. Tunza Care Services is a Western
-                    Australian family owned company that will work and deliver
-                    services across WA.
+                    and your unique experience. We are a registered NDIS provider offering a range of in-home care and support services in Australia.
                   </Typography>
                 </article>
               </div>

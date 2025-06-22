@@ -237,7 +237,7 @@ export default function ApplicationPage() {
                   <SelectContent>
                     <SelectItem value="support-worker">Support Worker</SelectItem>
                     <SelectItem value="registered-nurse">
-                      Registered Nurse
+                      Registered Nurse / Enrolled Nurse
                     </SelectItem>
                     <SelectItem value="cleaners">
                       Cleaners

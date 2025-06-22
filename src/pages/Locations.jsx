@@ -32,7 +32,7 @@ const LocationsPage = () => {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Locations</h1>
               <p className="text-lg md:text-xl max-w-3xl mx-auto">
                 Discover where Tunza Care is making a difference, with service areas 
-                across Western Australia and branches in the Northern Territory.
+                across Australia and branches in the Northern Territory.
               </p>
             </div>
           </div>

@@ -69,7 +69,7 @@ const OurTeam = () => {
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
             Our team of dedicated professionals brings years of experience in disability care, recognizing the
-            multicultural aspects of Western Australia and providing services with respect and compassion.
+            multicultural aspects of Australia and providing services with respect and compassion.
           </p>
         </motion.div>
 

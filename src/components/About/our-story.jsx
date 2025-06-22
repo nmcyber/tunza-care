@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { image8 } from '@/assets';
 
 const OurStory = () => {
   const ref = useRef(null);
@@ -88,7 +89,7 @@ const OurStory = () => {
 
             <div className='relative h-[300px] md:h-[400px] w-full rounded-2xl overflow-hidden shadow-md'>
               <img
-                src='/placeholder.svg?height=400&width=600'
+                src={image8}
                 alt='Tunza Care Services journey'
                 title='Tunza Care Services journey'
                 loading='lazy'

@@ -34,7 +34,7 @@ const StaffingOpportunities = () => {
     },
     {
       id: "2",
-      title: "Registered Nurses",
+      title: "Registered Nurses / Enrolled Nurses",
       services: [
         "Medication management",
         "Clinical assessments",

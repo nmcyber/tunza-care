@@ -53,7 +53,7 @@ const ServiceAreas = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-foreground text-center mb-2">Western Australia (WA)</h3>
+              <h3 className="text-2xl font-bold text-foreground text-center mb-2">Australia</h3>
             </div>
             <div className="p-6">
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">

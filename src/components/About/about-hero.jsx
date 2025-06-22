@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
+import { image8 } from '@/assets'
 
 const AboutHero = () => {
   return (
@@ -20,9 +21,7 @@ const AboutHero = () => {
               Empowering Lives Through Compassionate Care
             </h1>
             <p className="text-xl text-white/80 max-w-xl">
-              Tunza Care Services is a Western Australian family owned company delivering quality person-centered care
-              across WA, empowering individuals with disabilities to live with choice, independence, and community
-              inclusion.
+              Tunza Care Services is a registered NDIS provider offering a range of in-home care and support services in Australia
             </p>
           </motion.div>
 
@@ -34,7 +33,7 @@ const AboutHero = () => {
           >
             <div className="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="/placeholder.svg?height=400&width=600"
+                src={image8}
                 alt="Tunza Care team members helping clients"
                 title='Tunza Care team members helping clients'
                 style={{ objectFit: "cover" }}
@@ -47,7 +46,7 @@ const AboutHero = () => {
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg max-w-[260px]">
               <p className="text-primary font-semibold mb-2">Our Promise</p>
               <p className="text-gray-700 text-sm">
-                We recognize the multicultural aspects of Western Australia and provide services with respect and
+                We recognize the multicultural aspects of Australia and provide services with respect and
                 compassion for our clients, staff, and the community.
               </p>
             </div>

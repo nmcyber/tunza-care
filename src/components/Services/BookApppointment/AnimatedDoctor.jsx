@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { Heart } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { doctor_avatar, dr_stethoscope } from "@/assets"
+import { doctor_avatar, dr_stethoscope, image8 } from "@/assets"
 
 const AnimatedDoctorImage = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -55,10 +55,10 @@ const AnimatedDoctorImage = () => {
         <div className="absolute z-10 -top-0 -left-0 aspect-square w-[95%] bg-white rounded-full" />
       </div>
 
-      <div className="absolute z-10 aspect-square w-full overflow-hiddenn rounded-full">
+      <div className="absolute z-10 aspect-square w-full overflow-hidden rounded-full">
         {/* Animated image container */}
         <motion.div
-          className="absolute inset-0 w-full h-full outline-4 outline-orange-500"
+          className="absolute inset-0 w-full h-full overflow-hidden outline-4 outline-orange-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.5 }}
@@ -66,9 +66,9 @@ const AnimatedDoctorImage = () => {
           {/* Animated image */}
           <motion.img
             id="image"
-            src={dr_stethoscope}
+            src={image8}
             alt="doctor with stethoscope"
-            style={{ objectFit: "contain", objectPosition: "center", width: "100%" }}
+            style={{ objectFit: "cover", objectPosition: "center", width: "100%" }}
             className="absolute z-10 -top-14 h-[115%] aspect-square rounded-full outline-0 outline-red-500 "
             initial={{ y: "100%", opacity: 0 }}
             animate={{
@@ -86,7 +86,7 @@ const AnimatedDoctorImage = () => {
 
           {/* Animated overlay gradient for extra flair */}
           <motion.div
-            className="absolute inset-0 z-20 bg-gradient-to-t from-transparent to-pink-300/0"
+            className="absolute inset-0 z-20 bg-gradient-to-t overflow-hidden from-transparent to-pink-300/0"
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ duration: 1.5, delay: 1 }}
@@ -130,7 +130,7 @@ const AnimatedDoctorImage = () => {
             <AvatarFallback>CJ</AvatarFallback>
           </Avatar>
           <div>
-            <p className="font-medium text-sm">Dr. Charles Jones</p>
+            <p className="font-medium text-sm">Homecare you can trust</p>
             <div className="h-2 w-full bg-gray-200 rounded-full mt-1" />
           </div>
           {/* Heart icon */}

@@ -90,7 +90,6 @@ export const images2 = [
   { id: 11, src: image_5 },
   { id: 20, src: image4 },
   { id: 19, src: image3 },
-  { id: 18, src: "https://picsum.photos/id/40/1920/1080" },
 ];
 
 export const contactData = [

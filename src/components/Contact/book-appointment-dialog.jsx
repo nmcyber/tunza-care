@@ -13,7 +13,7 @@ import ContactForm from "./book-appointment-form";
 import BookAppointmentForm from "./book-appointment-form";
 
 export const BookAppointmentDialog = ({
-  buttonText = "Book Appointment Now ",
+  buttonText = "Inquiries",
   buttonVariant = "inline",
   position = null,
 }) => {

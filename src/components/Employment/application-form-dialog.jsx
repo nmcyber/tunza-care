@@ -247,11 +247,14 @@ export const ApplicationFormDialog = ({
                 <SelectItem value="registered-nurse">
                   Registered Nurse
                 </SelectItem>
+                <SelectItem value="registered-nurse">
+                  Enrolled Nurse
+                </SelectItem>
                 <SelectItem value="assistant-nurse">
                   Assistant in Nursing
                 </SelectItem>
                 <SelectItem value="catering-assistant">
-                  Catering Assistant
+                  Cleaning & Gardening
                 </SelectItem>
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>

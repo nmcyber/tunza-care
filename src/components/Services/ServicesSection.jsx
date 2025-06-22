@@ -15,6 +15,7 @@ const ServicesSection = () => {
     { text: "Finding and keeping a job" },
     { text: "Individual living options (ILO)" },
     { text: "Supporting independent living (SIL)" },
+    { text: "Support Coordination Level 2, Level 3" },
     { text: "Registered Nurse (RN)- Continence Assessment" },
     { text: "Assistant in Nursing (AIN)- Medication Administration" },
   ]
@@ -47,7 +48,7 @@ const ServicesSection = () => {
             <CardContent className="p-0">
               <div className="flex flex-col p-8 md:gap-16 md:py-11 md:px-10 lg:flex-row border-0 border-indigo-800 ">
                 {/* Left Side - Our Approach */}
-                <div className=" grid justify-items-start items-start w-full lg:w-1/2  bg-white">
+                <div className=" grid justify-items-start items-start w-full lg:w-3/5  bg-white">
                   <Typography variant="subtitle" className=" text-left">Our Approach</Typography>
                   <Typography variant="h1" className="py-0 "
                     h1Parts={[
@@ -69,7 +70,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Right Side - Services List */}
-                <div className="w-full lg:w-1/2 2xl:w-2/5 bg-[#f8f9fa] md:px-8 md:py-4 relative rounded-lg outline-0 outline-lime-400">
+                <div className="w-full lg:w-3/5 2xl:w-1/2 bg-[#f8f9fa] md:px-8 md:py-4 relative rounded-lg outline-0 outline-lime-400">
                 <InvertedBorder
                   right='0'
                   top='0'
