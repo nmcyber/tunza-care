@@ -22,21 +22,27 @@ export default function TrustedPartnership() {
 
         {/* Partner Logos */}
         <div className='flex flex-wrap py-8 justify-center items-center gap-8 md:gap-12 mb-10'>
-        <div className="flex flex-row w-full space-x-2 text-3xl justify-center items-center">
-        <span className='flex flex-1 align-middle max-w-fit'>
-          <img
-              src={nmcyber_logo}
-              className=" ~w-4/10"
-              alt="logo"
-            />
-            <p>
-            NM<span className="bg-clip-text self-center uppercase text-transparent font-medium bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
-            </p>
-          </span>
-          <span>
-            <AuroraText>Nextclick</AuroraText>
-          </span>
-        </div>  
+        <div className="flex flex-row w-full space-x-6 text-3xl justify-center items-center">
+            <span className='flex flex-1 items-center max-w-fit'>
+                <a href='https://nmcyber.com.au' target='_blank' rel='noopener noreferrer' className='flex items-center gap-2'>
+                    <img
+                        src={nmcyber_logo}
+                        className="h-8 object-contain" 
+                        alt="logo"
+                    />
+                    <p className="flex items-center">
+                        NM<span className="bg-clip-text uppercase text-transparent font-medium bg-gradient-to-r from-[#64CDF6] to-[#64CDF6]">Cyber</span>
+                    </p>
+                </a>
+            </span>
+                <a href='http://nextclicktechnologies.com' target='_blank' rel='noopener noreferrer' className='flex items-center gap-2'>
+            <span className='uppercase font-bold cursor-pointer'>
+                <AuroraText className='z-10 cursor-pointer'>
+                NextClick
+                </AuroraText>
+            </span>
+                </a>
+        </div>
           {/* {partners.map((partner) => (
             <div key={partner.id} className='flex items-center'>
               <img

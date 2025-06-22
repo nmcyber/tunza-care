@@ -129,7 +129,7 @@ export function AuroraText({
   return (
     (<span
       ref={containerRef}
-      className={`relative inline-block align-middle ${className}`}
+      className={`relative inline-block cursor-pointer align-middle ${className}`}
       style={{
         width: dimensions.width || "auto",
         height: dimensions.height || "auto",
