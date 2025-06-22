@@ -52,7 +52,7 @@ export const BottomBar = ({ itemVariants }) => {
             >
                 Alexander
               <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                alexander.chepkiyeng.dev
+                github.com/sagar9k
               </span>
             </a>
             <Code size={12} className="text-primary" />
@@ -64,7 +64,7 @@ export const BottomBar = ({ itemVariants }) => {
             >
                 Sagar
               <span className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                alexander.chepkiyeng.dev
+                Sagar9k
               </span>
             </a>
           </div>

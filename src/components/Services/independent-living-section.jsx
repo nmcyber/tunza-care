@@ -11,7 +11,7 @@ const IndependentLivingSection = () => {
     { text: "Cleaning and maintaining your home" },
     { text: "Transport you to run errands" },
     { text: "Connecting with the community" },
-    { text: "Exercise and health eating" },
+    { text: "Exercise and healthy eating" },
   ]
 
   return (
@@ -23,7 +23,7 @@ const IndependentLivingSection = () => {
         <Card className="rounded-xl overflow-hidden border-none shadow-lg">
           <CardContent className="p-0">
             <div className="flex flex-col relative space-y-10 py-6 px-4 md:gap-16 md:py-11 md:max-h-[90dvh] 2xl:max-h-[80dvh] md:px-9 lg:flex-row border-0 border-indigo-800 ">
-            <div className='flex flex-col md:flex-row gap-8 rounded-lg bbg-[#f8f9fa]'>
+            <div className='flex flex-col md:flex-row gap-8 rounded-lg'>
               {/* Left Side - Our Approach */}
               <div className="grid justify-items-start items-start w-full outline-0 outline-emerald-600 lg:w-1/2 px-4 pt-4 pb-6 md:px-8 md:py-4 bg-[#f8f9fa] overflow-hidden rounded-lg ">
                 {/* <Typography variant="subtitle" className=" text-left">Our Approach</Typography> */}
