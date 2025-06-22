@@ -1,22 +1,22 @@
 const ServiceAreas = () => {
   const waServiceAreas = [
-    "Perth Metropolitan Area",
-    "Cuderdin",
-    "Geraldton",
+    "York",
+    "Wyndham",
     "Kojonup",
     "Toodyay",
-    "Merredin",
-    "Narrogin",
     "Northam",
+    "Merredin",
+    "Cuderdin",
+    "Narrogin",
     "Kununurra",
-    "Wyndham",
-    "York",
+    "Geraldton",
+    "Perth Metropolitan Area",
   ]
 
   const upcomingServiceAreas = ["Albany", "Broom", "Esperance", "Kalgoorlie"]
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 my-4 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center text-center mb-12">
           <div className="flex items-center justify-center mb-4">
@@ -55,10 +55,10 @@ const ServiceAreas = () => {
               </div>
               <h3 className="text-2xl font-bold text-foreground text-center mb-2">Australia</h3>
             </div>
-            <div className="p-6">
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+           <div className="p-6">
+              <ul className="grid grid-cols-[minmax(0,1.75fr)_minmax(0,1fr)] gap-x-0 gap-y-1 md:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1fr)]">
                 {waServiceAreas.map((area, index) => (
-                  <li key={index} className="flex items-center text-muted-foreground">
+                  <li key={index} className="flex items-start text-muted-foreground py-0.5 w-full">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 text-primary mr-2 flex-shrink-0"
@@ -73,7 +73,7 @@ const ServiceAreas = () => {
                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    {area}
+                    <span className="flex-grow min-w-0 break-words">{area}</span>
                   </li>
                 ))}
               </ul>

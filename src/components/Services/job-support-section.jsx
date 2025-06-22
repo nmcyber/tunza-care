@@ -11,9 +11,9 @@ const JobSupportSection = () => {
       <div className="md:max-w-6xl 2xl:max-w-7xl mx-auto">
         <Card className="rounded-xl overflow-hidden border-none shadow-lg">
           <CardContent className="p-0">
-            <div className="flex flex-col p-8 md:gap-16 md:py-11 md:px-9 lg:flex-row border-0 border-indigo-800 ">
+            <div className="flex flex-col space-y-8 py-6 px-4 md:gap-12 md:py-11 md:px-9 lg:flex-row border-0 border-indigo-800 ">
               {/* Left Side - Our Approach */}
-              <div className=" grid justify-items-start items-start w-full lg:w-1/2 md:px-8 md:py-4 bg-[#f8f9fa] rounded-lg ">
+              <div className=" grid justify-items-start items-start w-full lg:w-1/2 px-4 pt-4 pb-6 md:px-8 md:py-4 bg-[#f8f9fa] rounded-lg ">
                 {/* <Typography variant="subtitle" className=" text-left">Our Approach</Typography>
                 <Typography variant="h1" className="py-0 "
                   h1Parts={[
@@ -21,10 +21,12 @@ const JobSupportSection = () => {
                     { text: "communities", color: "color2" },
                   ]} /> */}
 
-                <div className="space-y-4 text-gray-600">
-                <Typography variant="h2" className="text-3xl font-bold mb-4">
-                    Finding And Keeping <span className="text-[#1a6b9f]">A Job</span>...
-                  </Typography>
+                <div className="space-y-8 text-gray-600">
+                 <Typography variant="h1" className="py-0 "
+                  h1Parts={[
+                    { text: "Finding And", color: "color1" },
+                    { text: " Keeping A Job...", color: "color2" },
+                  ]} />
                   <Typography variant="p" className="text-gray-600 mb-4">
                     You get a better and greater sense of what is happening in the community, build independence, do what you
                     love and be passionate about it. Tunza Care Services will help build up a resume that matches your skills,
@@ -38,11 +40,11 @@ const JobSupportSection = () => {
 
               {/* Right Side - Services List */}
               <div id='house-image'
-                className='relative z-0 w-full md:w-1/2 outline-none border-0 border-fuchsia-500'>
+                className='relative z-0 w-full md:min-h-[60dvh] md:w-1/2 outline-none border-0 border-fuchsia-500'>
               <img
                   src={finding_and_keeping}
                   alt='Caregiver and client smiling together'
-                  className='w-full rounded-lg'
+                  className='w-full rounded-lg max-md:min-h-[40dvh]'
                   style={{
                     height: "100%",
                     objectFit: "cover",
