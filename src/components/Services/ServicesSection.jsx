@@ -46,7 +46,7 @@ const ServicesSection = () => {
         <div className="md:max-w-6xl 2xl:max-w-7xl mx-auto">
           <Card className="rounded-xl overflow-hidden border-none shadow-lg">
             <CardContent className="p-0">
-              <div className="flex flex-col p-8 md:gap-16 md:py-11 md:px-10 lg:flex-row border-0 border-indigo-800 ">
+              <div className="flex flex-col space-y-10 py-6 px-4 md:p-8 md:gap-16 md:py-11 md:px-10 lg:flex-row border-0 border-indigo-800 ">
                 {/* Left Side - Our Approach */}
                 <div className=" grid justify-items-start items-start w-full lg:w-3/5  bg-white">
                   <Typography variant="subtitle" className=" text-left">Our Approach</Typography>
@@ -70,19 +70,20 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Right Side - Services List */}
-                <div className="w-full lg:w-3/5 2xl:w-1/2 bg-[#f8f9fa] md:px-8 md:py-4 relative rounded-lg outline-0 outline-lime-400">
+                <div className="w-full lg:w-3/5 2xl:w-1/2 bg-[#f8f9fa] px-4 py-8 md:px-8 md:py-4 relative rounded-lg outline-0 outline-lime-400">
                 <InvertedBorder
                   right='0'
                   top='0'
-                  padding='4'
+                  padding='0'
+                  paddingMd='4'
                   rotation='-rotate-0'
                   innerColor={"bg-transparent"}
                   imgSrc={logo}
                   imgAlt='Star Icon'
                   imgSize='64px'
                   objectFit="cover"
-                  imgHeight="h-16"
-                  imgWidth="w-24"
+                  imgHeight="h-12 md:h-16"
+                  imgWidth="w-12 md:w-24"
                   imgHolderRounded="rounded-none"
                   hideSpanBg={true}
                   innerBorderRadius='rounded-bl-xl'
@@ -94,7 +95,7 @@ const ServicesSection = () => {
                   afterLeft='-left-6'
                   spanBgColor='bg-[#2DBA98]'
                 />
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary mb-8 mt-4">OUR SERVICES ARE</h3>
+                  <h3 className="text-xl md:text-3xl font-bold text-primary mb-8 mt-4">OUR SERVICES ARE</h3>
 
                   <ul className="space-y-4">
                     {services.map((service, index) => (

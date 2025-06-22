@@ -11,20 +11,20 @@ const TransportSection = () => {
       <div className="md:max-w-6xl 2xl:max-w-7xl mx-auto">
         <Card className="rounded-xl overflow-hidden border-none shadow-lg">
           <CardContent className="p-0">
-            <div className="flex flex-col p-8 md:gap-16 md:py-11 md:px-9 lg:flex-row border-0 border-indigo-800 ">
+            <div className="flex flex-col space-y-10 py-6 px-4 md:gap-16 md:py-11 md:px-9 lg:flex-row border-0 border-indigo-800 ">
               {/* Left Side - Our Approach */}
-              <div className=" grid justify-items-start items-start w-full lg:w-1/2 md:px-8 md:py-4 bg-[#f8f9fa] rounded-lg ">
-                {/* <Typography variant="subtitle" className=" text-left">Our Approach</Typography>
+              <div className="grid justify-items-start items-start w-full lg:w-1/2 px-4 py-8 md:px-8 md:py-4 bg-[#f8f9fa] rounded-lg ">
+                <Typography variant="subtitle" className=" text-left">Our Approach</Typography>
                 <Typography variant="h1" className="py-0 "
                   h1Parts={[
-                    { text: "welcome", color: "color1" },
-                    { text: "communities", color: "color2" },
-                  ]} /> */}
+                    { text: "Transport", color: "color1" },
+                    { text: "Options...", color: "color2" },
+                  ]} />
 
                 <div className="space-y-4 text-gray-600">
-                <h2 className="text-3xl font-bold mb-4">
+                {/* <h2 className="text-3xl font-bold mb-4">
                     <span className="text-[#1a6b9f]">Transport</span> Options...
-                  </h2>
+                  </h2> */}
                   <p className="text-gray-600 mb-4">
                     For every individual to be able to undertake both activities of daily living and meeting social needs,
                     there is a need for transportation from one place to the other.
@@ -42,7 +42,7 @@ const TransportSection = () => {
               <img
                   src={participation}
                   alt='Caregiver and client smiling together'
-                  className='w-full rounded-lg'
+                  className='w-full rounded-lg max-md:min-h-[35dvh]'
                   style={{
                     height: "100%",
                     objectFit: "cover",

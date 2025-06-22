@@ -20,17 +20,17 @@ const PersonalCareSection = () => {
         <div className=" md:max-w-6xl 2xl:max-w-7xl mx-auto">
           <Card className="rounded-xl overflow-hidden border-none shadow-lg">
             <CardContent className="p-0">
-              <div className="flex flex-col p-8 md:gap-16 md:py-11 md:px-10 lg:flex-row-reverse border-0 border-indigo-600 ">
+              <div className="flex flex-col space-y-10 pt-2 pb-6 px-6 md:p-8 md:gap-16 md:py-11 md:px-10 lg:flex-row-reverse border-0 border-indigo-600 ">
 
                   {/* Left side - Content */}
-                <div className=" grid justify-items-start items-start w-full lg:w-1/2 bg-none">
+                <div className=" grid justify-items-start items-start w-full  lg:w-1/2 bg-none">
                   <Typography variant="h1" className={"py-4"}
                     h1Parts={[
                       { text: "Personal Care", color: "color1" },
                       { text: "And Daily Living...", color: "color2" },
                     ]} />
                     <Typography variant="p" className="mb-6">
-                    Tunza Care will provide you with assistance in self-care tasks and daily personal care such as:
+                    Tunza Care will provide assistance in self-care tasks and daily personal care such as:
                   </Typography>
 
                   <ul className="space-y-3">
@@ -54,7 +54,7 @@ const PersonalCareSection = () => {
                 <img
                   src={personal_care}
                   alt='Caregiver and client smiling together'
-                  className='w-full rounded-lg'
+                  className='w-full rounded-lg max-md:min-h-[35dvh]'
                   style={{
                     height: "100%",
                     objectFit: "cover",
@@ -64,7 +64,8 @@ const PersonalCareSection = () => {
                  <InvertedBorder
                   top='0'
                   right='0'
-                  padding='4'
+                  padding='3'
+                  paddingMd='4'
                   rotation='-rotate-0'
                   innerColor={"bg-[#E1ECF1]"}
                   imgSrc={charity_icon}
