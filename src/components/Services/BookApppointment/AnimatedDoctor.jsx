@@ -68,8 +68,8 @@ const AnimatedDoctorImage = () => {
             id="image"
             src={image8}
             alt="doctor with stethoscope"
-            style={{ objectFit: "cover", objectPosition: "center", width: "100%" }}
-            className="absolute z-10 -top-14 h-[115%] aspect-square rounded-full outline-0 outline-red-500 "
+            style={{ objectFit: "cover", objectPosition: "center", width: "95%", borderRadius: "100%" }}
+            className="absolute z-10 -top-5 h-[105%] -left-0 aspect-auto rounded-full outline-0 outline-red-500 "
             initial={{ y: "100%", opacity: 0 }}
             animate={{
               y: isVisible ? 0 : "100%",

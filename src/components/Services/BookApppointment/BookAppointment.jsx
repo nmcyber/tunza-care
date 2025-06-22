@@ -39,7 +39,7 @@ const BookAppointmentBanner = () => {
 
           {/* Right side - Doctor Image */}
           <motion.div
-            className="w-11/12 mx-auto h-[35dvh] max-md:w-screen md:h-auto py-2 mt-8 justify-center max-md:aspect-square md:w-1/2 -mr-2 md:mr-0 relative "
+            className="w-11/12 mx-auto h-[35dvh] max-md:w-screen md:h-auto py-2 mt-8 justify-center max-md:aspect-square md:w-1/2 mr-2 md:mr-0 relative "
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
