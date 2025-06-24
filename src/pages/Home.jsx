@@ -3,6 +3,7 @@ import Hero from "@/components/Hero/Hero";
 import NDIS from "@/components/Landing/NDIS";
 import { images1, images2 } from "@/constants";
 import Location from "@/components/Footer/location";
+import { Helmet } from 'react-helmet-async';
 import TrustedPartnership from "@/components/Landing/TrustedPartnerships";
 import { OurPrinciplesSection } from "@/components/Landing/CoreMissionVision/OurPrinciplesSection";
 
@@ -60,7 +61,9 @@ const Home = () => {
       <Suspense fallback={<LoadingSpinner />}>
         <BookAppointmentBanner />
       </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>
       <Location />
+      </Suspense>
     </section>
     </>
   );
