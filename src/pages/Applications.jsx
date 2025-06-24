@@ -135,7 +135,7 @@ export default function ApplicationPage() {
         <title>Apply Now | Tunza Care Home Care Support Services</title>
         <meta name="description" content="Join the Tunza Care team. Apply for our available positions in healthcare and support services." />
         <meta name="keywords" content="care jobs, healthcare careers, support worker positions, nursing jobs, care employment" />
-        <link rel="canonical" href="http://192.168.28.25:5174/applications" />
+        <link rel="canonical" href=" https://tunza-care.nmcyber.com/applications" />
       </Helmet>
     <main className="min-h-screen py-12">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">

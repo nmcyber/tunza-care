@@ -28,7 +28,7 @@ export default function ContactPage() {
         <title>Contact Us | Tunza Care Home Care Support Services</title>
         <meta name="description" content="Get in touch with Tunza Care. We're here to answer your questions about our home care support services." />
         <meta name="keywords" content="contact Tunza Care, care support contact, healthcare inquiry, service information, location details" />
-        <link rel="canonical" href="http://192.168.28.25:5174/contact" />
+        <link rel="canonical" href=" https://tunza-care.nmcyber.com/contact-us" />
       </Helmet>
       <main className="min-h-screen relative mt-20">
         <PageHeader 
