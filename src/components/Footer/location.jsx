@@ -22,7 +22,7 @@ const Location = () => {
               : "eee"
           }] p-3 rounded-md`}
         >
-          <img src={iconSrc} alt={altText} size={32} className="" alt="Location Pin" width="26" height="30" />
+          <img src={iconSrc} alt={altText} size={32} className="" width="26" height="30" />
         </span>
         <div>
           <h4 className="text-sm text-gray-500">{title}</h4>
