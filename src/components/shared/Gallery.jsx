@@ -20,7 +20,7 @@ const ImageWithSkeleton = ({ src, alt, className, ...props }) => {
         alt={alt}
         // Apply the same className for consistent sizing with the skeleton
         // Hide the image until it's loaded to prevent a broken image icon or partial rendering
-        className={`${className} ${isImageLoaded ? "block" : "hidden"}`}
+        className={`${className} ${isImageLoaded ? "block" : "hidden"} width="600" height="800"`}
         onLoad={() => setIsImageLoaded(true)}
         onError={() => setIsImageLoaded(true)} // In case image fails to load, still hide skeleton
         {...props}
