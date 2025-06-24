@@ -35,8 +35,8 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
           </Routes>
-        </Suspense>
         <Footer />
+        </Suspense>
       </HelmetProvider>
     </BrowserRouter>
   );
