@@ -2,9 +2,16 @@ import { holding_hands_banner, smilling_nurse } from "@/assets";
 import EmploymentSection from "@/components/Employment/employment-section";
 import StaffingOpportunities from "@/components/Employment/staffing-opportunities";
 import Typography from "@/components/shared/Typography";
+import { Helmet } from 'react-helmet-async';
 
 export default function EmploymentPage() {
   return (
+    <>
+      <Helmet>
+        <title>Employment Opportunities | Join Tunza Care</title>
+        <meta name="description" content="Discover rewarding career and employment opportunities at Tunza Care. Join our team and make a difference in the lives of people with disabilities." />
+        <link rel="canonical" href="https://tunza-care.nmcyber.com/employment" />
+      </Helmet>
     <main className="min-h-screen w-full relative mt-20 flex flex-col">
       {/* Banner Section */}
       <section className="relative w-full items-center justify-center  md:min-h-[35dvh] md:max-h-[40dvh] bg-primary/90 text-white">
@@ -122,5 +129,6 @@ export default function EmploymentPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

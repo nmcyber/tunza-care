@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tunza-care.nmcyber.com/sitemap.xml

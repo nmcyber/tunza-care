@@ -14,7 +14,7 @@ export default function AboutPage() {
       <title>About Us | Tunza Care Home Care Support Services</title>
       <meta name="description" content="Learn about Tunza Care's story, values, and approach to providing exceptional home care support services across Australia." />
       <meta name="keywords" content="Tunza Care, about us, home care values, care approach, healthcare mission, care provider history" />
-      <link rel="canonical" href="http://192.168.28.25:5174/about" />
+      <link rel="canonical" href="https://tunza-care.nmcyber.com/about" />
     </Helmet>
     <main className="min-h-screen ">
       <AboutHero />

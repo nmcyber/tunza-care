@@ -87,8 +87,8 @@ const Navbar = () => {
             className="rounded-full bg-[#e6f2f5] text-[#0469842] hover:bg-[#d6eaef] px-6 outline-0 outline-blue-800"
             variant="ghost"
           >
-            <Phone className="mr-2 h-4 w-4 text-teal-600" />
-            <span className="text-teal-600 font-medium">08 9387 6326</span>
+            <Phone className="mr-2 h-4 w-4 text-teal-800" />
+            <span className="text-teal-800 font-medium">08 9387 6326</span>
           </Button>
         </nav>
 
@@ -119,7 +119,7 @@ const Navbar = () => {
                       "block relative font-sans text-[18px] transition-colors duration-300 my-1 px-4 py-3",
                       item.title === activeItem
                         ? "rounded-[11px] border border-[rgba(0,0,0,0.1)] bg-[linear-gradient(180deg,rgba(255,255,255,0.26)_0%,rgba(115,115,115,0.26)_100%)] font-semibold"
-                        : "text-gray-700 hover:text-teal-600 font-medium",
+                        : "text-gray-700 hover:text-teal-800 font-medium",
                     )}
                   >
                     {item.title}
@@ -127,15 +127,15 @@ const Navbar = () => {
                 ))}
 
                 <Button className="mt-6 rounded-full bg-[#e6f2f5] text-[#0469842] hover:bg-[#d6eaef]" variant="ghost">
-                  <Phone className="mr-2 h-4 w-4 text-teal-600" />
-                  <span className="text-teal-600 font-medium">0469 842 289</span>
+                  <Phone className="mr-2 h-4 w-4 text-teal-800" />
+                  <span className="text-teal-800 font-medium">0469 842 289</span>
                 </Button>
               </div>
 
               <SheetFooter>
                 <div className="mb-8 flex justify-start space-x-6">
                   {socials.map(({ link, ariaLabel, iconImage: Icon }, index) => (
-                    <a href={link} key={index} className="text-teal-600 hover:text-teal-800 transition-colors">
+                    <a href={link} key={index} className="text-teal-800 hover:text-teal-800 transition-colors">
                       <span className="sr-only">{ariaLabel}</span>
                       <Icon size={24} />
                     </a>

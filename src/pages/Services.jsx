@@ -78,7 +78,7 @@ const Services = () => {
         <title>Our Services | Tunza Care Home Care Support Services</title>
         <meta name="description" content="Explore our comprehensive range of home care support services including personal care, community support, transport assistance, and 24/7 support." />
         <meta name="keywords" content="home care services, personal care, community support, transport assistance, 24/7 care, NDIS services, disability support" />
-        <link rel="canonical" href="http://192.168.28.25:5174/services" />
+       <link rel="canonical" href="https://tunza-care.nmcyber.com/services" />
       </Helmet>
     <section className="min-h-screen">
       {/* Main Services Banner and Overview */}

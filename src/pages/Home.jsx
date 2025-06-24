@@ -40,6 +40,12 @@ const healthcareServices = {
 
 const Home = () => {
   return (
+     <>
+      <Helmet>
+        <title>Tunza Care - Compassionate NDIS Provider</title>
+        <meta name="description" content="Tunza Care offers expert and compassionate support services under the NDIS on tunza-care.nmcyber.com. We are dedicated to enhancing the lives of individuals with disabilities." />
+        <link rel="canonical" href="https://tunza-care.nmcyber.com/" />
+      </Helmet>
     <section className='py-20 m-auto bg-gray-100 '>
       <Hero />
       <TrustedPartnership />
@@ -56,6 +62,7 @@ const Home = () => {
       </Suspense>
       <Location />
     </section>
+    </>
   );
 };
 
